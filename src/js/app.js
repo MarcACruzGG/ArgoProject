@@ -6,7 +6,31 @@ function iniciarApp(){
     navegacionFija();
     crearGaleria();
     scrollNav();
+    banderas();
+   
 }
+
+
+function banderas(){
+    const flagsElement = document.getElementById('flags');
+    const textstoChange = document.querySelectorAll('[data-section]');
+    const changeLanguage = async language => {
+        const requestJson = await fetch(`./build/languages/${language}.json`);
+        const texts = await requestJson.json();
+        for(const texttoChange of textstoChange){
+            const section = texttoChange.dataset.section;
+            const value = texttoChange.dataset.value;
+           
+            texttoChange.textContent = texts[section][value];
+        }
+    };
+
+    flagsElement.addEventListener('click', (e) => {
+        changeLanguage(e.target.parentElement.dataset.language);
+    });
+}
+
+
 
 function navegacionFija(){
     const barra = document.querySelector('.header');
