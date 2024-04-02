@@ -1,0 +1,40 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+@keyframes slide {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.contenedor-logos{
+   overflow: hidden;
+   padding: 6rem 0;
+   background: white;
+   white-space: nowrap;
+
+   &:hover .logos-slide{
+        animation-play-state: paused;
+   }
+   
+   .logos-slide{
+
+    animation: 25s slide infinite linear;
+    display: inline-block;
+    
+
+    img{
+        height: 4.8rem;
+        margin:0 4rem;
+    }
+}
+
+}
+
+
+
+
