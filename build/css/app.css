@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -601,5 +602,96 @@ h3 {
     right: 0;
     background: rgb(255, 255, 255);
     background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%);
+  }
+}
+
+.sectores-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 120rem;
+  margin: 0 auto;
+  background-color: #ffe5a7;
+  border-radius: 4rem;
+}
+.sectores-container h2 {
+  color: #000000;
+  margin-bottom: 2rem;
+}
+
+.sectores-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+.sector {
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarjeta {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-5px);
+}
+
+.naranja {
+  background-color: #f67d04;
+}
+
+.negro {
+  background-color: #000000;
+}
+
+.blanco {
+  background: #ffffff;
+}
+
+.sector h3 {
+  margin: 0;
+  padding: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.sector .icono {
+  /* Aquí irían los estilos para los íconos, que podrían ser imágenes o SVGs. */
+  height: 50px;
+  width: 50px;
+  background: gray; /* Color de relleno temporal para representar el ícono. */
+  margin: 1rem auto;
+}
+
+.sector a {
+  display: inline-block;
+  margin: 1rem auto;
+  color: white;
+  padding: 0.5rem 1rem;
+  background: #333;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.sector a:hover {
+  background-color: #ff9f1c;
+}
+
+@media (min-width: 768px) {
+  .sectores-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .sector {
+    grid-column: span 2;
+  }
+  .central {
+    grid-column: 2/span 2;
   }
 }

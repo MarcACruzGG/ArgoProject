@@ -1,0 +1,93 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.sectores-container {
+    text-align: center;
+    padding: 2rem;
+    max-width: 120rem;
+    margin: 0 auto;
+    background-color: v.$sorbus200;
+    border-radius: 4rem;
+
+    h2{
+        color: v.$negro;
+        margin-bottom: 2rem;
+    }
+}
+
+.sectores-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 1rem; 
+    padding: 1rem;
+}
+
+.sector {
+    margin: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.tarjeta {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-5px);
+}
+
+.naranja { 
+    background-color: v.$sorbus600; 
+}
+.negro {
+    background-color: v.$negro;
+}
+.blanco {
+    background: v.$blanco; 
+    }
+
+.sector h3 {
+    margin: 0;
+    padding: 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.sector .icono {
+    /* Aquí irían los estilos para los íconos, que podrían ser imágenes o SVGs. */
+    height: 50px;
+    width: 50px;
+    background: gray; /* Color de relleno temporal para representar el ícono. */
+    margin: 1rem auto;
+}
+
+.sector a {
+    display: inline-block;
+    margin: 1rem auto;
+    color: white;
+    padding: 0.5rem 1rem;
+    background: #333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sector a:hover {
+    background-color: #ff9f1c;
+}
+
+@include m.tablet {
+    .sectores-grid {
+        grid-template-columns: repeat(4, 1fr); // Cambiamos a 4 columnas para tabletas
+    }
+    .sector {
+        grid-column: span 2; // Cada tarjeta abarca dos columnas
+    }
+    .central {
+        grid-column: 2 / span 2; // La tarjeta central ocupa dos columnas
+    }
+}
