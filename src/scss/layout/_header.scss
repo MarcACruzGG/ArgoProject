@@ -2,7 +2,11 @@
 @use 'base/mixins' as m;
 
 .header{
-    background-color: v.$sorbus400;
+     position: relative; /* Opcional: hace que el header sea fijo en la parte superior */
+     z-index: 10; /* Asegura que el header se mantenga sobre otros contenidos */
+     width: 100%; /* Asegura que el header ocupe todo el ancho */
+     backdrop-filter: blur(1px);     
+     background: rgba( 171, 128, 128, 0.15 );
     .contenido-logo {
         display: flex;
         justify-content: center;
@@ -28,6 +32,12 @@
           padding-left: 2rem;
         } 
     }
+
+    //Hamburguer menu phone
+
+    @include m.tablet{
+        position: absolute;
+    }
 }
 
 .logo{
@@ -47,6 +57,7 @@
 }
 
 .navegacion-principal{
+    
     @include m.tablet{
         display: flex;
         gap: 2.5rem;

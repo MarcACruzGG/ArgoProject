@@ -17,9 +17,10 @@
 
 .sectores-grid {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(4, 1fr); // Cambiamos a 4 columnas para tabletas
     grid-gap: 1rem; 
-    padding: 1rem;
+    padding: 5rem;
+    gap: 5rem;
 }
 
 .sector {
@@ -30,6 +31,23 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    grid-column: span 2; 
+
+    h3 {
+        margin: 0;
+        padding: 0.5rem 0;
+        font-size: 1.2rem;
+    }
+
+    a {
+        display: inline-block;
+        margin: 1rem auto;
+        color: white;
+        padding: 0.5rem 1rem;
+        background: #333;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
 }
 
 
@@ -38,56 +56,99 @@
     transition: transform 0.3s ease;
 }
 
-.tarjeta:hover {
-    transform: translateY(-5px);
-}
-
-.naranja { 
-    background-color: v.$sorbus600; 
-}
-.negro {
-    background-color: v.$negro;
-}
-.blanco {
-    background: v.$blanco; 
+.central {
+    grid-column: 2 / span 2; 
     }
 
-.sector h3 {
+
+.cards {
+    width: 50rem;
+    height: 25rem;
+    background-color: #292929;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+    border: 2px solid rgba(7, 7, 7, 0.12);
+    font-size: 1.6rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
     margin: 0;
-    padding: 0.5rem 0;
-    font-size: 1.2rem;
-}
+    padding: 1rem;
 
-.sector .icono {
-    /* Aquí irían los estilos para los íconos, que podrían ser imágenes o SVGs. */
-    height: 50px;
-    width: 50px;
-    background: gray; /* Color de relleno temporal para representar el ícono. */
-    margin: 1rem auto;
-}
+      h3 {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        margin-top: 3rem;
+        color: white;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: .4rem;
+      }
 
-.sector a {
-    display: inline-block;
-    margin: 1rem auto;
-    color: white;
-    padding: 0.5rem 1rem;
-    background: #333;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
+      p {
+        width: 80%;
+        margin: 0 auto;
+        font-size: 13px;
+        text-align: center;
+        margin-top: 20px;
+        color: white;
+        font-weight: 200;
+        letter-spacing: 2px;
+        opacity: 0;
+        max-height: 0;
+        transition: all 0.3s ease;
+      }
 
-.sector a:hover {
-    background-color: #ff9f1c;
-}
+      &:hover {
+        height: 27rem;
+      }
+      
+      &:hover p {
+        transition: all 0.3s ease;
+        opacity: 1;
+        max-height: 4rem;
+      }
+      
+      &:hover .icon {
+        background-position: -12rem;
+        transition: all 0.3s ease;
+      }
+  }
+  
+  .icon {
+    margin: 0 auto;
+    width: 100%;
+    height: 15rem;
+    max-width: 15rem;
+    background: rgb(201,93,5);
+    background: linear-gradient(90deg, rgba(201,93,5,1) 4%, rgba(255,177,53,1) 37%, rgba(255,152,14,1) 60%, rgba(246,125,4,1) 81%, rgba(201,93,5,1) 100%);
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s ease;
+    background-position: 0px;
+    background-size: 200px;
 
-@include m.tablet {
-    .sectores-grid {
-        grid-template-columns: repeat(4, 1fr); // Cambiamos a 4 columnas para tabletas
+    img{
+        width: 20rem;
+        height: 20rem;
     }
-    .sector {
-        grid-column: span 2; // Cada tarjeta abarca dos columnas
+  }
+
+  .card1{
+    background-color: v.$blanco;
+    
+    h3{
+        color: v.$negro;
     }
-    .central {
-        grid-column: 2 / span 2; // La tarjeta central ocupa dos columnas
+
+    p{
+        color: v.$negro;
     }
-}
+  }
