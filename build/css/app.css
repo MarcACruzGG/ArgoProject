@@ -476,6 +476,9 @@ h3 {
   }
 }
 
+.contenido-video {
+  z-index: 9;
+}
 .contenido-video h2 {
   color: #ffffff;
   font-size: 4rem;
