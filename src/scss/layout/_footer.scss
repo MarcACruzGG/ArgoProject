@@ -1,0 +1,152 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+    background-color: v.$negro;
+    color: v.$blanco;
+    border-radius: 3rem;
+    height: 100%;
+    margin-bottom: 0;
+
+  .cotenido-footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5rem;
+    padding: 3rem 1rem;
+}
+
+  .logo-footer {
+    display: flex;
+    flex-basis: 100%;
+    justify-content: center;
+  }
+
+  .logo {
+    width: auto;
+    height: 7rem;
+    padding-right: 0;
+  }
+
+  .navegacion-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    a {
+      color: v.$blanco;
+      text-decoration: none;
+      margin-bottom: 1rem;
+      transition: color 0.3s ease;
+
+      &:hover,
+      &:focus {
+        color: v.$sorbus500;
+      }
+    }
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-link {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    &:hover{
+        color: v.$sorbus500;
+      }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  @include m.tablet {
+    .contenedor.cotenido-footer {
+      flex-wrap: nowrap;
+    }
+
+    .logo-footer {
+      flex-basis: auto;
+      align-items: center;
+      padding-right: 0;
+      
+    }
+
+    .navegacion-footer {
+      flex-direction: row;
+      flex-basis: auto;
+      margin-bottom: 0;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+
+      a {
+        margin: 0 1rem;
+      }
+    }
+
+    .social-links {
+      justify-content: flex-end;
+      flex-basis: auto;
+      align-items: center;
+      
+    }
+  }
+}
+
+.contact-info{
+    margin: 0 ;
+    padding: 2rem 1rem;
+
+    h3{
+        color: v.$sorbus500;
+        font-size: 5rem;
+        margin-bottom: 2rem;
+    }
+
+    p{
+        color: v.$blanco;
+        font-size: 2rem;
+    }
+}
+
+.bloque{
+    display: block;
+    text-align: center;
+    width: 90rem;
+    .logo-footer {
+        align-items: center;
+        padding-bottom: 5rem;
+        padding-right: 0;
+      }
+  
+      .navegacion-footer {
+        flex-direction: row;
+        flex-basis: auto;
+        margin-bottom: 0;
+        padding-bottom: 5rem;
+        align-items: center;
+        a {
+          margin: 0 1rem;
+        }
+      }
+  
+      .social-links {
+        justify-content: center;
+        flex-basis: auto;
+        align-items: center;
+        
+      }
+}

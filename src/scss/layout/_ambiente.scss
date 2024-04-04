@@ -1,0 +1,74 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+
+.ambiente-container{
+    margin-top: 2rem;
+}
+
+.imagen{
+    position: relative;
+    max-height: 54rem;
+    min-height: 39rem;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+        .overlay{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 100%, rgba(0, 0, 0, 0.65) 100%);
+         
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+
+            p{
+                color: v.$blanco;
+                font-size: 2rem;
+                font-weight: 300;
+                margin: 0;
+            }
+        }
+
+}
+
+.logos {
+    margin-top: 1.5rem;
+    overflow: hidden;
+    background: white;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+  }
+
+  .iconos-ambiente {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+  }
+  
+  .icono-amb {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    width: 33.33%; 
+    text-align: center; 
+  }
+  
+  .icon-indv{
+    font-size: 4rem;
+    margin-bottom: 1rem; 
+  }
+  
+  p {
+    margin-top: 1rem;
+    color: v.$negro;
+    font-size: 1.2rem; 
+    margin-bottom: 2rem;
+  }

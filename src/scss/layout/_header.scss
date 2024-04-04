@@ -2,9 +2,9 @@
 @use 'base/mixins' as m;
 
 .header{
-     position: relative; /* Opcional: hace que el header sea fijo en la parte superior */
-     z-index: 10; /* Asegura que el header se mantenga sobre otros contenidos */
-     width: 100%; /* Asegura que el header ocupe todo el ancho */
+     position: relative; 
+     z-index: 10; 
+     width: 100%; 
      backdrop-filter: blur(1px);     
      background: rgba( 171, 128, 128, 0.15 );
     .contenido-logo {
@@ -32,8 +32,6 @@
           padding-left: 2rem;
         } 
     }
-
-    //Hamburguer menu phone
 
     @include m.tablet{
         position: absolute;

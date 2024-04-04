@@ -332,7 +332,7 @@ p {
 
 .contenedor {
   width: 95%;
-  max-width: 120rem;
+  max-width: 150rem;
   margin: 0 auto;
 }
 
@@ -357,9 +357,9 @@ h3 {
 }
 
 .header {
-  position: relative; /* Opcional: hace que el header sea fijo en la parte superior */
-  z-index: 10; /* Asegura que el header se mantenga sobre otros contenidos */
-  width: 100%; /* Asegura que el header ocupe todo el ancho */
+  position: relative;
+  z-index: 10;
+  width: 100%;
   backdrop-filter: blur(1px);
   background: rgba(171, 128, 128, 0.15);
 }
@@ -634,7 +634,8 @@ button a {
 .sectores-container {
   text-align: center;
   padding: 2rem;
-  max-width: 120rem;
+  width: 95%;
+  max-width: 150rem;
   margin: 0 auto;
   background-color: #ffe5a7;
   border-radius: 4rem;
@@ -855,13 +856,19 @@ button a {
 
 .menu-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 50rem;
   background: #000000;
   border-radius: 5rem;
   margin-top: 2rem;
-  width: 95%;
+}
+.menu-container h2 {
+  color: #ffffff;
+  display: block;
+  align-items: center;
+  text-align: center;
 }
 
 .menu {
@@ -872,7 +879,6 @@ button a {
   align-items: center;
   justify-content: center;
 }
-
 .menu li {
   position: absolute;
   left: 0;
@@ -882,11 +888,6 @@ button a {
   transition: 0.5s;
   transition-delay: calc(0.1s * var(--i));
 }
-
-.menu.active li {
-  transform: rotate(calc(45deg * var(--i)));
-}
-
 .menu a {
   display: flex;
   align-items: center;
@@ -902,12 +903,7 @@ button a {
   transition-delay: 0.5s;
   filter: drop-shadow(0 0 2px var(--clr));
 }
-
-.menu.active a {
-  color: var(--clr);
-}
-
-.menu a::before {
+.menu a:before {
   content: "";
   position: absolute;
   width: 20px;
@@ -919,7 +915,22 @@ button a {
   transition-delay: 0.5s, 1s, 1.5s;
 }
 
-.menu.active a::before {
+.menu.active .menuToggle {
+  transform: rotate(315deg);
+}
+.menu.active li {
+  transform: rotate(calc(45deg * var(--i)));
+}
+.menu.active li:hover a::before {
+  background: var(--clr);
+}
+.menu.active li:hover a ion-icon {
+  color: #161616;
+}
+.menu.active a {
+  color: var(--clr);
+}
+.menu.active a:before {
   width: 50px;
   height: 50px;
   background: #161616;
@@ -930,14 +941,6 @@ button a {
   border-radius: 10px;
   filter: drop-shadow(0 0 5px var(--clr));
   rotate: 135deg;
-}
-
-.menu.active li:hover a::before {
-  background: var(--clr);
-}
-
-.menu.active li:hover a ion-icon {
-  color: #161616;
 }
 
 .menuToggle {
@@ -955,6 +958,201 @@ button a {
   transition: 1.5s;
 }
 
-.menu.active .menuToggle {
-  transform: rotate(315deg);
+p {
+  color: #ffffff;
+}
+
+.ambiente-container {
+  margin-top: 2rem;
+}
+
+.imagen {
+  position: relative;
+  max-height: 54rem;
+  min-height: 39rem;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.imagen .overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 100%, rgba(0, 0, 0, 0.65) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.imagen .overlay p {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0;
+}
+
+.logos {
+  margin-top: 1.5rem;
+  overflow: hidden;
+  background: white;
+  justify-content: space-around;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.iconos-ambiente {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icono-amb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33.33%;
+  text-align: center;
+}
+
+.icon-indv {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-top: 1rem;
+  color: #000000;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.footer {
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 3rem;
+  height: 100%;
+  margin-bottom: 0;
+}
+.footer .cotenido-footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 5rem;
+  padding: 3rem 1rem;
+}
+.footer .logo-footer {
+  display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+}
+.footer .logo {
+  width: auto;
+  height: 7rem;
+  padding-right: 0;
+}
+.footer .navegacion-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 100%;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+.footer .navegacion-footer a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+.footer .navegacion-footer a:hover, .footer .navegacion-footer a:focus {
+  color: #ff980e;
+}
+.footer .social-links {
+  display: flex;
+  justify-content: center;
+}
+.footer .social-link {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.footer .social-link:hover {
+  color: #ff980e;
+}
+.footer .social-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .footer .contenedor.cotenido-footer {
+    flex-wrap: nowrap;
+  }
+  .footer .logo-footer {
+    flex-basis: auto;
+    align-items: center;
+    padding-right: 0;
+  }
+  .footer .navegacion-footer {
+    flex-direction: row;
+    flex-basis: auto;
+    margin-bottom: 0;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  .footer .navegacion-footer a {
+    margin: 0 1rem;
+  }
+  .footer .social-links {
+    justify-content: flex-end;
+    flex-basis: auto;
+    align-items: center;
+  }
+}
+
+.contact-info {
+  margin: 0;
+  padding: 2rem 1rem;
+}
+.contact-info h3 {
+  color: #ff980e;
+  font-size: 5rem;
+  margin-bottom: 2rem;
+}
+.contact-info p {
+  color: #ffffff;
+  font-size: 2rem;
+}
+
+.bloque {
+  display: block;
+  text-align: center;
+  width: 90rem;
+}
+.bloque .logo-footer {
+  align-items: center;
+  padding-bottom: 5rem;
+  padding-right: 0;
+}
+.bloque .navegacion-footer {
+  flex-direction: row;
+  flex-basis: auto;
+  margin-bottom: 0;
+  padding-bottom: 5rem;
+  align-items: center;
+}
+.bloque .navegacion-footer a {
+  margin: 0 1rem;
+}
+.bloque .social-links {
+  justify-content: center;
+  flex-basis: auto;
+  align-items: center;
 }
