@@ -13,7 +13,10 @@
     justify-content: space-between;
     margin: 0 5rem;
     padding: 3rem 1rem;
-}
+    
+    
+
+    }
 
   .logo-footer {
     display: flex;
@@ -51,25 +54,26 @@
   .social-links {
     display: flex;
     justify-content: center;
-  }
-
-  .social-link {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 0.5rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    &:hover{
-        color: v.$sorbus500;
+    gap: 2rem;
+    .social-link {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 0.5rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        
+        &:hover{
+            color: v.$sorbus500;
+          }
+    
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
   }
 
   @include m.tablet {
@@ -104,6 +108,8 @@
       
     }
   }
+
+ 
 }
 
 .contact-info{
@@ -150,3 +156,4 @@
         
       }
 }
+

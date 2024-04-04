@@ -3,48 +3,80 @@
 
 
 .ambiente-container{
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
-.imagen{
-    position: relative;
-    max-height: 54rem;
-    min-height: 39rem;
-    overflow: hidden;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-        .overlay{
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 100%, rgba(0, 0, 0, 0.65) 100%);
-         
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
 
-            p{
-                color: v.$blanco;
-                font-size: 2rem;
-                font-weight: 300;
-                margin: 0;
-            }
-        }
+.imagen{
+  position: relative;
+  max-height: 54rem;
+  min-height: 39rem;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  .overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 100%, rgba(0, 0, 0, 0.65) 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+      p{
+
+        color: v.$blanco;
+        font-size: 2rem;
+        font-weight: 300;
+        margin: 0;
+      }
+    }
 
 }
 
 .logos {
-    margin-top: 1.5rem;
-    overflow: hidden;
-    background: white;
-    justify-content: space-around;
-    display: flex;
-    align-items: center;
-    text-align: center;
-
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; // Centra los logos en el contenedor
+  text-align: center;
+  font-size: .5rem;
+  .certificado {
+    width: auto; 
+    height: 2rem; 
+    margin: 0 5px; 
   }
+
+
+  @include m.telefono {
+    justify-content: space-around;
+    font-size: 2rem;
+
+    .certificado {
+      width: auto; 
+      height: 3rem; 
+      margin: 0 5px; 
+    }
+  }
+
+  @include m.tablet{
+    overflow: hidden;
+    padding: 1.5rem 0;
+    background: v.$blanco;
+    font-size: 8rem;
+    justify-content: space-around;
+    font-size: 2rem;
+
+    .certificado { // Corrección de la clase
+      width: auto; // Ajusta el ancho de manera automática
+      height: 4rem; // Altura fija para tabletas
+      margin: 0 10px; // Espaciado horizontal entre logos
+    }
+  }
+}
+
 
   .iconos-ambiente {
     margin-top: 5rem;
