@@ -5,8 +5,12 @@
      position: relative; 
      z-index: 10; 
      width: 100%; 
-     backdrop-filter: blur(1px);     
-     background: rgba( 171, 128, 128, 0.15 );
+     background: red;
+     @include m.tablet{
+        position: absolute;
+        backdrop-filter: blur(1px);     
+         background: rgba( 171, 128, 128, 0.15 );
+    }
     .contenido-logo {
         display: flex;
         justify-content: center;
@@ -33,9 +37,7 @@
         } 
     }
 
-    @include m.tablet{
-        position: absolute;
-    }
+    
 }
 
 .logo{

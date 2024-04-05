@@ -360,8 +360,14 @@ h3 {
   position: relative;
   z-index: 10;
   width: 100%;
-  backdrop-filter: blur(1px);
-  background: rgba(171, 128, 128, 0.15);
+  background: red;
+}
+@media (min-width: 768px) {
+  .header {
+    position: absolute;
+    backdrop-filter: blur(1px);
+    background: rgba(171, 128, 128, 0.15);
+  }
 }
 .header .contenido-logo {
   display: flex;
@@ -389,11 +395,6 @@ h3 {
     display: flex;
     justify-content: right;
     padding-left: 2rem;
-  }
-}
-@media (min-width: 768px) {
-  .header {
-    position: absolute;
   }
 }
 
