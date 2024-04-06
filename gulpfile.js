@@ -42,14 +42,33 @@ function versionWebp (done) {
     done(); 
  } 
 
- 
+ function versionAvif(done){
+    const opciones = {
+        quality: 50
+    };
+        src('src/img/**/*.{png,jpg}')
+            .pipe(avif(opciones))
+            .pipe(dest('build/img'));
+
+        done();
+}
+
+function javascript(done){
+    src('src/js/**/*.js')
+        .pipe(dest('build/js'));
+    done();
+}
 
 function dev(done){
     watch('src/scss/**/*.scss', css);
+    watch('src/js/**/*.js', javascript);
+
     done();
 }
 
 exports.css = css;
+exports.js = javascript;
 exports.versionWebp = versionWebp;
 exports.imagenes = imagenes;
-exports.dev = parallel( imagenes ,versionWebp, dev) ;
+exports.versionAvif = versionAvif;
+exports.dev = parallel( imagenes ,versionAvif,versionWebp, javascript,dev) ;

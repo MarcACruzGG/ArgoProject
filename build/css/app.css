@@ -356,6 +356,11 @@ h3 {
   font-size: 3rem;
 }
 
+img {
+  height: 100%;
+  height: auto;
+}
+
 .header {
   position: relative;
   z-index: 10;
@@ -584,15 +589,18 @@ button a {
   overflow: hidden;
   padding: 1.5rem 0;
   background: #ffffff;
-  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
+  width: 100%;
 }
 .contenedor-logos:before, .contenedor-logos:after {
+  content: "";
   position: absolute;
   top: 0;
   width: 25rem;
   height: 100%;
-  content: "";
   z-index: 2;
 }
 .contenedor-logos:before {
@@ -605,15 +613,14 @@ button a {
   background: rgb(255, 255, 255);
   background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 20%);
 }
-.contenedor-logos.slide-left .logos-slide {
-  animation: 30s slide-left infinite linear;
-}
-.contenedor-logos.slide-right .logos-slide {
-  animation: 30s slide-right infinite linear;
-}
 .contenedor-logos .logos-slide {
-  display: inline-block;
-  margin: 0 2rem;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
 }
 .contenedor-logos .logos-slide img {
   height: 2rem;
@@ -621,6 +628,22 @@ button a {
 }
 .contenedor-logos:hover .logos-slide {
   animation-play-state: paused;
+}
+.contenedor-logos .slide-left, .contenedor-logos .slide-right {
+  width: 100%;
+  overflow: hidden;
+}
+.contenedor-logos .slide-left .logos-slide {
+  animation: 30s slide-right infinite linear;
+}
+.contenedor-logos .slide-left .logos-slide .slide-left {
+  animation: 30s slide-left infinite linear;
+}
+.contenedor-logos .slide-right .logos-slide {
+  animation: 30s slide-right infinite linear;
+}
+.contenedor-logos .slide-right .logos-slide .slide-right {
+  animation: 30s slide-left infinite linear;
 }
 @media (min-width: 768px) {
   .contenedor-logos:before {

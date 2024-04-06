@@ -2,37 +2,33 @@
 @use 'base/variables' as v;
 
 @keyframes slide-left {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 @keyframes slide-right {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(0);
-    }
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
 }
 
 .contenedor-logos{
     overflow: hidden;
     padding: 1.5rem 0;
     background: v.$blanco;
-    white-space: nowrap;
+    display: flex;
+    flex-direction: column; // Para organizar los carruseles verticalmente
+    align-items: center; // Centra los carruseles horizontalmente
     position: relative;
+    width: 100%; // Asegura que el contenedor ocupe el ancho completo disponible
+
     
 
     &:before,&:after{
+        content: "";
         position: absolute;
         top: 0;
         width: 25rem;
         height: 100%;
-        content: "";
         z-index: 2;
     }
 
@@ -48,17 +44,16 @@
         background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 20%);
     }
 
-    &.slide-left .logos-slide {
-        animation: 30s slide-left infinite linear;
-    }
-
-    &.slide-right .logos-slide {
-        animation: 30s slide-right infinite linear;
-    }
+   
 
     .logos-slide {
-        display: inline-block;
-        margin: 0 2rem;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+        animation-duration: 40s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
 
         img {
             height: 2rem;
@@ -69,7 +64,30 @@
         animation-play-state: paused;
     }
     
-    
+    .slide-left, .slide-right {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .slide-left{
+        .logos-slide{
+            animation: 30s slide-right infinite linear;
+            .slide-left{
+                animation: 30s slide-left infinite linear;
+            }
+        }
+    }
+
+    .slide-right{
+        .logos-slide{
+            animation: 30s slide-right infinite linear;
+            .slide-right{
+                animation: 30s slide-left infinite linear;
+            }
+        }
+        
+    }
+
     @include m.tablet{
         &:before{
             left: 0;
