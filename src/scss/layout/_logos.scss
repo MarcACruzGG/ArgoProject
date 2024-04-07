@@ -2,13 +2,12 @@
 @use 'base/mixins' as m;
 
 .contenedor-logos {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  margin:1.3rem 0;
 
   &:before,&:after{
     content: "";
@@ -52,53 +51,47 @@
 
     .logos-slide {
       display: flex;
-      gap: 3.4rem; // Espacio entre logos
-      // No se define width aquí; será ajustado dinámicamente por JS
+      gap: 2rem;
+      animation: slideLeft 800s linear infinite;
 
       img {
         height: 2rem; // Altura fija de los logos
         width: 11.5rem; // Mantener la proporción de los logos
         &:hover{
-            cursor: pointer;
-            filter: brightness(0) saturate(100%) invert(49%) sepia(95%) saturate(4200%) hue-rotate(356deg) brightness(100%) contrast(101%);
-        }
+          cursor: pointer;
+          filter: brightness(0) saturate(100%) invert(49%) sepia(95%) saturate(4200%) hue-rotate(356deg) brightness(100%) contrast(101%);
+      }
       }
     }
   }
 
   .slide-left .logos-slide {
     display: flex;
-    width: calc(11.5rem * 22);
-    animation: slideLeft 40s linear infinite;
+    width: calc(11.5rem * 44);
+    animation: slideLeft 80s linear infinite;
   }
 
   .slide-right .logos-slide {
-    animation: slideRight 40s linear infinite;
+    animation: slideRight 80s linear infinite;
     display: flex;
-    width: calc(11.5rem * 22);
+    width: calc(11.5rem * 44);
   }
 }
 
 @keyframes slideLeft {
-  0% {
+  0%, 100% {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(calc(-11.5rem * 11));
+    transform: translateX(calc(-11.5rem * 22)); // Desplaza exactamente el ancho de todos los logos originales una vez
   }
-  100% { transform: translateX(0); 
-}
 }
 
 @keyframes slideRight {
-  0% {
-    transform: translateX(calc(-11.5rem * 11));
+  0%, 100% {
+    transform: translateX(calc(-11.5rem * 22)); // Comienza al final de los logos originales y termina en el mismo lugar
   }
   50% {
     transform: translateX(0);
   }
-  100% {
-    transform: translateX(calc(-11.5rem * 11));
-  }
 }
-

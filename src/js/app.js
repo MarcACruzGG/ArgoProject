@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function iniciarApp() {
-    loadIonicons();
+        loadIonicons();
+        toggleMenu();
+        duplicarLogosParaCarruselInfinito();
 }
 
 function loadIonicons() {
@@ -19,3 +21,24 @@ function loadIonicons() {
     scriptNoModule.src = 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js';
     document.body.appendChild(scriptNoModule);
 }
+
+function toggleMenu() {
+    let menuToggle = document.querySelector(".menuToggle");
+    let menu = document.querySelector(".menu");
+    if (menuToggle && menu) {
+        menuToggle.onclick = function () {
+            menu.classList.toggle("active");
+        };
+    }
+}
+        
+function duplicarLogosParaCarruselInfinito() {
+    const todosLosSlides = document.querySelectorAll('.logos-slide');
+
+    todosLosSlides.forEach(slide => {
+        // Clona el contenido de logos para tener el doble de elementos
+        const clonado = slide.cloneNode(true);
+        slide.append(...clonado.childNodes); // Añade los clones al final del mismo contenedor
+    });
+}
+

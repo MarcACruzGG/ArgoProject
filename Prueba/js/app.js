@@ -3,9 +3,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function iniciarApp() {
-        loadIonicons();
-        toggleMenu();
-        duplicarLogosParaCarruselInfinito();
+    loadIonicons();
+    duplicarLogosParaCarruselInfinito();
 }
 
 function loadIonicons() {
@@ -22,16 +21,6 @@ function loadIonicons() {
     document.body.appendChild(scriptNoModule);
 }
 
-function toggleMenu() {
-    let menuToggle = document.querySelector(".menuToggle");
-    let menu = document.querySelector(".menu");
-    if (menuToggle && menu) {
-        menuToggle.onclick = function () {
-            menu.classList.toggle("active");
-        };
-    }
-}
-        
 function duplicarLogosParaCarruselInfinito() {
     const todosLosSlides = document.querySelectorAll('.logos-slide');
 
@@ -41,4 +30,3 @@ function duplicarLogosParaCarruselInfinito() {
         slide.append(...clonado.childNodes); // Añade los clones al final del mismo contenedor
     });
 }
-
