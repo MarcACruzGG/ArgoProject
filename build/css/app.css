@@ -569,37 +569,20 @@ button a {
     margin-bottom: 0;
   }
 }
-@keyframes slide-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes slide-right {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
 .contenedor-logos {
-  overflow: hidden;
-  padding: 1.5rem 0;
-  background: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
   position: relative;
-  width: 100%;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .contenedor-logos:before, .contenedor-logos:after {
   content: "";
   position: absolute;
   top: 0;
-  width: 25rem;
+  width: 10rem;
   height: 100%;
   z-index: 2;
 }
@@ -613,38 +596,6 @@ button a {
   background: rgb(255, 255, 255);
   background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 20%);
 }
-.contenedor-logos .logos-slide {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: start;
-  animation-duration: 40s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-fill-mode: forwards;
-}
-.contenedor-logos .logos-slide img {
-  height: 2rem;
-  margin: 0 1rem;
-}
-.contenedor-logos:hover .logos-slide {
-  animation-play-state: paused;
-}
-.contenedor-logos .slide-left, .contenedor-logos .slide-right {
-  width: 100%;
-  overflow: hidden;
-}
-.contenedor-logos .slide-left .logos-slide {
-  animation: 30s slide-right infinite linear;
-}
-.contenedor-logos .slide-left .logos-slide .slide-left {
-  animation: 30s slide-left infinite linear;
-}
-.contenedor-logos .slide-right .logos-slide {
-  animation: 30s slide-right infinite linear;
-}
-.contenedor-logos .slide-right .logos-slide .slide-right {
-  animation: 30s slide-left infinite linear;
-}
 @media (min-width: 768px) {
   .contenedor-logos:before {
     left: 0;
@@ -657,7 +608,55 @@ button a {
     background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%);
   }
 }
+.contenedor-logos .slide-left, .contenedor-logos .slide-right {
+  overflow: hidden;
+  width: 100%;
+}
+.contenedor-logos .slide-left .logos-slide, .contenedor-logos .slide-right .logos-slide {
+  display: flex;
+  gap: 3.4rem;
+}
+.contenedor-logos .slide-left .logos-slide img, .contenedor-logos .slide-right .logos-slide img {
+  height: 2rem;
+  width: 11.5rem;
+}
+.contenedor-logos .slide-left .logos-slide img:hover, .contenedor-logos .slide-right .logos-slide img:hover {
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(49%) sepia(95%) saturate(4200%) hue-rotate(356deg) brightness(100%) contrast(101%);
+}
+.contenedor-logos .slide-left .logos-slide {
+  display: flex;
+  width: 253rem;
+  animation: slideLeft 40s linear infinite;
+}
+.contenedor-logos .slide-right .logos-slide {
+  animation: slideRight 40s linear infinite;
+  display: flex;
+  width: 253rem;
+}
 
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-126.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideRight {
+  0% {
+    transform: translateX(-126.5rem);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-126.5rem);
+  }
+}
 .sectores-container {
   text-align: center;
   padding: 2rem;

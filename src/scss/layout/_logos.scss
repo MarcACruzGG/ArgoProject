@@ -1,104 +1,104 @@
-@use 'base/mixins' as m;
 @use 'base/variables' as v;
+@use 'base/mixins' as m;
 
-@keyframes slide-left {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-}
-
-@keyframes slide-right {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(0); }
-}
-
-.contenedor-logos{
-    overflow: hidden;
-    padding: 1.5rem 0;
-    background: v.$blanco;
+.contenedor-logos {
     display: flex;
-    flex-direction: column; // Para organizar los carruseles verticalmente
-    align-items: center; // Centra los carruseles horizontalmente
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
     position: relative;
-    width: 100%; // Asegura que el contenedor ocupe el ancho completo disponible
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 
-    
+  &:before,&:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    z-index: 2;
+}
 
-    &:before,&:after{
-        content: "";
-        position: absolute;
-        top: 0;
-        width: 25rem;
-        height: 100%;
-        z-index: 2;
-    }
+&:before{
+    left: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 20%);
+}
 
-    &:before{
+&:after{
+    right: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 20%);
+}
+  
+@include m.tablet {
+  
+      &:before {
         left: 0;
         background: rgb(255,255,255);
-        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 20%);
-    }
-
-    &:after{
+        background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
+      }
+  
+      &:after {
         right: 0;
         background: rgb(255,255,255);
-        background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 20%);
+        background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
     }
-
-   
+ }
+  
+  .slide-left, .slide-right {
+    overflow: hidden;
+    width: 100%;
 
     .logos-slide {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: start;
-        animation-duration: 40s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-fill-mode: forwards;
+      display: flex;
+      gap: 3.4rem; // Espacio entre logos
+      // No se define width aquí; será ajustado dinámicamente por JS
 
-        img {
-            height: 2rem;
-            margin: 0 1rem;
+      img {
+        height: 2rem; // Altura fija de los logos
+        width: 11.5rem; // Mantener la proporción de los logos
+        &:hover{
+            cursor: pointer;
+            filter: brightness(0) saturate(100%) invert(49%) sepia(95%) saturate(4200%) hue-rotate(356deg) brightness(100%) contrast(101%);
         }
+      }
     }
-    &:hover .logos-slide {
-        animation-play-state: paused;
-    }
-    
-    .slide-left, .slide-right {
-        width: 100%;
-        overflow: hidden;
-    }
+  }
 
-    .slide-left{
-        .logos-slide{
-            animation: 30s slide-right infinite linear;
-            .slide-left{
-                animation: 30s slide-left infinite linear;
-            }
-        }
-    }
+  .slide-left .logos-slide {
+    display: flex;
+    width: calc(11.5rem * 22);
+    animation: slideLeft 40s linear infinite;
+  }
 
-    .slide-right{
-        .logos-slide{
-            animation: 30s slide-right infinite linear;
-            .slide-right{
-                animation: 30s slide-left infinite linear;
-            }
-        }
-        
-    }
-
-    @include m.tablet{
-        &:before{
-            left: 0;
-            background: rgb(255,255,255);
-            background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
-        }
-        &:after{
-            right: 0;
-            background: rgb(255,255,255);
-            background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 70%);
-        }
-    }
-
+  .slide-right .logos-slide {
+    animation: slideRight 40s linear infinite;
+    display: flex;
+    width: calc(11.5rem * 22);
+  }
 }
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(calc(-11.5rem * 11));
+  }
+  100% { transform: translateX(0); 
+}
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(calc(-11.5rem * 11));
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-11.5rem * 11));
+  }
+}
+
