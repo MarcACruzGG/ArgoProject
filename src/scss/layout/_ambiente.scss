@@ -163,7 +163,8 @@
       display: block;
       width: 160px;
       height: 160%;
-      background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+      background: rgb(201,93,5);
+      background: linear-gradient(90deg, rgba(201,93,5,1) 4%, rgba(255,177,53,1) 37%, rgba(255,152,14,1) 60%, rgba(246,125,4,1) 81%, rgba(201,93,5,1) 100%);
       animation: rotation_481 5000ms infinite linear;
     }
 
@@ -172,9 +173,9 @@
     position: absolute;
     width: 99%;
     height: 99%;
-    background-color: #151515;
+    background-color: v.$negro;
     border-radius: 5px;
-    color: white;
+    color: v.$blanco;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -236,7 +237,7 @@
     width: 90px;
     height: 90px;
     border-radius: 50%;
-    background-color: #ffbb66;
+    background-color: v.$sorbus400;
     position: relative;
     filter: blur(15px);
     animation: floating 2600ms infinite linear;
@@ -249,7 +250,7 @@
 }
 
 .front, .back {
-  background-color: #151515;
+  background-color: v.$negro;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -270,7 +271,7 @@
 }
 
 #bottom {
-  background-color: #ff8866;
+  background-color: v.$sorbus600;
   left: 50px;
   top: 0px;
   width: 150px;
@@ -279,7 +280,7 @@
 }
 
 #right {
-  background-color: #ff2233;
+  background-color: v.$sorbus100;
   left: 160px;
   top: -80px;
   width: 30px;
