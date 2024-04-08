@@ -22,10 +22,10 @@
     .contenido-header{
         padding: 1rem;
         display: flex;
-        flex-direction: column; // O 'row', dependiendo de la disposición deseada
-        justify-content: center; // Esto centrará los elementos hijos de .contenido-header horizontalmente
-        align-items: center; // Esto centrará los elementos hijos de .contenido-header verticalmente
-        width: 100%; // Se extiende a lo ancho del contenedor padre
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center; 
+        width: 100%; 
        @include m.tablet{
            display: flex;
            justify-content: space-between;
@@ -141,6 +141,7 @@
         font-size: 1.5rem;
         margin: 1rem auto;
         width: 15rem;
+        
         @include m.tablet{
             display: block;
             text-align: center;

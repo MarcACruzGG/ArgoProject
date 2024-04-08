@@ -1,6 +1,13 @@
 @use 'base/variables' as v;
 @use 'base/mixins' as m;
 
+
+.contenedor{
+  width: unset;
+  max-width: unset;
+  margin: unset;
+}
+
 .contenedor-logos {
   display: flex;
   flex-direction: column;

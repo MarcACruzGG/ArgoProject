@@ -116,8 +116,19 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20rem; /* Espacio entre las tarjetas */
-  padding: 20px;
+  gap: 6rem; /* Espacio entre las tarjetas */
+  padding: 5rem;
+
+  @include m.telefono{
+    gap: 5rem;
+    padding: 10px;
+  }
+
+  @include m.tablet{
+    gap: 8rem;
+    padding: 10px;
+    
+  }
 
   .card {
     overflow: visible;
@@ -219,11 +230,7 @@
     }
   }
     
-  .card-footer {
-    color: #ffffff88;
-    margin-top: 5px;
-    font-size: 8px;
-  }
+
   
   .circle {
     width: 90px;
