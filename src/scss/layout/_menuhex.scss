@@ -15,20 +15,19 @@
   
   h2{
     color: v.$blanco;
+    column-gap: 5rem;
     display: block;
     align-items: center;
-    text-align: center;
   }
 }
 .menu {
+  margin: 3rem auto;
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 26rem;
+  height: 26rem;
   display: flex;
   align-items: center;
   justify-content: center;
-
-
 
   li {
     position: absolute;
@@ -90,6 +89,24 @@
 
   a {
     color: var(--clr);
+    position: relative;
+    span {
+      position: absolute;
+      top: calc(100% + 1rem); // Posiciona debajo del menú
+      left: 50%; // Centra el texto
+      transform: translateX(-50%); // Asegura el centrado exacto
+      color: var(--clr); // Usa el color definido en --clr
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+
+    &:hover span {
+      opacity: 1;
+      visibility: visible;
+    }
+
     &:before {
       width: 50px;
       height: 50px;
@@ -123,4 +140,9 @@
 
   p{
     color: v.$blanco;
+  }
+
+  .texto-menu{
+    color: v.$blanco;
+    font-size: 3rem;
   }

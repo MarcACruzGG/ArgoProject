@@ -1094,7 +1094,7 @@ button a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 6rem; /* Espacio entre las tarjetas */
+  gap: 6rem;
   padding: 5rem;
 }
 @media (min-width: 480px) {
@@ -1137,7 +1137,7 @@ button a {
   position: absolute;
   content: " ";
   display: block;
-  width: 160px;
+  width: 16rem;
   height: 160%;
   background: rgb(201, 93, 5);
   background: linear-gradient(90deg, rgb(201, 93, 5) 4%, rgb(255, 177, 53) 37%, rgb(255, 152, 14) 60%, rgb(246, 125, 4) 81%, rgb(201, 93, 5) 100%);
@@ -1273,15 +1273,16 @@ button a {
 }
 .menu-container h2 {
   color: #ffffff;
+  column-gap: 5rem;
   display: block;
   align-items: center;
-  text-align: center;
 }
 
 .menu {
+  margin: 3rem auto;
   position: relative;
-  width: 260px;
-  height: 260px;
+  width: 26rem;
+  height: 26rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1336,6 +1337,22 @@ button a {
 }
 .menu.active a {
   color: var(--clr);
+  position: relative;
+}
+.menu.active a span {
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--clr);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+.menu.active a:hover span {
+  opacity: 1;
+  visibility: visible;
 }
 .menu.active a:before {
   width: 50px;
@@ -1367,6 +1384,11 @@ button a {
 
 p {
   color: #ffffff;
+}
+
+.texto-menu {
+  color: #ffffff;
+  font-size: 3rem;
 }
 
 .footer {

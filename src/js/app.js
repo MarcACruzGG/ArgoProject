@@ -5,19 +5,18 @@ document.addEventListener('DOMContentLoaded', function() {
 function iniciarApp() {
         loadIonicons();
         toggleMenu();
+        mostrarTextoMenu();
         duplicarLogosParaCarruselInfinito();
         toggleMenuHamburguesa();
         toggleSelectorIdioma();
 }
 
 function loadIonicons() {
-    // Cargar Ionicons module
     let scriptModule = document.createElement('script');
     scriptModule.type = 'module';
     scriptModule.src = 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js';
     document.body.appendChild(scriptModule);
 
-    // Cargar Ionicons no module (fallback)
     let scriptNoModule = document.createElement('script');
     scriptNoModule.noModule = true;
     scriptNoModule.src = 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js';
@@ -65,9 +64,27 @@ function toggleSelectorIdioma() {
             idioma.style.display = this.checked ? 'flex' : 'none';
         }
     });
-
-    // Asegura que el selector de idioma vuelva a su estado visible por defecto en pantallas más grandes
     window.addEventListener('resize', function() {
         idioma.style.display = window.innerWidth >= 768 ? 'flex' : hamburgerCheckbox.checked ? 'flex' : 'none';
+    });
+}
+
+function mostrarTextoMenu() {
+    const menuItems = document.querySelectorAll('.menu li');
+    const textoMenu = document.querySelector('.texto-menu');
+
+    const textos = [
+        "Misión-Vision", "Políticas", "Certificados", "Equipo", 
+        "Calidad", "Procesos", "Presupuesto", "Volumen de trabajo"
+    ];
+
+    menuItems.forEach((item, index) => {
+        item.addEventListener('mouseover', () => {
+            textoMenu.textContent = textos[index];
+        });
+
+        item.addEventListener('mouseout', () => {
+            textoMenu.textContent = ""; // O cualquier texto predeterminado si prefieres
+        });
     });
 }
