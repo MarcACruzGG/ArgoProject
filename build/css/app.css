@@ -979,37 +979,37 @@ button a {
   position: relative;
   width: 100%;
   overflow: hidden;
-  height: 20rem;
+  height: 25rem;
 }
 @media (min-width: 480px) {
   .ambiente-container .imagen {
-    height: 30rem;
+    height: 35rem;
   }
 }
 @media (min-width: 768px) {
   .ambiente-container .imagen {
-    height: 45rem;
+    height: 50rem;
   }
 }
 @media (min-width: 1169px) {
   .ambiente-container .imagen {
-    height: 50rem;
+    height: 60rem;
   }
 }
 .ambiente-container .imagen img {
   width: 100%;
-  height: auto;
+  height: 26rem;
   object-fit: cover;
   object-position: left center;
 }
 @media (min-width: 480px) {
   .ambiente-container .imagen img {
-    height: auto;
+    height: 36rem;
   }
 }
 @media (min-width: 768px) {
   .ambiente-container .imagen img {
-    height: auto;
+    height: 51rem;
   }
 }
 @media (min-width: 1169px) {
@@ -1084,71 +1084,166 @@ button a {
   }
 }
 
-.iconos-ambiente {
-  margin-top: 5rem;
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20rem; /* Espacio entre las tarjetas */
+  padding: 20px;
+}
+.card-container .card {
+  overflow: visible;
+  width: 190px;
+  height: 254px;
+}
+.card-container .card:hover .content {
+  transform: rotateY(180deg);
+}
+.card-container .content {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 300ms;
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.9333333333);
+  border-radius: 5px;
+}
+.card-container .back {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.card-container .back:before {
+  position: absolute;
+  content: " ";
+  display: block;
+  width: 160px;
+  height: 160%;
+  background: linear-gradient(90deg, transparent, #ff9966, #ff9966, #ff9966, #ff9966, transparent);
+  animation: rotation_481 5000ms infinite linear;
+}
+.card-container .back-content {
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  background-color: #151515;
+  border-radius: 5px;
+  color: white;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 30px;
 }
-@media (min-width: 768px) {
-  .iconos-ambiente {
-    display: flex;
-    align-items: center;
-  }
+.card-container .front {
+  transform: rotateY(180deg);
+  color: white;
 }
-.iconos-ambiente .icono-amb {
-  text-align: center;
-  width: auto;
-  margin-bottom: 1.5rem;
+.card-container .front .front-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-@media (min-width: 768px) {
-  .iconos-ambiente .icono-amb {
-    margin: 0 1rem;
-  }
+.card-container .front .img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
-.iconos-ambiente .icono-amb p {
-  font-size: 1.3rem;
-  color: #000000;
-  margin: 0 auto;
-  text-align: center;
-  align-items: center;
-  width: 30rem;
+.card-container .description {
+  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5333333333);
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  border-radius: 5px;
 }
-@media (min-width: 480px) {
-  .iconos-ambiente .icono-amb p {
-    font-size: 1.3rem;
-    width: 45rem;
-    margin: 1rem auto;
-    text-align: center;
-  }
+.card-container .description p {
+  font-size: rem;
+  margin: 0;
 }
-@media (min-width: 768px) {
-  .iconos-ambiente .icono-amb p {
-    text-align: center;
-    width: 23rem;
-    margin: 0 auto;
-    font-size: 1.4rem;
-  }
+.card-container .title {
+  font-size: 11px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
-.iconos-ambiente .icon-indv {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+.card-container .title p {
+  width: 50%;
+  font-size: 2rem;
 }
-@media (min-width: 480px) {
-  .iconos-ambiente .icon-indv {
-    font-size: 3rem;
-  }
+.card-container .card-footer {
+  color: rgba(255, 255, 255, 0.5333333333);
+  margin-top: 5px;
+  font-size: 8px;
+}
+.card-container .circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #ffbb66;
+  position: relative;
+  filter: blur(15px);
+  animation: floating 2600ms infinite linear;
+}
+.card-container .icon-indv {
+  height: 10rem;
+  width: 10rem;
 }
 
-@media (min-width: 768px) {
-  .iconos-ambiente {
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 0;
+.front, .back {
+  background-color: #151515;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+@keyframes rotation_481 {
+  0% {
+    transform: rotateZ(0deg);
   }
-  .iconos-ambiente .icono-amb {
-    width: auto;
-    text-align: center;
+  0% {
+    transform: rotateZ(360deg);
+  }
+}
+#bottom {
+  background-color: #ff8866;
+  left: 50px;
+  top: 0px;
+  width: 150px;
+  height: 150px;
+  animation-delay: -800ms;
+}
+
+#right {
+  background-color: #ff2233;
+  left: 160px;
+  top: -80px;
+  width: 30px;
+  height: 30px;
+  animation-delay: -1800ms;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0px);
   }
 }
 .menu-container {
