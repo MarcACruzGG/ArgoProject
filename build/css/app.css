@@ -1137,7 +1137,7 @@ button a {
   position: absolute;
   content: " ";
   display: block;
-  width: 16rem;
+  width: 50rem;
   height: 160%;
   background: rgb(201, 93, 5);
   background: linear-gradient(90deg, rgb(201, 93, 5) 4%, rgb(255, 177, 53) 37%, rgb(255, 152, 14) 60%, rgb(246, 125, 4) 81%, rgb(201, 93, 5) 100%);
@@ -1388,7 +1388,7 @@ p {
 
 .texto-menu {
   color: #ffffff;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .footer {

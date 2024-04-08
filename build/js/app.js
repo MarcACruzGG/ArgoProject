@@ -81,10 +81,14 @@ function mostrarTextoMenu() {
     menuItems.forEach((item, index) => {
         item.addEventListener('mouseover', () => {
             textoMenu.textContent = textos[index];
+            textoMenu.style.opacity = '1'; // Hace visible el texto
+            textoMenu.style.visibility = 'visible'; // Asegura que el texto sea visible
         });
 
         item.addEventListener('mouseout', () => {
-            textoMenu.textContent = ""; // O cualquier texto predeterminado si prefieres
+            textoMenu.textContent = ""; // Limpia el texto
+            textoMenu.style.opacity = '0'; // Hace el texto invisible
+            textoMenu.style.visibility = 'hidden'; // Cambia la visibilidad
         });
     });
 }
