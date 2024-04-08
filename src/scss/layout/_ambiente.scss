@@ -2,18 +2,22 @@
 @use 'base/variables' as v;
 
 
-.ambiente-container{
+.ambiente-container {
   margin-top: 2rem;
+  width: 100%; // Asegura que el contenedor ocupe todo el ancho disponible
 
-  .imagen{
+  .imagen {
     position: relative;
-   
-     img {
-      width: 100%; // Hace que la imagen sea tan ancha como su contenedor
-      height: auto; // Mantiene la relación de aspecto de la imagen
-      display: block; // Evita cualquier espacio debajo de la imagen que pueda causar inline
+    width: 100%; // Asegura que el contenedor de la imagen ocupe todo el ancho disponible
+    // Se remueve la altura fija para permitir que la imagen mantenga su relación de aspecto
+    overflow: hidden; // Asegura que cualquier imagen que se salga del contenedor se recorte
+
+    img {
+      width: 100%; // La imagen ocupa todo el ancho de su contenedor
+      height: auto; // La altura se ajusta para mantener la relación de aspecto de la imagen
+      object-fit: cover; // Asegura que la imagen cubra el contenedor
+      object-position: left center; // Alinea la imagen a la izquierda y al centro verticalmente
     }
-    
     .overlay{
       position: absolute;
       height: 100%;
@@ -25,19 +29,24 @@
       text-align: center;
   
         p{
-  
           color: v.$blanco;
-          font-size: 3rem;
+          font-size: 1.5rem;
           font-weight: 400;
           margin: 0 2rem;
           padding: 1.3rem;
+
+          @include m.telefono{
+            font-size: 2rem;
+          }
+
+          @include m.tablet{
+            font-size: 3rem;
+          }
         }
       }
   
   }
 }
-
-
 
 .logos {
   margin-top: 1.5rem;
@@ -86,6 +95,14 @@
     display: flex;
     justify-content: space-between; 
     align-items: center; 
+
+    p {
+      margin-top: 1rem;
+      color: v.$negro;
+      font-size: 1.2rem; 
+      margin-bottom: 2rem;
+      width: 30rem;
+    }
   }
   
   .icono-amb {
@@ -101,9 +118,4 @@
     margin-bottom: 1rem; 
   }
   
-  p {
-    margin-top: 1rem;
-    color: v.$negro;
-    font-size: 1.2rem; 
-    margin-bottom: 2rem;
-  }
+  

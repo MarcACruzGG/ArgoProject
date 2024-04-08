@@ -973,14 +973,18 @@ button a {
 
 .ambiente-container {
   margin-top: 2rem;
+  width: 100%;
 }
 .ambiente-container .imagen {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 .ambiente-container .imagen img {
   width: 100%;
   height: auto;
-  display: block;
+  object-fit: cover;
+  object-position: left center;
 }
 .ambiente-container .imagen .overlay {
   position: absolute;
@@ -994,10 +998,20 @@ button a {
 }
 .ambiente-container .imagen .overlay p {
   color: #ffffff;
-  font-size: 3rem;
+  font-size: 1.5rem;
   font-weight: 400;
   margin: 0 2rem;
   padding: 1.3rem;
+}
+@media (min-width: 480px) {
+  .ambiente-container .imagen .overlay p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .ambiente-container .imagen .overlay p {
+    font-size: 3rem;
+  }
 }
 
 .logos {
@@ -1046,6 +1060,13 @@ button a {
   justify-content: space-between;
   align-items: center;
 }
+.iconos-ambiente p {
+  margin-top: 1rem;
+  color: #000000;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  width: 30rem;
+}
 
 .icono-amb {
   display: flex;
@@ -1058,13 +1079,6 @@ button a {
 .icon-indv {
   font-size: 4rem;
   margin-bottom: 1rem;
-}
-
-p {
-  margin-top: 1rem;
-  color: #000000;
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
 }
 
 .menu-container {
