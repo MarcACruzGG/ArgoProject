@@ -4,37 +4,40 @@
 
 .ambiente-container{
   margin-top: 2rem;
-}
 
-
-.imagen{
-  position: relative;
-  max-height: 54rem;
-  min-height: 39rem;
-  overflow: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  .overlay{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 100%, rgba(0, 0, 0, 0.65) 100%);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-
-      p{
-
-        color: v.$blanco;
-        font-size: 2rem;
-        font-weight: 300;
-        margin: 0;
-      }
+  .imagen{
+    position: relative;
+   
+     img {
+      width: 100%; // Hace que la imagen sea tan ancha como su contenedor
+      height: auto; // Mantiene la relación de aspecto de la imagen
+      display: block; // Evita cualquier espacio debajo de la imagen que pueda causar inline
     }
-
+    
+    .overlay{
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 100%, rgba(0, 0, 0, 0.65) 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+  
+        p{
+  
+          color: v.$blanco;
+          font-size: 3rem;
+          font-weight: 400;
+          margin: 0 2rem;
+          padding: 1.3rem;
+        }
+      }
+  
+  }
 }
+
+
 
 .logos {
   margin-top: 1.5rem;

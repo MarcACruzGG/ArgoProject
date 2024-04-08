@@ -6,7 +6,8 @@ function iniciarApp() {
         loadIonicons();
         toggleMenu();
         duplicarLogosParaCarruselInfinito();
-        activarMenuResponsive();
+        toggleMenuHamburguesa();
+        toggleSelectorIdioma();
 }
 
 function loadIonicons() {
@@ -42,31 +43,31 @@ function duplicarLogosParaCarruselInfinito() {
     });
 }
 
-function activarMenuResponsive() {
+function toggleMenuHamburguesa() {
     const hamburgerCheckbox = document.querySelector('.hamburger input[type="checkbox"]');
     const nav = document.querySelector('.navegacion-principal');
-    const flags = document.querySelector('#flags'); // Selector para las banderas
+    hamburgerCheckbox.addEventListener('change', function() {
+        if (window.innerWidth < 768) {
+            nav.style.display = this.checked ? 'block' : 'none';
+        }
+    });
+    window.addEventListener('resize', function() {
+        nav.style.display = window.innerWidth >= 768 ? 'flex' : hamburgerCheckbox.checked ? 'block' : 'none';
+    });
+}
+
+function toggleSelectorIdioma() {
+    const hamburgerCheckbox = document.querySelector('.hamburger input[type="checkbox"]');
+    const idioma = document.querySelector('.idioma');
 
     hamburgerCheckbox.addEventListener('change', function() {
         if (window.innerWidth < 768) {
-            // Cambia la visualización de la navegación y las banderas basado en el checkbox
-            const displayStyle = this.checked ? 'block' : 'none';
-            nav.style.display = displayStyle;
-            flags.style.display = displayStyle; // Aplica el mismo estilo a las banderas
+            idioma.style.display = this.checked ? 'flex' : 'none';
         }
     });
 
+    // Asegura que el selector de idioma vuelva a su estado visible por defecto en pantallas más grandes
     window.addEventListener('resize', function() {
-        if (window.innerWidth >= 768) {
-            // Restablece la visualización para pantallas más grandes
-            nav.style.display = 'flex'; // Asume que la visualización predeterminada es flex
-            flags.style.display = 'flex'; // Asume que la visualización predeterminada de las banderas es flex
-        } else {
-            // Asegura que tanto la navegación como las banderas se oculten en pantallas pequeñas si el checkbox no está marcado
-            if (!hamburgerCheckbox.checked) {
-                nav.style.display = 'none';
-                flags.style.display = 'none';
-            }
-        }
+        idioma.style.display = window.innerWidth >= 768 ? 'flex' : hamburgerCheckbox.checked ? 'flex' : 'none';
     });
 }

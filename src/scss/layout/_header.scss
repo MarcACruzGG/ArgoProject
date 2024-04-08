@@ -21,22 +21,91 @@
     }
     .contenido-header{
         padding: 1rem;
+        display: flex;
+        flex-direction: column; // O 'row', dependiendo de la disposición deseada
+        justify-content: center; // Esto centrará los elementos hijos de .contenido-header horizontalmente
+        align-items: center; // Esto centrará los elementos hijos de .contenido-header verticalmente
+        width: 100%; // Se extiende a lo ancho del contenedor padre
        @include m.tablet{
            display: flex;
            justify-content: space-between;
            align-items: center;
+           flex-direction: unset;
+            width: unset;
+
        }
     }
-    .flags{
+    .idioma{
         display: flex;
-        justify-content: center;    
-        gap: 2rem;
-        
+        width: 20rem;
+        color: v.$blanco;
+        display: none;
+        width: 14rem; 
+
         @include m.tablet{
-          display: flex;
-          justify-content: right;
-          padding-left: 2rem;
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+            padding-left: 2rem;
+            width:unset;
         } 
+
+        .text_item{
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            @include m.tablet{
+                font-size: 1.5rem;
+                font-weight: 600;
+
+            }
+        }
+
+        .switchi {
+            font-size: 17px;
+            position: relative;
+            display: inline-block;
+            width: 3.5em;
+            height: 2em;
+            margin: 1rem auto;
+
+            input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+          }
+          
+          /* The slider */
+          .slideri {
+            position: absolute;
+            cursor: pointer;
+            inset: 0;
+            border: 2px solid v.$blanco;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            &:before {
+                position: absolute;
+                content: "";
+                height: 1.4em;
+                width: 1.4em;
+                left: 0.2em;
+                bottom: 0.2em;
+                background-color: v.$blanco;
+                border-radius: inherit;
+                transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+              }
+          }
+          
+        .switchi input:checked + .slideri {
+            box-shadow: 0 0 2rem v.$sorbus600;
+            border: 2px solid v.$sorbus600;
+          }
+          
+        .switchi input:checked + .slideri:before {
+            transform: translateX(1.5em);
+          }
+
     }
 }
 
@@ -44,7 +113,6 @@
     width: 15rem;
     height: 7rem;
     text-align: center;
-    padding-bottom: 2rem;
     margin:0;
 
     @include m.tablet{
@@ -59,7 +127,7 @@
 
 
 .navegacion-principal{    
-
+    display: none;
     @include m.tablet{
         display: flex;
         gap: 2.5rem;
@@ -88,25 +156,12 @@
     }
 }
 
-.flags__item{
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    overflow: hidden;
-    cursor: pointer;
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-
 .hamburger {
     display: block; // Visible solo en pantallas menores a 768px  
     cursor: pointer;
     position: absolute;
     right: 1rem;
-    top: 1rem;
+    top: 2rem;
     
     @include m.tablet{
       display: none;
@@ -119,7 +174,7 @@
   
     .line {
       fill: none;
-      stroke: white;
+      stroke: v.$blanco;
       stroke-linecap: round;
       stroke-linejoin: round;
       stroke-width: 3;
@@ -136,18 +191,12 @@
         &:checked + svg .line-top-bottom {
             stroke-dasharray: 20 300;
             stroke-dashoffset: -32.42;
+            stroke: v.$sorbus600;
           }
 
         &:checked + svg {
             transform: rotate(-45deg);
+    
           }
-    }
-  }
-  
-  // Asegúrate de ajustar la visibilidad de la navegación y las banderas en pantallas pequeñas
-  .navegacion-principal, #flags {
-    display: none;
-  @include m.tablet {
-        display: flex;
     }
   }

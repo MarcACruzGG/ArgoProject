@@ -382,32 +382,93 @@ img {
 }
 .header .contenido-header {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 @media (min-width: 768px) {
   .header .contenido-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-direction: unset;
+    width: unset;
   }
 }
-.header .flags {
+.header .idioma {
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  width: 20rem;
+  color: #ffffff;
+  display: none;
+  width: 14rem;
+  /* The slider */
 }
 @media (min-width: 768px) {
-  .header .flags {
+  .header .idioma {
     display: flex;
-    justify-content: right;
+    gap: 2rem;
+    margin: 1rem 0;
     padding-left: 2rem;
+    width: unset;
   }
+}
+.header .idioma .text_item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+@media (min-width: 768px) {
+  .header .idioma .text_item {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+}
+.header .idioma .switchi {
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.5em;
+  height: 2em;
+  margin: 1rem auto;
+}
+.header .idioma .switchi input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.header .idioma .slideri {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.header .idioma .slideri:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  left: 0.2em;
+  bottom: 0.2em;
+  background-color: #ffffff;
+  border-radius: inherit;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.header .idioma .switchi input:checked + .slideri {
+  box-shadow: 0 0 2rem #f67d04;
+  border: 2px solid #f67d04;
+}
+.header .idioma .switchi input:checked + .slideri:before {
+  transform: translateX(1.5em);
 }
 
 .logo {
   width: 15rem;
   height: 7rem;
   text-align: center;
-  padding-bottom: 2rem;
   margin: 0;
 }
 @media (min-width: 768px) {
@@ -420,6 +481,9 @@ img {
   }
 }
 
+.navegacion-principal {
+  display: none;
+}
 @media (min-width: 768px) {
   .navegacion-principal {
     display: flex;
@@ -450,25 +514,12 @@ img {
   color: #ff980e;
 }
 
-.flags__item {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  overflow: hidden;
-  cursor: pointer;
-}
-.flags__item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .hamburger {
   display: block;
   cursor: pointer;
   position: absolute;
   right: 1rem;
-  top: 1rem;
+  top: 2rem;
 }
 @media (min-width: 768px) {
   .hamburger {
@@ -481,7 +532,7 @@ img {
 }
 .hamburger .line {
   fill: none;
-  stroke: white;
+  stroke: #ffffff;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 3;
@@ -496,18 +547,10 @@ img {
 .hamburger input:checked + svg .line-top-bottom {
   stroke-dasharray: 20 300;
   stroke-dashoffset: -32.42;
+  stroke: #f67d04;
 }
 .hamburger input:checked + svg {
   transform: rotate(-45deg);
-}
-
-.navegacion-principal, #flags {
-  display: none;
-}
-@media (min-width: 768px) {
-  .navegacion-principal, #flags {
-    display: flex;
-  }
 }
 
 .video {
@@ -543,17 +586,17 @@ img {
   color: #ffffff;
   font-size: 4rem;
   margin: 0;
-  margin-top: 20rem;
-}
-@media (min-width: 768px) {
-  .contenido-video h2 {
-    font-size: 7rem;
-    margin-top: 5rem;
-  }
+  margin-top: 10rem;
 }
 @media (min-width: 480px) {
   .contenido-video h2 {
     font-size: 5rem;
+    margin: 0;
+  }
+}
+@media (min-width: 768px) {
+  .contenido-video h2 {
+    font-size: 4rem;
     margin: 0;
   }
 }
@@ -931,17 +974,15 @@ button a {
 .ambiente-container {
   margin-top: 2rem;
 }
-
-.imagen {
+.ambiente-container .imagen {
   position: relative;
-  max-height: 54rem;
-  min-height: 39rem;
-  overflow: hidden;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
 }
-.imagen .overlay {
+.ambiente-container .imagen img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.ambiente-container .imagen .overlay {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -951,11 +992,12 @@ button a {
   justify-content: center;
   text-align: center;
 }
-.imagen .overlay p {
+.ambiente-container .imagen .overlay p {
   color: #ffffff;
-  font-size: 2rem;
-  font-weight: 300;
-  margin: 0;
+  font-size: 3rem;
+  font-weight: 400;
+  margin: 0 2rem;
+  padding: 1.3rem;
 }
 
 .logos {
