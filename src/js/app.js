@@ -70,7 +70,7 @@ function toggleSelectorIdioma() {
 }
 
 function mostrarTextoMenu() {
-    const menuItems = document.querySelectorAll('.menu li');
+    const menuItems = document.querySelectorAll('.menu li a');
     const textoMenu = document.querySelector('.texto-menu');
 
     const textos = [
@@ -79,16 +79,21 @@ function mostrarTextoMenu() {
     ];
 
     menuItems.forEach((item, index) => {
+        var i = 0;
         item.addEventListener('mouseover', () => {
             textoMenu.textContent = textos[index];
             textoMenu.style.opacity = '1'; // Hace visible el texto
             textoMenu.style.visibility = 'visible'; // Asegura que el texto sea visible
+            i++;
+            console.log(i);
         });
 
         item.addEventListener('mouseout', () => {
             textoMenu.textContent = ""; // Limpia el texto
-            textoMenu.style.opacity = '0'; // Hace el texto invisible
             textoMenu.style.visibility = 'hidden'; // Cambia la visibilidad
+            i++;
+            console.log(i);
+
         });
     });
 }

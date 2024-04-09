@@ -473,8 +473,6 @@ img {
 }
 @media (min-width: 768px) {
   .logo {
-    width: 10rem;
-    height: 4.5rem;
     margin: 0;
     padding-right: 1rem;
     padding-bottom: 0;
@@ -1349,10 +1347,6 @@ button a {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s, visibility 0.3s;
-}
-.menu.active a:hover span {
-  opacity: 1;
-  visibility: visible;
 }
 .menu.active a:before {
   width: 50px;
