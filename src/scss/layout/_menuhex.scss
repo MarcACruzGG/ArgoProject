@@ -5,36 +5,38 @@
 .menu-container{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center; 
+  justify-content: center; 
   height: 50rem;
   background: v.$negro;
   border-radius: 5rem;
   margin-top: 2rem;
   margin-bottom: 2rem;
+  position: relative;
   
   h2{
     color: v.$blanco;
     column-gap: 5rem;
     display: block;
     align-items: center;
+    margin: 0 auto 4rem auto;
   }
 }
 .menu {
-  margin: 3rem auto;
+  margin-bottom: 9.5rem;
   position: relative;
   width: 26rem;
   height: 26rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center; 
 
   li {
     position: absolute;
     left: 0;
     list-style: none;
     transform: rotate(0deg) translateX(100px);
-    transform-origin: 130px;
+    transform-origin: 13rem;
     transition: 0.5s;
     transition-delay: calc(0.1s * var(--i));
   }
@@ -43,10 +45,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 60px;
-    height: 60px;
+    width: 6rem;
+    height: 6rem;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 2.2rem;
     border-radius: 50%;
     transform: rotate(calc(360deg / -8 * var(--i)));
     transition: 1s;
@@ -57,8 +59,8 @@
     &:before {
       content: "";
       position: absolute;
-      width: 20px;
-      height: 2px;
+      width: 2rem;
+      height: .2rem;
       border-radius: 2px;
       background: var(--clr);
       transform: rotate(calc(90deg * var(--i))) translate(0, 25px);
@@ -90,21 +92,10 @@
   a {
     color: var(--clr);
     position: relative;
-    span {
-      position: absolute;
-      top: calc(100% + 1rem); // Posiciona debajo del menú
-      left: 50%; // Centra el texto
-      transform: translateX(-50%); // Asegura el centrado exacto
-      color: var(--clr); // Usa el color definido en --clr
-      white-space: nowrap;
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.3s, visibility 0.3s;
-    }
-
+    
     &:before {
-      width: 50px;
-      height: 50px;
+      width: 5rem;
+      height: 5rem;
       background: #161616;
       border: 2px solid var(--clr);
       transform: rotate(calc(0 * var(--i)));
@@ -119,16 +110,16 @@
 
 .menuToggle {
   position: absolute;
-  width: 60px;
-  height: 60px;
-  color: #fff;
+  width: 5rem;
+  height: 5rem;
+  color: v.$blanco;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 100;
   border-radius: 50%;
   cursor: pointer;
-  font-size: 32px;
+  font-size: 3.7rem;
   transition: 1.5s;
 }
 
@@ -142,3 +133,24 @@
     font-size: 2.5rem;
     
   }
+
+
+.centro-linea-horizontal, .centro-linea-vertical {
+  position: absolute;
+  background-color: red; /* Color visible para la línea */
+  z-index: 1000; /* Asegura que las líneas estén por encima de otros elementos */
+}
+
+.centro-linea-horizontal {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px; /* Grosor de la línea horizontal */
+}
+
+.centro-linea-vertical {
+  top: 0;
+  left: 50%;
+  width: 1px; /* Grosor de la línea vertical */
+  height: 100%;
+}

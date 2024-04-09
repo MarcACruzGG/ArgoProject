@@ -12,7 +12,7 @@
 </head>
 <body>
    
-    <header class="header">
+    <header id="somos" class="header">
             <div class="contenedor contenido-header">
                 <div class="contenido-logo">
                     <img height="300" width="200"  class="logo" src="build/logos/LOGO ARGO_bco-01.svg" alt="Logo Artes Graficas">
@@ -27,20 +27,20 @@
                   </label>
 
                 <nav class="navegacion-principal">
-                    <a href="#lineup" data-section="navigation" data-value="text">¿Quiénes somos?</a>
-                    <a href="#galeria" data-section="navigation" data-value="text2">Nuestros Sectores</a>
-                    <a href="#boletos" data-section="navigation" data-value="text3">Nuestros Equipos</a>
-                    <a href="#boletos" data-section="navigation" data-value="text4">Medio Ambiente</a>
-                    <a href="#boletos" data-section="navigation" data-value="text5">Contacto</a>
+                    <a href="#somos" data-section="navigation" data-value="text">¿Quiénes somos?</a>
+                    <a href="#sectores" data-section="navigation" data-value="text2">Nuestros Sectores</a>
+                    <a href="#ambiente" data-section="navigation" data-value="text3">Medio Ambiente</a>
+                    <a href="#preguntas" data-section="navigation" data-value="text4">Preguntas Frecuentes</a>
+                    <a href="#contacto" data-section="navigation" data-value="text5">Contacto</a>
                 </nav>
     
                 <div class="idioma">
-                    <span class="text_item" data-language="es">En</span>
+                    <span class="text_item" data-language="es">Es</span>
                     <label class="switchi">
                         <input type="checkbox">
                         <span class="slideri"></span>
                     </label>
-                    <span class="text_item" data-language="en">Es</span>
+                    <span class="text_item" data-language="en">En</span>
                 
                 </div>               
             </div>
@@ -125,7 +125,7 @@
         </div>
     </section>
 
-    <section class="contenedor sectores-container">
+    <section id="sectores" class="contenedor sectores-container">
             <h2>Nuestros Sectores</h2>
             <div class="sectores-grid">
                 <div class="card1 cards sector">
@@ -216,7 +216,7 @@
     </section>
    
 
-    <section class="ambiente-container">
+    <section id="ambiente" class="ambiente-container">
         <div class="imagen">
             <div class="overlay">
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -321,17 +321,21 @@
           
           
     </section>
-    <section class="contenedor menu-container">
+    <section id="preguntas" class="contenedor menu-container">
         <h2>FAQ</h2>
         <div>
             <ul class="menu">
-                <div class="menuToggle"><ion-icon name="add-outline"></ion-icon></div>
+                <div class="menuToggle">
+                  <ion-icon name="add-outline"></ion-icon></div>
                 <li style="--i: 0; --clr: #ffffff">
                   <a href="#">
                     <ion-icon name="home-outline"></ion-icon></a>
                 </li>
                 <li style="--i: 1; --clr: #ffb135">
-                  <a href="#"><ion-icon name="settings-outline"></ion-icon></a>
+                  <a href="#">
+                    <ion-icon name="settings-outline">
+                    </ion-icon>
+                  </a>
                 </li>
                 <li style="--i: 2; --clr: #c95d05">
                   <a href="#"><ion-icon name="mail-outline"></ion-icon></a>
@@ -355,7 +359,7 @@
         </div>
         <div class="texto-menu"></div>
     </section>
-    <footer class="footer contenedor">
+    <footer id="contacto" class="footer contenedor">
         <div class="contenido-footer">
             <div class="bloque">
                 <div class="logo-footer">
