@@ -30,21 +30,15 @@
 }
 
 .sector {
+    a{
+        height: auto;
+        width: auto;
+    }
     grid-column: span 2; 
     h3 {
         margin: 0;
         padding: 0.5rem 0;
         font-size: 1.2rem;
-    }
-
-    a {
-        display: inline-block;
-        margin: 1rem auto;
-        color: v.$blanco;
-        padding: 0.5rem 1rem;
-        background: #333;
-        border-radius: .5rem;
-        transition: background-color 0.3s ease;
     }
 }
 

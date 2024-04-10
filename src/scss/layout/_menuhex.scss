@@ -133,24 +133,3 @@
     font-size: 2.5rem;
     
   }
-
-
-.centro-linea-horizontal, .centro-linea-vertical {
-  position: absolute;
-  background-color: red; /* Color visible para la línea */
-  z-index: 1000; /* Asegura que las líneas estén por encima de otros elementos */
-}
-
-.centro-linea-horizontal {
-  top: 50%;
-  left: 0;
-  width: 100%;
-  height: 1px; /* Grosor de la línea horizontal */
-}
-
-.centro-linea-vertical {
-  top: 0;
-  left: 50%;
-  width: 1px; /* Grosor de la línea vertical */
-  height: 100%;
-}
