@@ -2,12 +2,6 @@
 @use 'base/mixins' as m;
 
 
-.contenedor{
-  width: unset;
-  max-width: unset;
-  margin: unset;
-}
-
 .contenedor-logos {
   display: flex;
   flex-direction: column;
@@ -15,6 +9,8 @@
   overflow: hidden;
   position: relative;
   margin:1.3rem 0;
+  width: unset;
+  max-width: unset;
 
   &:before,&:after{
     content: "";

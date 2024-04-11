@@ -33,10 +33,10 @@ function imagenes(done) {
 }
 
 function versionWebp (done) {  
-       const opciones = {        
+       const opciones = {     
         quality: 50    
         };     
-    src('src/img/**/*.{png,jpg}')       
+    src('src/img/**/*.{png,jpg,jpeg}')       
         .pipe( webp(opciones) )     
         .pipe( dest('build/img'));     
     done(); 
@@ -46,7 +46,7 @@ function versionWebp (done) {
     const opciones = {
         quality: 50
     };
-        src('src/img/**/*.{png,jpg}')
+        src('src/img/**/*.{png,jpg,jpeg}')
             .pipe(avif(opciones))
             .pipe(dest('build/img'));
 
@@ -58,6 +58,7 @@ function javascript(done){
         .pipe(dest('build/js'));
     done();
 }
+
 
 function dev(done){
     watch('src/scss/**/*.scss', css);
