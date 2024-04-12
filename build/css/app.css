@@ -489,6 +489,7 @@ img {
   .navegacion-principal {
     display: flex;
     gap: 2.5rem;
+    margin-right: 2rem;
   }
 }
 .navegacion-principal a {
@@ -1583,7 +1584,7 @@ p {
   align-items: center;
   max-height: 80vh;
 }
-.overlay .overlay-content .overlay-content p {
+.overlay .overlay-content p {
   color: #fff;
   margin-left: 20px;
 }
