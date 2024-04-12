@@ -126,6 +126,8 @@ function crearGaleria() {
         imagen.innerHTML = `
             <img loading="lazy" width="200" height="300" src="/build/img/galeria/${i}.png" alt="Imagen Galeria ${i}">
         `;
+        imagen.onclick = () => mostrarImagen(i); // Agregar evento clic
+        galeria.appendChild(imagen);
     }
 }
 
