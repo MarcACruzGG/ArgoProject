@@ -1507,6 +1507,30 @@ p {
   }
 }
 
+.card-galery {
+  width: 60rem;
+  height: 30rem;
+  background: linear-gradient(90deg, rgb(255, 250, 236) 0%, rgb(255, 209, 111) 23%, rgb(255, 152, 14) 84%, rgb(246, 125, 4) 100%);
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.card2-galery {
+  width: 60rem;
+  height: 30rem;
+  background-color: #1a1a1a;
+  transition: all 0.2s;
+}
+
+.card2-galery:hover {
+  transform: scale(0.98);
+  border-radius: 20px;
+}
+
+.card-galery:hover {
+  box-shadow: 0px 0px 30px 1px rgba(255, 255, 255, 0.407);
+}
+
 .movies {
   padding: 5rem 0 15rem 0;
   padding: 3rem;
@@ -1536,6 +1560,7 @@ p {
   .iconosmin-contenedor {
     margin-top: 6rem;
     margin-bottom: 6rem;
+    justify-content: space-evenly;
   }
 }
 .iconosmin-contenedor .iconmin {
@@ -1547,13 +1572,19 @@ p {
   padding: 0;
 }
 .iconosmin-contenedor .iconmin img {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
 }
 .iconosmin-contenedor .iconmin img:hover {
   background-color: #f67d04;
   cursor: pointer;
   border-radius: 50%;
+}
+@media (min-width: 480px) {
+  .iconosmin-contenedor .iconmin img {
+    width: 8rem;
+    height: 8rem;
+  }
 }
 @media (min-width: 768px) {
   .iconosmin-contenedor .iconmin img {

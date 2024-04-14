@@ -8,7 +8,6 @@ function iniciarApp() {
         mostrarTextoMenu();
         duplicarLogosParaCarruselInfinito();
         toggleMenuHamburguesa();
-        toggleSelectorIdioma();
         iniciarSwiper();
         crearGaleria();
 }
@@ -57,20 +56,6 @@ function toggleMenuHamburguesa() {
     });
 }
 
-function toggleSelectorIdioma() {
-    const hamburgerCheckbox = document.querySelector('.hamburger input[type="checkbox"]');
-    const idioma = document.querySelector('.idioma');
-
-    hamburgerCheckbox.addEventListener('change', function() {
-        if (window.innerWidth < 768) {
-            idioma.style.display = this.checked ? 'flex' : 'none';
-        }
-    });
-    window.addEventListener('resize', function() {
-        idioma.style.display = window.innerWidth >= 768 ? 'flex' : hamburgerCheckbox.checked ? 'flex' : 'none';
-    });
-}
-
 function mostrarTextoMenu() {
     const menuItems = document.querySelectorAll('.menu li a');
     const textoMenu = document.querySelector('.texto-menu');
@@ -100,20 +85,4 @@ function mostrarTextoMenu() {
     });
 }
 
-function iniciarSwiper() {
-    const swiper = new Swiper(".mySwiper", {
-        effect: "coverflow",
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
-        coverflowEffect: {
-            rotate: 15,
-            stretch: 0,
-            depth: 300,
-            modifier: 1,
-            slideShadows: true,
-        },
-        loop: true
-    });
-}
 

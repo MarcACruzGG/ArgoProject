@@ -8,10 +8,27 @@ function iniciarApp() {
         mostrarTextoMenu();
         duplicarLogosParaCarruselInfinito();
         toggleMenuHamburguesa();
-        toggleSelectorIdioma();
         iniciarSwiper();
         crearGaleria();
 }
+
+function iniciarSwiper() {
+    const swiper = new Swiper(".mySwiper", {
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: {
+            rotate: 15,
+            stretch: 0,
+            depth: 300,
+            modifier: 1,
+            slideShadows: true,
+        },
+        loop: true
+    });
+}
+
 
 function crearGaleria() {
     const galeria = document.querySelector('.swiper-wrapper');

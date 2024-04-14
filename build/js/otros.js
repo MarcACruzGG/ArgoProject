@@ -12,6 +12,7 @@ function iniciarApp() {
         crearGaleria();
 }
 
+
 function iniciarSwiper() {
     const swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
