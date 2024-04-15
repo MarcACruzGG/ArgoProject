@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
 function iniciarApp() {
         loadIonicons();
         toggleMenu();
+        mostrarInfoModal();
         mostrarTextoMenu();
         duplicarLogosParaCarruselInfinito();
         toggleMenuHamburguesa();
-        iniciarSwiper();
-        crearGaleria();
+
 }
 
 function loadIonicons() {
@@ -56,8 +56,41 @@ function toggleMenuHamburguesa() {
     });
 }
 
+function mostrarInfoModal() {
+    const menuItems = document.querySelectorAll('.menu li .a-menu'); // Selecciona los divs con clase 'a-menu'
+    const textos = [
+        "Misión-Vision", "Políticas", "Certificados", "Equipo", 
+        "Calidad", "Procesos", "Presupuesto", "Volumen de trabajo"
+    ];
+
+    menuItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+            const modalOverlay = document.createElement('div');
+            modalOverlay.className = 'modal-overlay';
+            modalOverlay.innerHTML = `
+                <div class="modal-content">
+                    <h2>${textos[index]}</h2>
+                    <p>Descripción detallada para ${textos[index]}</p>
+                    <button class="cerrar-modal">Cerrar</button>
+                </div>
+            `;
+            const body = document.querySelector('body');
+            body.appendChild(modalOverlay);
+            body.classList.add('fijar-body'); 
+
+            // Agregar evento para cerrar el modal
+            modalOverlay.addEventListener('click', function(e) {
+                if (e.target.classList.contains('cerrar-modal') || e.target === modalOverlay) {
+                    modalOverlay.remove();
+                    body.classList.remove('fijar-body');
+                }
+            });
+        });
+    });
+}
+
 function mostrarTextoMenu() {
-    const menuItems = document.querySelectorAll('.menu li a');
+    const menuItems = document.querySelectorAll('.menu li .a-menu'); // Selecciona los divs con clase 'a-menu'
     const textoMenu = document.querySelector('.texto-menu');
 
     const textos = [
@@ -66,23 +99,18 @@ function mostrarTextoMenu() {
     ];
 
     menuItems.forEach((item, index) => {
-        var i = 0;
         item.addEventListener('mouseover', () => {
             textoMenu.textContent = textos[index];
             textoMenu.style.opacity = '1'; // Hace visible el texto
             textoMenu.style.visibility = 'visible'; // Asegura que el texto sea visible
-            i++;
-            console.log(i);
         });
 
         item.addEventListener('mouseout', () => {
             textoMenu.textContent = ""; // Limpia el texto
             textoMenu.style.visibility = 'hidden'; // Cambia la visibilidad
-            i++;
-            console.log(i);
-
         });
     });
 }
+
 
 

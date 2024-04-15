@@ -13,6 +13,7 @@
   margin-top: 2rem;
   margin-bottom: 2rem;
   position: relative;
+
   
   h2{
     color: v.$blanco;
@@ -41,8 +42,9 @@
     transition-delay: calc(0.1s * var(--i));
   }
 
-  a {
+  .a-menu{
     display: flex;
+    cursor: pointer;
     align-items: center;
     justify-content: center;
     width: 6rem;
@@ -79,17 +81,18 @@
   li {
     transform: rotate(calc(360deg / 8 * var(--i)));
 
-    &:hover a::before {
+    &:hover .a-menu::before {
       background: var(--clr);
     }
 
-    &:hover a ion-icon {
+    &:hover .a-menu ion-icon {
       color: #161616;
+      
     }
 
   }
 
-  a {
+  .a-menu {
     color: var(--clr);
     position: relative;
     
@@ -133,3 +136,32 @@
     font-size: 2.5rem;
     
   }
+
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    width: 90%;
+    max-width: 60rem; // 600px
+}
+
+.cerrar-modal {
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
