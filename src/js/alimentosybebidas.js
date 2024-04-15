@@ -9,7 +9,9 @@ function iniciarApp() {
         duplicarLogosParaCarruselInfinito();
         toggleMenuHamburguesa();
         iniciarSwiper();
-        crearGaleria();
+        cargarDatosGaleria(); // Esto ahora solo carga datos al inicio
+        crearGaleria(); // No modifica esta función
+    
 }
 
 function iniciarSwiper() {
@@ -30,36 +32,43 @@ function iniciarSwiper() {
 }
 
 
+async function cargarDatosGaleria() {
+    try {
+        const response = await fetch('/build/json/alimentosybebidas.json');
+        imagenesInfo = await response.json();
+    } catch (error) {
+        console.error("Error al cargar datos de la galería: ", error);
+    }
+}
+
+// Función original sin modificaciones
 function crearGaleria() {
     const galeria = document.querySelector('.swiper-wrapper');
 
     for (let i = 1; i <= 15; i++) {
         const imagen = document.createElement('div');
         imagen.className = 'swiper-slide';
-        imagen.innerHTML = `
-            <img loading="lazy" width="200" height="300" src="/build/img/galeria/${i}.png" alt="Imagen Galeria ${i}">
-        `;
-        imagen.onclick = () => mostrarImagen(i); // Agregar evento clic
+        imagen.innerHTML = `<img loading="lazy" width="200" height="300" src="/build/img/galeria/${i}.png" alt="Imagen Galería ${i}">`;
+        imagen.onclick = () => mostrarImagen(i); // Mantiene la función original
         galeria.appendChild(imagen);
     }
 }
 
+// Modificada para usar la información precargada
 function mostrarImagen(id) {
+    const info = imagenesInfo.find(imagen => imagen.id === id); // Encuentra la información correcta basada en el ID
     const overlay = document.createElement('div');
     overlay.className = 'overlay';
     overlay.innerHTML = `
         <div class="overlay-content">
-            <p>Información sobre la imagen ${id}</p>
+            <p>${info ? info.descripcion : 'Descripción no disponible'}</p>
         </div>
     `;
     overlay.onclick = function() {
-        const body = document.querySelector('body');
-        body.appendChild(overlay);
-        body.classList.remove('fijar-body'); 
-        overlay.remove(); // Cierra el overlay al hacer clic en cualquier parte fuera de la imagen
+        overlay.remove();
+        document.body.classList.remove('fijar-body');
     };
 
-    const body = document.querySelector('body');
-    body.appendChild(overlay);
-    body.classList.add('fijar-body'); 
+    document.body.appendChild(overlay);
+    document.body.classList.add('fijar-body');
 }

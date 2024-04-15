@@ -360,7 +360,6 @@ h3 {
 }
 
 img {
-  height: 100%;
   height: auto;
 }
 
@@ -1326,6 +1325,9 @@ p {
   width: 90%;
   max-width: 60rem;
 }
+.modal-content p {
+  color: #000000;
+}
 
 .cerrar-modal {
   margin-top: 2rem;
@@ -1610,18 +1612,27 @@ p {
   place-items: center;
   z-index: 2;
 }
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
 .overlay .overlay-content {
-  max-width: 90%;
+  max-width: 80%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 .overlay .overlay-content img {
-  max-width: 90%;
-  display: flex;
-  align-items: center;
+  max-width: 100%;
   max-height: 80vh;
+  margin-bottom: 20px;
 }
 .overlay .overlay-content p {
-  color: #fff;
-  margin-left: 20px;
+  color: #333;
+  text-align: center;
+  font-size: 1.2rem;
 }

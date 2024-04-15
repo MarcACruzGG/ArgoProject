@@ -34,7 +34,7 @@ function iniciarSwiper() {
 function crearGaleria() {
     const galeria = document.querySelector('.swiper-wrapper');
 
-    for (let i = 1; i <= 15; i++) {
+    for (let i = 1; i <= 21; i++) {
         const imagen = document.createElement('div');
         imagen.className = 'swiper-slide';
         imagen.innerHTML = `
