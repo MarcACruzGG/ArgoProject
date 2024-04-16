@@ -1,17 +1,14 @@
 document.addEventListener('DOMContentLoaded', function() {
     iniciarApp();
+    inicializarGaleria();
 });
 
 function iniciarApp() {
         loadIonicons();
-        toggleMenu();
-        mostrarTextoMenu();
-        duplicarLogosParaCarruselInfinito();
+
         toggleMenuHamburguesa();
         iniciarSwiper();
-        cargarDatosGaleria(); // Esto ahora solo carga datos al inicio
-        crearGaleria(); // No modifica esta función
-    
+
 }
 
 function iniciarSwiper() {
@@ -31,44 +28,34 @@ function iniciarSwiper() {
     });
 }
 
-
-async function cargarDatosGaleria() {
-    try {
-        const response = await fetch('/build/json/alimentosybebidas.json');
-        imagenesInfo = await response.json();
-    } catch (error) {
-        console.error("Error al cargar datos de la galería: ", error);
-    }
+function inicializarGaleria() {
+    const imagenes = document.querySelectorAll('.swiper-slide img'); // Selecciona todas las imágenes en los slides
+    
+    imagenes.forEach(imagen => {
+        imagen.addEventListener('click', function() {
+            mostrarImagen(this.id); // 'this' se refiere al elemento img que fue clickeado
+        });
+    });
 }
 
-// Función original sin modificaciones
-function crearGaleria() {
-    const galeria = document.querySelector('.swiper-wrapper');
 
-    for (let i = 1; i <= 15; i++) {
-        const imagen = document.createElement('div');
-        imagen.className = 'swiper-slide';
-        imagen.innerHTML = `<img loading="lazy" width="200" height="300" src="/build/img/galeria/${i}.png" alt="Imagen Galería ${i}">`;
-        imagen.onclick = () => mostrarImagen(i); // Mantiene la función original
-        galeria.appendChild(imagen);
-    }
-}
-
-// Modificada para usar la información precargada
 function mostrarImagen(id) {
-    const info = imagenesInfo.find(imagen => imagen.id === id); // Encuentra la información correcta basada en el ID
+    const imagenSrc = `/build/img/AlimentosyBebidas/${id}.png`; // Construye la ruta de la imagen basándose en el id
     const overlay = document.createElement('div');
     overlay.className = 'overlay';
     overlay.innerHTML = `
         <div class="overlay-content">
-            <p>${info ? info.descripcion : 'Descripción no disponible'}</p>
+            <img src="${imagenSrc}" alt="Imagen Galeria ${id}" width="200" height="300">
+            <p>Información sobre la imagen ${id}</p>
         </div>
     `;
-    overlay.onclick = function() {
-        overlay.remove();
-        document.body.classList.remove('fijar-body');
-    };
+    overlay.addEventListener('click', function() {
+        overlay.remove(); // Cierra el overlay al hacer clic en cualquier parte fuera de la imagen
+        document.body.classList.remove('fijar-body'); 
+    });
 
     document.body.appendChild(overlay);
-    document.body.classList.add('fijar-body');
+    document.body.classList.add('fijar-body'); 
 }
+
+

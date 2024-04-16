@@ -8,9 +8,42 @@ function iniciarApp() {
         toggleMenuHamburguesa();
         toggleMenu();
         mostrarInfoModal();
-        mostrarTextoMenu();
         loadIonicons();
+        scrollNav();
+        navegacionFija();
 
+}
+
+function navegacionFija(){
+    const barra = document.querySelector('.header');
+    const sobreLogos = document.querySelector('.contenedor-logos');
+    const body = document.querySelector('body');
+
+    window.addEventListener('scroll',function(){
+        if(sobreLogos.getBoundingClientRect().bottom < 0){
+            barra.classList.add('fijo');
+            body.classList.add('body-scroll');
+        }
+        else{
+            barra.classList.remove('fijo');
+            body.classList.remove('body-scroll');
+        }
+    });
+}
+
+function scrollNav(){
+    const enlaces = document.querySelectorAll('.navegacion-principal a');
+
+    enlaces.forEach( enlace => {
+        enlace.addEventListener('click',function(e){
+            e.preventDefault();
+
+            const seccionScroll = e.target.attributes.href.value;
+            const seccion = document.querySelector(seccionScroll);
+            seccion.scrollIntoView({behavior: 'smooth' });
+
+        });
+    });
 }
 
 function loadIonicons() {
@@ -48,20 +81,6 @@ function toggleMenuHamburguesa() {
         nav.style.display = window.innerWidth >= 768 ? 'flex' : hamburgerCheckbox.checked ? 'block' : 'none';
     });
 }
-
-
-function loadIonicons() {
-let scriptModule = document.createElement('script');
-scriptModule.type = 'module';
-scriptModule.src = 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js';
-document.body.appendChild(scriptModule);
-
-let scriptNoModule = document.createElement('script');
-scriptNoModule.noModule = true;
-scriptNoModule.src = 'https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js';
-document.body.appendChild(scriptNoModule);
-}
-
 
 function mostrarInfoModal() {
 const menuItems = document.querySelectorAll('.menu li .a-menu');
@@ -109,28 +128,6 @@ menuItems.forEach((item, index) => {
 });
 }
 
-function mostrarTextoMenu() {
-const menuItems = document.querySelectorAll('.menu li .a-menu'); // Selecciona los divs con clase 'a-menu'
-const textoMenu = document.querySelector('.texto-menu');
-
-const textos = [
-    "Misión-Vision", "Políticas", "Certificados", "Equipo", 
-    "Calidad", "Procesos", "Presupuesto", "Volumen de trabajo"
-];
-
-menuItems.forEach((item, index) => {
-    item.addEventListener('mouseover', () => {
-        textoMenu.textContent = textos[index];
-        textoMenu.style.opacity = '1'; // Hace visible el texto
-        textoMenu.style.visibility = 'visible'; // Asegura que el texto sea visible
-    });
-
-    item.addEventListener('mouseout', () => {
-        textoMenu.textContent = ""; // Limpia el texto
-        textoMenu.style.visibility = 'hidden'; // Cambia la visibilidad
-    });
-});
-}
 
 
 

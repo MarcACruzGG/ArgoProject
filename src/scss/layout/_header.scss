@@ -6,12 +6,17 @@
      z-index: 10; 
      width: 100%; 
      background: v.$negro;
-     
+
      @include m.tablet{
         position: absolute;
         backdrop-filter: blur(1px);     
          background: rgba( 171, 128, 128, 0.15 );
          
+         &.fijo{
+          position: fixed;
+          width: 100%;
+          background-color: v.$negro;
+         }
     }
     .contenido-logo {
         display: flex;

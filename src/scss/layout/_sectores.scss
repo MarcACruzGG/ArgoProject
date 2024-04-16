@@ -142,8 +142,8 @@
     background-size: 20rem;
 
     img{
-        width: 11rem;
-        height: 11rem;
+        width: 7rem;
+        height: 7rem;
     }
 
     @include m.tablet{
@@ -151,8 +151,8 @@
         height: 15rem;
 
         img{
-            width: 20rem;
-            height: 20rem;
+            width: 11rem;
+            height: 11rem;
         }
     }
   }

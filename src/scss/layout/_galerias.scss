@@ -24,33 +24,14 @@
       margin-top: 0;
     }
   }
- }
- 
 
-.card-galery {
-  width: 60rem;
-  height: 30rem;
-  background: linear-gradient(90deg, rgba(255,250,236,1) 0%, rgba(255,209,111,1) 23%, rgba(255,152,14,1) 84%, rgba(246,125,4,1) 100%);
-  border-radius: 20px;
-  transition: all .3s;
+  img{
+    height: 15rem;
+    width: 15rem;
+    margin-top: 5rem;
+  }
  }
  
- .card2-galery {
-  width: 60rem;
-  height: 30rem;
-  background-color: #1a1a1a;
-  transition: all .2s;
- }
- 
- .card2-galery:hover {
-  transform: scale(0.98);
-  border-radius: 20px;
- }
- 
- .card-galery:hover {
-  box-shadow: 0px 0px 30px 1px rgba(255, 255, 255, 0.407);
- }
-
 .movies{
   padding: 5rem 0 15rem 0;
   padding: 3rem;
@@ -76,8 +57,8 @@
 .iconosmin-contenedor{
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   text-align: center;
  
 
@@ -86,20 +67,16 @@
     margin-bottom: 6rem;
     text-align: center;
     justify-content: space-evenly;
+    display: flex;
     
   }
   .iconmin{
     height: 5rem;
     width: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 0;
 
     p{
       color: v.$negro;
-      display: flex; 
-      justify-content: center;
       text-align: center;
       font-size: .7rem;
 
@@ -110,6 +87,12 @@
       }
       @include m.tablet{
         font-size: 1.5rem;
+        color: v.$negro;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+   
       }
     
     }
@@ -117,20 +100,21 @@
     img{
       width: 3.5rem;
       height: 3.5rem;
-
+      padding: 0;
+      
       &:hover{
         background-color: v.$sorbus600;  
         cursor: pointer;
-        border-radius: 50%;
+        border-radius: 20%;
       }
       @include m.telefono{
-        width: 6rem;
-        height: 6rem;
+        width: 4rem;
+        height: 4rem;
         
       }
       @include m.tablet{
-      width: 10rem;
-       height: 10rem;
+      width: 5rem;
+       height: 5rem;
       }
     }
   }
