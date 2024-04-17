@@ -1488,6 +1488,8 @@ p {
 .carta-header h2 {
   color: #1a1a1a;
   margin-top: 0;
+  font-size: 4.5rem;
+  margin-bottom: 1.5rem;
 }
 @media (min-width: 768px) {
   .carta-header {
@@ -1549,11 +1551,11 @@ p {
 .iconosmin-contenedor .iconmin p {
   color: #000000;
   text-align: center;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 @media (min-width: 480px) {
   .iconosmin-contenedor .iconmin p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 0;
   }
 }
