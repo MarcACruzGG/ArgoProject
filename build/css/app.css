@@ -1658,3 +1658,15 @@ p {
   text-align: center;
   font-size: 1.2rem;
 }
+
+.descripcion {
+  background-color: #ffe5a7;
+  margin-top: 5rem;
+  color: #000000;
+  font-weight: 400;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+}
+.descripcion span {
+  font-weight: 600;
+}

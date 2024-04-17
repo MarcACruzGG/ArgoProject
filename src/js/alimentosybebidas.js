@@ -39,23 +39,33 @@ function inicializarGaleria() {
 }
 
 
+const descripciones = [
+    "Descripción de la imagen 1 uno",
+    "Descripción de la imagen 2 ds",
+    "Descripción de la imagen 3 12",
+    "Descripción de la imagen 4 1ad",
+    "Descripción de la imagen 5 asdsad",
+    "Descripción de la imagen 6 awdad",
+    // Añade más descripciones según el número de imágenes
+];
+
 function mostrarImagen(id) {
-    const imagenSrc = `/build/img/AlimentosyBebidas/${id}.png`; // Construye la ruta de la imagen basándose en el id
+    const imagenSrc = `/build/img/AlimentosyBebidas/${id}.png`;
     const overlay = document.createElement('div');
     overlay.className = 'overlay';
     overlay.innerHTML = `
         <div class="overlay-content">
             <img src="${imagenSrc}" alt="Imagen Galeria ${id}" width="200" height="300">
-            <p>Información sobre la imagen ${id}</p>
+            <p>${descripciones[id - 1]}</p>
         </div>
     `;
     overlay.addEventListener('click', function() {
-        overlay.remove(); // Cierra el overlay al hacer clic en cualquier parte fuera de la imagen
-        document.body.classList.remove('fijar-body'); 
+        overlay.remove();
+        document.body.classList.remove('fijar-body');
     });
 
     document.body.appendChild(overlay);
-    document.body.classList.add('fijar-body'); 
+    document.body.classList.add('fijar-body');
 }
 
 

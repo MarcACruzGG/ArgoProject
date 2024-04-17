@@ -162,3 +162,14 @@
   }
 }
 
+.descripcion{
+  background-color: v.$sorbus200;
+  margin-top: 5rem;
+  color: v.$negro;
+  font-weight: 400;
+  font-size: 2rem;
+  border-radius: .5rem;
+  span{
+    font-weight: 600;
+  }
+}
