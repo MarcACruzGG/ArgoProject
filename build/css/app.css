@@ -743,7 +743,7 @@ button a {
 
 .cards {
   width: auto;
-  height: 20rem;
+  height: 25rem;
   background-color: hsl(0, 0%, 16%);
   border-radius: 1rem;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
@@ -764,6 +764,7 @@ button a {
   text-align: center;
   margin-top: 3rem;
   color: #ffffff;
+  font-size: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.4rem;
@@ -774,23 +775,10 @@ button a {
   font-size: 1.3rem;
   text-align: center;
   margin-top: 2rem;
-  color: #ffffff;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: 0.2rem;
-  opacity: 0;
-  max-height: 0;
-  transition: all 0.3s ease;
-}
-.cards:hover {
-  height: 27rem;
-}
-.cards:hover p {
-  transition: all 0.3s ease;
   opacity: 1;
-  max-height: 4rem;
-}
-.cards:hover .icon {
-  background-position: -12rem;
+  max-height: 0;
   transition: all 0.3s ease;
 }
 @media (min-width: 768px) {
@@ -798,6 +786,21 @@ button a {
     margin: 0;
     width: auto;
     height: auto;
+  }
+  .cards p {
+    opacity: 0;
+  }
+  .cards:hover p {
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height: 4rem;
+  }
+  .cards:hover {
+    height: 29rem;
+  }
+  .cards:hover .icon {
+    background-position: -12rem;
+    transition: all 0.3s ease;
   }
 }
 @media (min-width: 1169px) {
@@ -846,6 +849,10 @@ button a {
 .card1 p {
   color: #000000;
 }
+.card1 p .click-here {
+  font-weight: bold;
+  color: #000000;
+}
 
 .card2 {
   background-color: #f67d04;
@@ -854,6 +861,10 @@ button a {
   color: #ffffff;
 }
 .card2 p {
+  color: #ffffff;
+}
+.card2 p .click-here {
+  font-weight: bold;
   color: #ffffff;
 }
 
@@ -866,6 +877,10 @@ button a {
 .card3 p {
   color: #ffffff;
 }
+.card3 p .click-here {
+  font-weight: bold;
+  color: #ffffff;
+}
 
 .card4 {
   background-color: #ffffff;
@@ -874,6 +889,10 @@ button a {
   color: #000000;
 }
 .card4 p {
+  color: #000000;
+}
+.card4 p .click-here {
+  font-weight: bold;
   color: #000000;
 }
 
@@ -886,6 +905,10 @@ button a {
 .card5 p {
   color: #000000;
 }
+.card5 p .click-here {
+  font-weight: bold;
+  color: #000000;
+}
 
 .card6 {
   background-color: #000000;
@@ -896,6 +919,10 @@ button a {
 .card6 p {
   color: #ffffff;
 }
+.card6 p .click-here {
+  font-weight: bold;
+  color: #ffffff;
+}
 
 .card7 {
   background-color: #ffffff;
@@ -904,6 +931,10 @@ button a {
   color: #000000;
 }
 .card7 p {
+  color: #000000;
+}
+.card7 p .click-here {
+  font-weight: bold;
   color: #000000;
 }
 
