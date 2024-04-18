@@ -5,10 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function iniciarApp() {
         loadIonicons();
-
         toggleMenuHamburguesa();
         iniciarSwiper();
-
 }
 
 function iniciarSwiper() {
