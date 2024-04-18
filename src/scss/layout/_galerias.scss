@@ -48,7 +48,7 @@
   .swiper-slide{
     background-position: center;
     background-size: cover;
-    width: 250px;
+    width: 25rem;
   }
   
   .swiper-slide img{
@@ -162,14 +162,21 @@
   }
 }
 
-.descripcion{
+.texto-gal{
+  margin:2rem;
   background-color: v.$sorbus200;
+  border-radius: 2rem;
   margin-top: 5rem;
-  color: v.$negro;
-  font-weight: 400;
-  font-size: 2rem;
-  border-radius: .5rem;
-  span{
-    font-weight: 600;
+  height: auto;
+  text-align:justify;
+  p{
+    color: v.$negro;
+    font-weight: 400;
+    font-size: 2rem;
+    padding: 1rem;
+    span{
+      font-weight: 600;
+    }
   }
 }
+

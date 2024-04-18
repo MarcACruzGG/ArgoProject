@@ -1551,7 +1551,7 @@ p {
 .swiper .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 250px;
+  width: 25rem;
 }
 .swiper .swiper-slide img {
   display: block;
@@ -1659,14 +1659,20 @@ p {
   font-size: 1.2rem;
 }
 
-.descripcion {
+.texto-gal {
+  margin: 2rem;
   background-color: #ffe5a7;
+  border-radius: 2rem;
   margin-top: 5rem;
+  height: auto;
+  text-align: justify;
+}
+.texto-gal p {
   color: #000000;
   font-weight: 400;
   font-size: 2rem;
-  border-radius: 0.5rem;
+  padding: 1rem;
 }
-.descripcion span {
+.texto-gal p span {
   font-weight: 600;
 }
