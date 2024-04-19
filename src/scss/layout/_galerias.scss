@@ -164,7 +164,7 @@
 
 .texto-gal{
   margin:2rem;
-  background-color: v.$sorbus200;
+  background-color: v.$sorbus100;
   border-radius: 2rem;
   margin-top: 5rem;
   height: auto;
@@ -173,7 +173,8 @@
     color: v.$negro;
     font-weight: 400;
     font-size: 2rem;
-    padding: 1rem;
+    padding: 3rem;
+    line-height: 3.5rem;
     span{
       font-weight: 600;
     }

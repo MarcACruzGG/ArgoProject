@@ -1661,7 +1661,7 @@ p {
 
 .texto-gal {
   margin: 2rem;
-  background-color: #ffe5a7;
+  background-color: #fff4d3;
   border-radius: 2rem;
   margin-top: 5rem;
   height: auto;
@@ -1671,7 +1671,8 @@ p {
   color: #000000;
   font-weight: 400;
   font-size: 2rem;
-  padding: 1rem;
+  padding: 3rem;
+  line-height: 3.5rem;
 }
 .texto-gal p span {
   font-weight: 600;
