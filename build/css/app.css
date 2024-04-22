@@ -494,7 +494,7 @@ img {
 
 .video {
   position: relative;
-  max-height: 67.5rem;
+  max-height: 62.5rem;
   min-height: 39rem;
   overflow: hidden;
 }
@@ -1507,6 +1507,15 @@ p {
   .contact-info p {
     font-size: 1.3rem;
   }
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.5s;
+}
+a:hover {
+  color: #ff980e;
 }
 
 .carta-header {

@@ -61,6 +61,7 @@
         margin-bottom: 2rem;
         width: auto;
         transition: .5s;
+
         @include m.tablet{
             margin: 0;
         }
@@ -141,4 +142,13 @@
     }
     
 
+}
+
+a{
+    text-decoration: none;
+    color: v.$blanco;
+    transition: .5s;
+    &:hover{
+        color: v.$sorbus500;
+    }
 }
