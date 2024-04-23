@@ -27,6 +27,14 @@
         gap: 2rem;
         margin-top: 2rem;
 
+        a{
+            text-decoration: none;
+            color: v.$blanco;
+            transition: .5s;
+            &:hover{
+                color: v.$sorbus500;
+            }
+        }
 
         .social-link{
             width: 2.5rem;
@@ -144,11 +152,3 @@
 
 }
 
-a{
-    text-decoration: none;
-    color: v.$blanco;
-    transition: .5s;
-    &:hover{
-        color: v.$sorbus500;
-    }
-}
