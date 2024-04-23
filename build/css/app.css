@@ -1395,6 +1395,14 @@ p {
   gap: 2rem;
   margin-top: 2rem;
 }
+.footer .social-links a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.5s;
+}
+.footer .social-links a:hover {
+  color: #ff980e;
+}
 .footer .social-links .social-link {
   width: 2.5rem;
   height: 2.5rem;
@@ -1507,15 +1515,6 @@ p {
   .contact-info p {
     font-size: 1.3rem;
   }
-}
-
-a {
-  text-decoration: none;
-  color: #ffffff;
-  transition: 0.5s;
-}
-a:hover {
-  color: #ff980e;
 }
 
 .carta-header {

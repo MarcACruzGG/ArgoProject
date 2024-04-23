@@ -44,6 +44,14 @@ const descripciones = [
     "Descripción de la imagen 4 1ad",
     "Descripción de la imagen 5 asdsad",
     "Descripción de la imagen 6 awdad",
+    "Descripción de la imagen 7 awasddad",
+    "Descripción de la imagen 8 aasdwdad",
+    "Descripción de la imagen 9 awdasdad",
+    "Descripción de la imagen 10 awasddad",
+    "Descripción de la imagen 11 awasddad",
+    "Descripción de la imagen 12 awasddad",
+    "Descripción de la imagen 13 aaswdad",
+    "Descripción de la imagen 14 awasddad",
     // Añade más descripciones según el número de imágenes
 ];
 
