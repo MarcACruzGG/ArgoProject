@@ -101,14 +101,14 @@ function toggleMenuHamburguesa() {
 function mostrarInfoModal() {
 const menuItems = document.querySelectorAll('.menu li .a-menu');
 const textos = [
-    { titulo: "Misión-Vision", descripcion: "Descripción detallada de Misión-Vision" },
-    { titulo: "Políticas", descripcion: "Descripción detallada de Políticas" },
-    { titulo: "Certificados", descripcion: "Descripción detallada de Certificados" },
+    { titulo: "Misión-Vision", descripcion: "Nuestra misión es desarrollarnos como un equipo profesional en la industria gráfica, siempre comprometidos con la mejora continua. Con miras hacia el futuro, nuestra visión es posicionarnos como líderes del mercado, reconocidos por nuestros acabados especializados y soluciones innovadoras que marcan la diferencia." },
+    { titulo: "Políticas", descripcion: "En ARGO Artes Gráficas S.A., estamos comprometidos con mantener los más altos estándares de calidad en la industria gráfica mexicana. Nos esforzamos por mejorar continuamente nuestros procesos y servicios, cumpliendo con los requisitos de la norma ISO 9001:2015 para garantizar la excelencia en todos nuestros productos y servicios." },
+    { titulo: "Certificados", descripcion: "Nuestra operación se distingue por adherirse a estándares de excelencia, ética y sostenibilidad. Nos esforzamos por garantizar que cada aspecto de nuestro proceso cumple rigurosamente con las expectativas de calidad y responsabilidad social, asegurando un impacto positivo tanto en la comunidad como en el medio ambiente. Este compromiso nos permite entregar productos que no solo cumplen con las necesidades de nuestros clientes, sino que también contribuyen a un futuro más sostenible." },
     { titulo: "Equipo", descripcion: "Descripción detallada de Equipo" },
-    { titulo: "Calidad", descripcion: "Descripción detallada de Calidad" },
+    { titulo: "Calidad", descripcion: "La calidad es nuestra prioridad. Llevamos a cabo inspecciones rigurosas de la materia prima, los procesos de producción y el producto terminado para asegurar que cada entrega supere las expectativas de nuestros clientes y garantice su completa satisfacción." },
     { titulo: "Procesos", descripcion: "Descripción detallada de Procesos" },
-    { titulo: "Presupuesto", descripcion: "Descripción detallada de Presupuesto" },
-    { titulo: "Volumen de trabajo", descripcion: "Descripción detallada de Volumen de trabajo" }
+    { titulo: "Presupuesto", descripcion: "Contamos con un departamento especializado en cotizaciones que se enfoca en ofrecer precios justos y respuestas oportunas a las solicitudes de nuestros clientes. Este equipo utiliza herramientas avanzadas y metodologías precisas para garantizar que cada presupuesto refleje el mejor valor posible, considerando tanto la calidad del trabajo como los tiempos de entrega requeridos, asegurando así la satisfacción total del cliente." },
+    { titulo: "Volumen de trabajo", descripcion: "DNos centramos exclusivamente en la producción a gran escala, con infraestructura diseñada para manejar altos volúmenes de producción de manera eficiente. Este enfoque nos permite garantizar calidad y entrega a tiempo, pero también significa que no manejamos proyectos de baja escala o pedidos pequeños." }
 ];
 
 menuItems.forEach((item, index) => {

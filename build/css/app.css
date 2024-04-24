@@ -1061,7 +1061,8 @@ button a {
 @media (min-width: 480px) {
   .card-container {
     gap: 5rem;
-    padding: 10px;
+    padding: 1rem;
+    margin-top: 2rem;
   }
 }
 @media (min-width: 768px) {
@@ -1155,6 +1156,7 @@ button a {
   max-width: 100%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 .card-container .title p {
   width: 50%;
