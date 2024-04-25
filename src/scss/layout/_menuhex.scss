@@ -14,14 +14,22 @@
   margin-bottom: 2rem;
   position: relative;
 
-  
   h2{
+    font-size: 2rem;
     color: v.$blanco;
     column-gap: 5rem;
     display: block;
     align-items: center;
     margin: 0 auto 4rem auto;
   }
+  @include m.telefono{
+    h2{
+      font-size: 3.6rem;
+     
+    }
+  }
+  
+
 }
 .menu {
   margin-bottom: 9.5rem;
@@ -155,12 +163,20 @@
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
+    
     width: 90%;
     max-width: 60rem; // 600px
 
     p{
       color: v.$negro;
-    }
+    } 
+}
+
+@include m.telefono{
+  .modal-content {
+    width: 95%;
+  }
+  
 }
 
 .cerrar-modal {

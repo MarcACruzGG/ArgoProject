@@ -23,7 +23,13 @@ function iniciarSwiper() {
             slideShadows: true,
         },
         loop: true,
-        initialSlide: 0
+        initialSlide: 0,
+        on: {
+            ready: function() {
+                const swiper = this;
+                swiper.slideTo(0, 0); // Comenzar desde la primera imagen (índice 0)
+            }
+        }
     });
 }
 
@@ -54,7 +60,7 @@ function mostrarImagen(id) {
     overlay.className = 'overlay';
     overlay.innerHTML = `
         <div class="overlay-content">
-            <img src="${imagenSrc}" alt="Imagen Galeria ${id}" width="200" height="300">
+            <img src="${imagenSrc}" alt="Imagen Galeria ${id}" width="600" height="900">
             <p>${descripciones[id - 1]}</p>
         </div>
     `;

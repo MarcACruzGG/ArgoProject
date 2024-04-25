@@ -69,7 +69,7 @@ function mostrarImagen(id) {
     overlay.className = 'overlay';
     overlay.innerHTML = `
         <div class="overlay-content">
-            <img src="${imagenSrc}" alt="Imagen Galeria ${id}" width="200" height="300">
+            <img src="${imagenSrc}" alt="Imagen Galeria ${id}" width="600" height="900">
             <p>${descripciones[id - 1]}</p>
         </div>
     `;

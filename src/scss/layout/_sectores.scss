@@ -89,7 +89,7 @@
       p {
         width: 80%;
         margin: 0 auto;
-        font-size: 1.3rem;
+        font-size: .95rem;
         text-align: center;
         margin-top: 2rem;
         font-weight: 400;
@@ -103,6 +103,10 @@
         margin: 0;
         width: auto;
         height: 34rem;
+        
+        p{
+            font-size: 1.2rem;
+        }
  
       }
 

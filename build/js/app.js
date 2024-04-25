@@ -130,7 +130,7 @@ const textos = [
             <li>SEDEX/SMETA 4 Pilares - Demuestra nuestro compromiso con la transparencia, la ética empresarial, los derechos laborales y el cuidado ambiental.</li>
             <li>Auditoria de Principios Rectores SGP Coca-Cola - Validación de nuestro compromiso con los principios de sostenibilidad y responsabilidad social en nuestra cadena de suministro.</li>
         </ul>
-        <p style="text-align:justify;">Estas certificaciones reflejan nuestra dedicación a ofrecer productos y servicios de la más alta calidad, mientras cumplimos con los más altos estándares de responsabilidad social y ambiental.</p>
+        <p style="text-align:justify; padding-top:1.5rem;">Estas certificaciones reflejan nuestra dedicación a ofrecer productos y servicios de la más alta calidad, mientras cumplimos con los más altos estándares de responsabilidad social y ambiental.</p>
         </p>
         `
     },
@@ -185,13 +185,11 @@ const textos = [
         titulo: "Volumen de trabajo", 
         descripcion: `
         <p style="text-align:justify;">
-        <strong>Volumen de trabajo:</strong> Nos especializamos en producciones de alto volumen :
-        <br>
-        • Nuestra infraestructura está diseñada para manejar altos volúmenes de producción de manera eficiente.
+        <strong>Volumen de trabajo:</strong>Como una industria manufacturera de tamaño mediano, nos centramos en la producción de alto volumen, lo que nos permite especializarnos en satisfacer las demandas de grandes pedidos.
         <br>
         • Garantizamos calidad y entrega a tiempo para proyectos de gran envergadura.
         <br>
-        • No manejamos proyectos de baja escala o pedidos pequeños.
+        • Optamos por enfocarnos en proyectos de mayor volumen y pedidos más grandes, lo que nos permite ofrecer un servicio especializado y eficiente para este tipo de producciones.
         </p>
         `
     }
