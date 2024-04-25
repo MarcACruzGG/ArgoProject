@@ -163,8 +163,9 @@
     padding: 2rem;
     border-radius: 1rem;
     text-align: center;
-    
+    overflow-y: auto;
     width: 90%;
+    max-height: 90%;
     max-width: 60rem; // 600px
 
     p{
@@ -175,6 +176,7 @@
 @include m.telefono{
   .modal-content {
     width: 95%;
+    max-height: 90%;
   }
   
 }
