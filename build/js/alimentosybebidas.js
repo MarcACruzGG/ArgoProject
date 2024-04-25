@@ -22,7 +22,14 @@ function iniciarSwiper() {
             modifier: 1,
             slideShadows: true,
         },
-        loop: true
+        loop: true,
+        initialSlide: 0,
+        on: {
+            ready: function() {
+                const swiper = this;
+                swiper.slideTo(0, 0); // Comenzar desde la primera imagen (índice 0)
+            }
+        }
     });
 }
 

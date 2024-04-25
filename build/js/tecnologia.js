@@ -22,7 +22,8 @@ function iniciarSwiper() {
             modifier: 1,
             slideShadows: true,
         },
-        loop: true
+        loop: true,
+        initialSlide: 0
     });
 }
 
@@ -48,7 +49,7 @@ const descripciones = [
 ];
 
 function mostrarImagen(id) {
-    const imagenSrc = `/build/img/AlimentosyBebidas/${id}.png`;
+    const imagenSrc = `/build/img/Tecnologia/${id}.png`;
     const overlay = document.createElement('div');
     overlay.className = 'overlay';
     overlay.innerHTML = `

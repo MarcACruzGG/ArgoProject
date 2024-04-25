@@ -552,7 +552,7 @@ img {
     font-size: 2rem;
   }
 }
-@media (min-width: 1169px) {
+@media (min-width: 1250px) {
   .contenido-video p {
     font-size: 2.7rem;
   }
@@ -788,7 +788,7 @@ button a {
     height: 34rem;
   }
 }
-@media (min-width: 1169px) {
+@media (min-width: 1250px) {
   .cards {
     margin: 0;
     width: 50rem;
@@ -958,7 +958,7 @@ button a {
     height: 50rem;
   }
 }
-@media (min-width: 1169px) {
+@media (min-width: 1250px) {
   .ambiente-container .imagen {
     height: 60rem;
   }
@@ -979,7 +979,7 @@ button a {
     height: 51rem;
   }
 }
-@media (min-width: 1169px) {
+@media (min-width: 1250px) {
   .ambiente-container .imagen img {
     height: auto;
   }
@@ -1148,6 +1148,7 @@ button a {
   border-radius: 5px;
 }
 .card-container .description p {
+  text-align: justify;
   font-size: 1.5rem;
   margin: 0;
 }
@@ -1158,9 +1159,10 @@ button a {
   justify-content: space-between;
   margin-bottom: 1rem;
 }
-.card-container .title p {
+.card-container .title h3 {
   width: 50%;
   font-size: 2rem;
+  margin-bottom: 0;
 }
 .card-container .circle {
   width: 90px;
