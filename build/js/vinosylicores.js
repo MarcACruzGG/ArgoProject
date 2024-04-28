@@ -114,17 +114,33 @@ function processingButton(event) {
   const track = carruselList.querySelector(".carrusel-track");
   const carrusel = track.querySelectorAll(".carrusel");
   const carruselWidth = carrusel[0].offsetWidth;
-  let currentTransform = track.style.transform.replace(/[^\d.]/g, '') || 0;
-  let newPosition = 0;
+
+  // Obteniendo el valor actual de la transformación del carrusel
+  let currentTransform = getTranslateX(track);
 
   if (btn.dataset.button === "button-prev" && currentTransform < 0) {
-    newPosition = parseInt(currentTransform) + carruselWidth;
+    // Mover hacia la derecha
+    let newPosition = currentTransform + carruselWidth;
     track.style.transform = `translateX(${newPosition}px)`;
   } else if (btn.dataset.button === "button-next") {
-    newPosition = parseInt(currentTransform) - carruselWidth;
+    // Mover hacia la izquierda
+    let newPosition = currentTransform - carruselWidth;
     if (Math.abs(newPosition) <= carruselWidth * (carrusel.length - 1)) {
       track.style.transform = `translateX(${newPosition}px)`;
     }
+  }
+}
+
+function getTranslateX(element) {
+  const style = window.getComputedStyle(element);
+  const matrix = style.transform || style.webkitTransform || style.mozTransform;
+
+  if (matrix === 'none') {
+    return 0;
+  } else {
+    const values = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
+    const x = values[4];
+    return parseInt(x);
   }
 }
 
@@ -133,7 +149,7 @@ function addTouchEventsToCarrusel() {
   let isDragging = false;
   let startPos = 0;
   let currentTranslate = 0;
-  let prevTranslate = 0;
+  let prevTranslate = getTranslateX(track);
 
   track.addEventListener('touchstart', touchStart);
   track.addEventListener('touchend', touchEnd);
