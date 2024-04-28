@@ -11,36 +11,36 @@ html {
 }
 
 /* Sections
-   ========================================================================== */
+     ========================================================================== */
 /**
- * Remove the margin in all browsers.
- */
+   * Remove the margin in all browsers.
+   */
 body {
   margin: 0;
 }
 
 /**
- * Render the `main` element consistently in IE.
- */
+   * Render the `main` element consistently in IE.
+   */
 main {
   display: block;
 }
 
 /**
- * Correct the font size and margin on `h1` elements within `section` and
- * `article` contexts in Chrome, Firefox, and Safari.
- */
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
 }
 
 /* Grouping content
-   ========================================================================== */
+     ========================================================================== */
 /**
- * 1. Add the correct box sizing in Firefox.
- * 2. Show the overflow in Edge and IE.
- */
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
 hr {
   box-sizing: content-box; /* 1 */
   height: 0; /* 1 */
@@ -48,27 +48,27 @@ hr {
 }
 
 /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
 pre {
   font-family: monospace, monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
 /* Text-level semantics
-   ========================================================================== */
+     ========================================================================== */
 /**
- * Remove the gray background on active links in IE 10.
- */
+   * Remove the gray background on active links in IE 10.
+   */
 a {
   background-color: transparent;
 }
 
 /**
- * 1. Remove the bottom border in Chrome 57-
- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
- */
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
@@ -76,17 +76,17 @@ abbr[title] {
 }
 
 /**
- * Add the correct font weight in Chrome, Edge, and Safari.
- */
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
 b,
 strong {
   font-weight: bolder;
 }
 
 /**
- * 1. Correct the inheritance and scaling of font size in all browsers.
- * 2. Correct the odd `em` font sizing in all browsers.
- */
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
 code,
 kbd,
 samp {
@@ -95,16 +95,16 @@ samp {
 }
 
 /**
- * Add the correct font size in all browsers.
- */
+   * Add the correct font size in all browsers.
+   */
 small {
   font-size: 80%;
 }
 
 /**
- * Prevent `sub` and `sup` elements from affecting the line height in
- * all browsers.
- */
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
 sub,
 sup {
   font-size: 75%;
@@ -122,20 +122,20 @@ sup {
 }
 
 /* Embedded content
-   ========================================================================== */
+     ========================================================================== */
 /**
- * Remove the border on images inside links in IE 10.
- */
+   * Remove the border on images inside links in IE 10.
+   */
 img {
   border-style: none;
 }
 
 /* Forms
-   ========================================================================== */
+     ========================================================================== */
 /**
- * 1. Change the font styles in all browsers.
- * 2. Remove the margin in Firefox and Safari.
- */
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
 button,
 input,
 optgroup,
@@ -148,26 +148,28 @@ textarea {
 }
 
 /**
- * Show the overflow in IE.
- * 1. Show the overflow in Edge.
- */
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
 button,
-input { /* 1 */
+input {
+  /* 1 */
   overflow: visible;
 }
 
 /**
- * Remove the inheritance of text transform in Edge, Firefox, and IE.
- * 1. Remove the inheritance of text transform in Firefox.
- */
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
 button,
-select { /* 1 */
+select {
+  /* 1 */
   text-transform: none;
 }
 
 /**
- * Correct the inability to style clickable types in iOS and Safari.
- */
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
 button,
 [type=button],
 [type=reset],
@@ -176,8 +178,8 @@ button,
 }
 
 /**
- * Remove the inner border and padding in Firefox.
- */
+   * Remove the inner border and padding in Firefox.
+   */
 button::-moz-focus-inner,
 [type=button]::-moz-focus-inner,
 [type=reset]::-moz-focus-inner,
@@ -187,8 +189,8 @@ button::-moz-focus-inner,
 }
 
 /**
- * Restore the focus styles unset by the previous rule.
- */
+   * Restore the focus styles unset by the previous rule.
+   */
 button:-moz-focusring,
 [type=button]:-moz-focusring,
 [type=reset]:-moz-focusring,
@@ -197,18 +199,18 @@ button:-moz-focusring,
 }
 
 /**
- * Correct the padding in Firefox.
- */
+   * Correct the padding in Firefox.
+   */
 fieldset {
   padding: 0.35em 0.75em 0.625em;
 }
 
 /**
- * 1. Correct the text wrapping in Edge and IE.
- * 2. Correct the color inheritance from `fieldset` elements in IE.
- * 3. Remove the padding so developers are not caught out when they zero out
- *    `fieldset` elements in all browsers.
- */
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
 legend {
   box-sizing: border-box; /* 1 */
   color: inherit; /* 2 */
@@ -219,23 +221,23 @@ legend {
 }
 
 /**
- * Add the correct vertical alignment in Chrome, Firefox, and Opera.
- */
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
 progress {
   vertical-align: baseline;
 }
 
 /**
- * Remove the default vertical scrollbar in IE 10+.
- */
+   * Remove the default vertical scrollbar in IE 10+.
+   */
 textarea {
   overflow: auto;
 }
 
 /**
- * 1. Add the correct box sizing in IE 10.
- * 2. Remove the padding in IE 10.
- */
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
 [type=checkbox],
 [type=radio] {
   box-sizing: border-box; /* 1 */
@@ -243,66 +245,66 @@ textarea {
 }
 
 /**
- * Correct the cursor style of increment and decrement buttons in Chrome.
- */
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
 [type=number]::-webkit-inner-spin-button,
 [type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
 /**
- * 1. Correct the odd appearance in Chrome and Safari.
- * 2. Correct the outline style in Safari.
- */
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
 [type=search] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
 
 /**
- * Remove the inner padding in Chrome and Safari on macOS.
- */
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
 [type=search]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
 /**
- * 1. Correct the inability to style clickable types in iOS and Safari.
- * 2. Change font properties to `inherit` in Safari.
- */
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
 ::-webkit-file-upload-button {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
 
 /* Interactive
-   ========================================================================== */
+     ========================================================================== */
 /*
- * Add the correct display in Edge, IE 10+, and Firefox.
- */
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
 details {
   display: block;
 }
 
 /*
- * Add the correct display in all browsers.
- */
+   * Add the correct display in all browsers.
+   */
 summary {
   display: list-item;
 }
 
 /* Misc
-   ========================================================================== */
+     ========================================================================== */
 /**
- * Add the correct display in IE 10+.
- */
+   * Add the correct display in IE 10+.
+   */
 template {
   display: none;
 }
 
 /**
- * Add the correct display in IE 10.
- */
+   * Add the correct display in IE 10.
+   */
 [hidden] {
   display: none;
 }
@@ -343,7 +345,9 @@ a {
   text-decoration: none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   margin: 0 0 5rem 0;
 }
 
@@ -645,20 +649,24 @@ button a {
     background: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgba(255, 255, 255, 0) 70%);
   }
 }
-.contenedor-logos .slide-left, .contenedor-logos .slide-right {
+.contenedor-logos .slide-left,
+.contenedor-logos .slide-right {
   overflow: hidden;
   width: 100%;
 }
-.contenedor-logos .slide-left .logos-slide, .contenedor-logos .slide-right .logos-slide {
+.contenedor-logos .slide-left .logos-slide,
+.contenedor-logos .slide-right .logos-slide {
   display: flex;
   gap: 2rem;
   animation: slideLeft 800s linear infinite;
 }
-.contenedor-logos .slide-left .logos-slide img, .contenedor-logos .slide-right .logos-slide img {
+.contenedor-logos .slide-left .logos-slide img,
+.contenedor-logos .slide-right .logos-slide img {
   height: 2rem;
   width: 11.5rem;
 }
-.contenedor-logos .slide-left .logos-slide img:hover, .contenedor-logos .slide-right .logos-slide img:hover {
+.contenedor-logos .slide-left .logos-slide img:hover,
+.contenedor-logos .slide-right .logos-slide img:hover {
   cursor: pointer;
   filter: brightness(0) saturate(100%) invert(49%) sepia(95%) saturate(4200%) hue-rotate(356deg) brightness(100%) contrast(101%);
 }
@@ -1051,7 +1059,7 @@ button a {
   .logos .certificado {
     width: auto;
     height: 4rem;
-    margin: 0 10px;
+    margin: 0 1rem;
   }
 }
 
@@ -1072,14 +1080,14 @@ button a {
 @media (min-width: 768px) {
   .card-container {
     gap: 8rem;
-    padding: 10px;
+    padding: 1rem;
     margin-top: 4rem;
   }
 }
 .card-container .card {
   overflow: visible;
-  width: 190px;
-  height: 254px;
+  width: 19rem;
+  height: 25.4rem;
 }
 .card-container .card:hover .content {
   transform: rotateY(180deg);
@@ -1089,8 +1097,8 @@ button a {
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 300ms;
-  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.9333333333);
-  border-radius: 5px;
+  box-shadow: 0 0 1rem 0.1rem rgba(0, 0, 0, 0.9333333333);
+  border-radius: 0.5rem;
 }
 .card-container .back {
   width: 100%;
@@ -1115,13 +1123,13 @@ button a {
   width: 99%;
   height: 99%;
   background-color: #000000;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   color: #ffffff;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 3rem;
 }
 .card-container .front {
   transform: rotateY(180deg);
@@ -1131,7 +1139,7 @@ button a {
   position: absolute;
   width: 100%;
   height: 100%;
-  padding: 10px;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1144,12 +1152,12 @@ button a {
   object-position: center;
 }
 .card-container .description {
-  box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.5333333333);
+  box-shadow: 0 0 1rem 0.5rem rgba(0, 0, 0, 0.5333333333);
   width: 100%;
-  padding: 10px;
+  padding: 1rem;
   background-color: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(5px);
-  border-radius: 5px;
+  backdrop-filter: blur(0.5rem);
+  border-radius: 0.5rem;
 }
 .card-container .description p {
   text-align: justify;
@@ -1157,7 +1165,7 @@ button a {
   margin: 0;
 }
 .card-container .title {
-  font-size: 11px;
+  font-size: 1.1rem;
   max-width: 100%;
   display: flex;
   justify-content: space-between;
@@ -1169,12 +1177,12 @@ button a {
   margin-bottom: 0;
 }
 .card-container .circle {
-  width: 90px;
-  height: 90px;
+  width: 9rem;
+  height: 9rem;
   border-radius: 50%;
   background-color: #ffb135;
   position: relative;
-  filter: blur(15px);
+  filter: blur(1.5rem);
   animation: floating 2600ms infinite linear;
 }
 .card-container .icon-indv {
@@ -1191,14 +1199,15 @@ button a {
   }
 }
 
-.front, .back {
+.front,
+.back {
   background-color: #000000;
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   overflow: hidden;
 }
 
@@ -1212,31 +1221,31 @@ button a {
 }
 #bottom {
   background-color: #f67d04;
-  left: 50px;
-  top: 0px;
-  width: 150px;
-  height: 150px;
+  left: 5rem;
+  top: 0rem;
+  width: 15rem;
+  height: 15rem;
   animation-delay: -800ms;
 }
 
 #right {
   background-color: #fff4d3;
-  left: 160px;
-  top: -80px;
-  width: 30px;
-  height: 30px;
+  left: 16rem;
+  top: -8rem;
+  width: 3rem;
+  height: 3rem;
   animation-delay: -1800ms;
 }
 
 @keyframes floating {
   0% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(10px);
+    transform: translateY(0);
   }
   100% {
-    transform: translateY(0px);
+    transform: translateY(0);
   }
 }
 .menu-container {
@@ -1278,7 +1287,7 @@ button a {
   position: absolute;
   left: 0;
   list-style: none;
-  transform: rotate(0deg) translateX(100px);
+  transform: rotate(0deg) translateX(10rem);
   transform-origin: 13rem;
   transition: 0.5s;
   transition-delay: calc(0.1s * var(--i));
@@ -1297,16 +1306,16 @@ button a {
   transition: 1s;
   color: transparent;
   transition-delay: 0.5s;
-  filter: drop-shadow(0 0 2px var(--clr));
+  filter: drop-shadow(0 0 0.2rem var(--clr));
 }
 .menu .a-menu:before {
   content: "";
   position: absolute;
   width: 2rem;
   height: 0.2rem;
-  border-radius: 2px;
+  border-radius: 0.2rem;
   background: var(--clr);
-  transform: rotate(calc(90deg * var(--i))) translate(0, 25px);
+  transform: rotate(calc(90deg * var(--i))) translate(0, 2.5rem);
   transition: width 0.5s, height 0.5s, transform 0.5s;
   transition-delay: 0.5s, 1s, 1.5s;
 }
@@ -1331,12 +1340,12 @@ button a {
   width: 5rem;
   height: 5rem;
   background: #161616;
-  border: 2px solid var(--clr);
+  border: 0.2rem solid var(--clr);
   transform: rotate(calc(0 * var(--i)));
   transition: transform 0.5s, height 0.5s, width 0.5s;
   transition-delay: 0.5s, 1.5s, 1.5s;
-  border-radius: 10px;
-  filter: drop-shadow(0 0 5px var(--clr));
+  border-radius: 1rem;
+  filter: drop-shadow(0 0 0.5rem var(--clr));
   rotate: 135deg;
 }
 
@@ -1554,7 +1563,7 @@ p {
   height: 100%;
   border-radius: 3rem;
   background: #fff;
-  box-shadow: 15px 15px 30px rgb(25, 25, 25), -15px -15px 30px rgb(60, 60, 60);
+  box-shadow: 1.5rem 1.5rem 3rem rgb(25, 25, 25), -1.5rem -1.5rem 3rem rgb(60, 60, 60);
 }
 .carta-header h2 {
   color: #1a1a1a;
@@ -1597,10 +1606,9 @@ p {
 
 .carrusel {
   position: relative;
-  padding: 0 1.8rem;
-  float: left;
-  box-sizing: border-box;
+  padding: 0 1.5rem;
   display: flex;
+  margin-left: 4rem;
 }
 .carrusel img {
   cursor: pointer;
@@ -1726,9 +1734,9 @@ p {
   flex-direction: column;
   align-items: center;
   background: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
 }
 .overlay .overlay-content img {
   max-width: 100%;
@@ -1763,11 +1771,20 @@ p {
 .img-zoom-lens {
   position: absolute;
   border: 0.1rem solid #000;
-  width: 10rem; /* 100px */
-  height: 10rem; /* 100px */
+  width: 1rem;
+  height: 1rem;
   visibility: hidden;
 }
 
 .img-zoom-container {
   position: relative;
+}
+
+.img-zoom-lens {
+  display: none;
+}
+@media (min-width: 768px) {
+  .img-zoom-lens {
+    display: block;
+  }
 }

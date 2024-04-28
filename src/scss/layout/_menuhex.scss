@@ -1,12 +1,11 @@
-@use 'base/mixins' as m;
-@use 'base/variables' as v;
+@use "base/mixins" as m;
+@use "base/variables" as v;
 
-
-.menu-container{
+.menu-container {
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   height: 50rem;
   background: v.$negro;
   border-radius: 5rem;
@@ -14,7 +13,7 @@
   margin-bottom: 2rem;
   position: relative;
 
-  h2{
+  h2 {
     font-size: 2rem;
     color: v.$blanco;
     column-gap: 5rem;
@@ -22,15 +21,13 @@
     align-items: center;
     margin: 0 auto 4rem auto;
   }
-  @include m.telefono{
-    h2{
+  @include m.telefono {
+    h2 {
       font-size: 3.6rem;
-     
     }
   }
-  
-
 }
+
 .menu {
   margin-bottom: 9.5rem;
   position: relative;
@@ -38,19 +35,19 @@
   height: 26rem;
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 
   li {
     position: absolute;
     left: 0;
     list-style: none;
-    transform: rotate(0deg) translateX(100px);
+    transform: rotate(0deg) translateX(10rem);
     transform-origin: 13rem;
     transition: 0.5s;
     transition-delay: calc(0.1s * var(--i));
   }
 
-  .a-menu{
+  .a-menu {
     display: flex;
     cursor: pointer;
     align-items: center;
@@ -64,24 +61,23 @@
     transition: 1s;
     color: transparent;
     transition-delay: 0.5s;
-    filter: drop-shadow(0 0 2px var(--clr));
+    filter: drop-shadow(0 0 0.2rem var(--clr));
 
     &:before {
       content: "";
       position: absolute;
       width: 2rem;
-      height: .2rem;
-      border-radius: 2px;
+      height: 0.2rem;
+      border-radius: 0.2rem;
       background: var(--clr);
-      transform: rotate(calc(90deg * var(--i))) translate(0, 25px);
+      transform: rotate(calc(90deg * var(--i))) translate(0, 2.5rem);
       transition: width 0.5s, height 0.5s, transform 0.5s;
       transition-delay: 0.5s, 1s, 1.5s;
     }
   }
 }
 
-.menu.active{
-
+.menu.active {
   .menuToggle {
     transform: rotate(315deg);
   }
@@ -95,25 +91,23 @@
 
     &:hover .a-menu ion-icon {
       color: #161616;
-      
     }
-
   }
 
   .a-menu {
     color: var(--clr);
     position: relative;
-    
+
     &:before {
       width: 5rem;
       height: 5rem;
       background: #161616;
-      border: 2px solid var(--clr);
+      border: 0.2rem solid var(--clr);
       transform: rotate(calc(0 * var(--i)));
       transition: transform 0.5s, height 0.5s, width 0.5s;
       transition-delay: 0.5s, 1.5s, 1.5s;
-      border-radius: 10px;
-      filter: drop-shadow(0 0 5px var(--clr));
+      border-radius: 1rem; // converted from 10px
+      filter: drop-shadow(0 0 0.5rem var(--clr));
       rotate: 135deg;
     }
   }
@@ -134,58 +128,54 @@
   transition: 1.5s;
 }
 
+p {
+  color: v.$blanco;
+}
 
-  p{
-    color: v.$blanco;
-  }
+.texto-menu {
+  color: v.$blanco;
+  font-size: 2.5rem;
+}
 
-  .texto-menu{
-    color: v.$blanco;
-    font-size: 2.5rem;
-    
-  }
-
-  .modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.8);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
 }
 
 .modal-content {
-    background: white;
-    padding: 2rem;
-    border-radius: 1rem;
-    text-align: center;
-    overflow-y: auto;
-    width: 90%;
-    max-height: 90%;
-    max-width: 60rem; // 600px
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  overflow-y: auto;
+  width: 90%;
+  max-height: 90%;
+  max-width: 60rem;
 
-    p{
-      color: v.$negro;
-      font-size: 1.6rem;
-    } 
+  p {
+    color: v.$negro;
+    font-size: 1.6rem;
+  }
 }
 
-@include m.telefono{
+@include m.telefono {
   .modal-content {
     width: 95%;
     max-height: 90%;
   }
-  
 }
 
 .cerrar-modal {
-    margin-top: 2rem;
-    padding: 1rem 2rem;
-    font-size: 1.6rem;
-    cursor: pointer;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
 }
-

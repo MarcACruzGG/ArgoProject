@@ -1,154 +1,146 @@
-@use 'base/variables' as v;
-@use 'base/mixins' as m;
+@use "base/variables" as v;
+@use "base/mixins" as m;
 
-.footer{
-    background-color: v.$negro;
-    color: v.$blanco;
-    border-radius: 3rem 3rem 0 0 ;
-    height: 100%;
-    margin-bottom: 0;
-    
-    .logo-footer{
-        display: block;
-        justify-content: center;
-        text-align: center; 
-        margin: 0; 
-        
-    
-        .logo{
-            padding-right: 0;
-            
-        }
-    }
+.footer {
+  background-color: v.$negro;
+  color: v.$blanco;
+  border-radius: 3rem 3rem 0 0;
+  height: 100%;
+  margin-bottom: 0;
 
-    .social-links{
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        margin-top: 2rem;
-
-        a{
-            text-decoration: none;
-            color: v.$blanco;
-            transition: .5s;
-            &:hover{
-                color: v.$sorbus500;
-            }
-        }
-
-        .social-link{
-            width: 2.5rem;
-            height: 2.5rem;
-            transition: .5s;
-            &:hover{
-                color: v.$sorbus500;
-                cursor: pointer;
-            }
-            @include m.tablet{
-                width: 2rem;
-                height: 2rem;
-            }
-        }
-    }
-}
-
-.navegacion-footer{
+  .logo-footer {
+    display: block;
+    justify-content: center;
+    text-align: center;
     margin: 0;
 
-    @include m.tablet{
-        display: flex;
-        justify-content: space-between;
-        gap: 1.2rem;
-        margin: 1.5rem 2rem;
-        width: 100%;
+    .logo {
+      padding-right: 0;
     }
-    a{
-        display: block;
-        text-align: center;
-        color: v.$blanco;
-        margin-bottom: 2rem;
-        width: auto;
-        transition: .5s;
+  }
 
-        @include m.tablet{
-            margin: 0;
-        }
-        
-        &:hover{
-            color: v.$sorbus500;
-        }
-    }
-}
-
-.contenido-footer{
+  .social-links {
     display: flex;
-    width: auto;
-    .bloque{
-        display: flex;
-        flex-direction: column;
-        gap: 3.5rem;
-        margin:4rem 0 2rem 2rem;
-        align-items: center;
-        text-align: center;
-        width: 70%;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+
+    a {
+      text-decoration: none;
+      color: v.$blanco;
+      transition: 0.5s;
+      &:hover {
+        color: v.$sorbus500;
+      }
     }
 
-    @include m.telefono{
-        margin:2rem 2rem 0 2rem;
-        
+    .social-link {
+      width: 2.5rem;
+      height: 2.5rem;
+      transition: 0.5s;
+      &:hover {
+        color: v.$sorbus500;
+        cursor: pointer;
+      }
+      @include m.tablet {
+        width: 2rem;
+        height: 2rem;
+      }
     }
-    
+  }
 }
 
-.contact-info{
+.navegacion-footer {
+  margin: 0;
+
+  @include m.tablet {
+    display: flex;
+    justify-content: space-between;
+    gap: 1.2rem;
+    margin: 1.5rem 2rem;
+    width: 100%;
+  }
+  a {
+    display: block;
+    text-align: center;
+    color: v.$blanco;
+    margin-bottom: 2rem;
+    width: auto;
+    transition: 0.5s;
+
+    @include m.tablet {
+      margin: 0;
+    }
+
+    &:hover {
+      color: v.$sorbus500;
+    }
+  }
+}
+
+.contenido-footer {
+  display: flex;
+  width: auto;
+  .bloque {
     display: flex;
     flex-direction: column;
+    gap: 3.5rem;
+    margin: 4rem 0 2rem 2rem;
+    align-items: center;
     text-align: center;
-    margin:4rem 1rem 2rem 1rem;
+    width: 70%;
+  }
 
-    gap: 2rem;
-
-    @include m.telefono{
-        width: auto;
-        text-align: right; 
-        gap: 2rem;
-    }
-
-    @include m.tablet{
-        text-align: center;
-        width: 50%;
-        gap: 0;
-    }
-
-    h3{
-    color: v.$sorbus500;
-    font-size: 2.1rem;
-    margin-bottom: 2rem;    
-    
-        @include m.telefono{
-            font-size: 2.6rem;
-        }
-    }
-
-    h4{
-        font-size: 1.9rem;        
-        
-            @include m.telefono{
-                font-size: 1.7rem;
-            }
-        }
-
-    p{
-
-        font-size: 1rem;
-        margin-bottom: 3rem;
-        gap: 2rem;
-        
-        @include m.telefono{
-            font-size: 1.3rem;
-        }
-    }
-    
-
+  @include m.telefono {
+    margin: 2rem 2rem 0 2rem;
+  }
 }
 
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 4rem 1rem 2rem 1rem;
+
+  gap: 2rem;
+
+  @include m.telefono {
+    width: auto;
+    text-align: right;
+    gap: 2rem;
+  }
+
+  @include m.tablet {
+    text-align: center;
+    width: 50%;
+    gap: 0;
+  }
+
+  h3 {
+    color: v.$sorbus500;
+    font-size: 2.1rem;
+    margin-bottom: 2rem;
+
+    @include m.telefono {
+      font-size: 2.6rem;
+    }
+  }
+
+  h4 {
+    font-size: 1.9rem;
+
+    @include m.telefono {
+      font-size: 1.7rem;
+    }
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    gap: 2rem;
+
+    @include m.telefono {
+      font-size: 1.3rem;
+    }
+  }
+}

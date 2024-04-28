@@ -1,82 +1,71 @@
-@use 'base/mixins' as m;
-@use 'base/variables' as v;
-
+@use "base/mixins" as m;
+@use "base/variables" as v;
 
 .carta-header {
   width: 100%;
   height: 100%;
   border-radius: 3rem;
   background: #fff;
-  box-shadow: 15px 15px 30px rgb(25, 25, 25),
-              -15px -15px 30px rgb(60, 60, 60);
-  h2{
+  box-shadow: 1.5rem 1.5rem 3rem rgb(25, 25, 25),
+    -1.5rem -1.5rem 3rem rgb(60, 60, 60);
+  h2 {
     color: #1a1a1a;
     margin-top: 0;
     font-size: 4.5rem;
     margin-bottom: 1.5rem;
   }
-  @include m.tablet{
-
+  @include m.tablet {
     width: 60rem;
     height: 35rem;
   }
-
-  @include m.telefono{
-    h2{
+  @include m.telefono {
+    h2 {
       margin-top: 0;
-    
     }
   }
-
-  img{
+  img {
     height: 15rem;
     width: 15rem;
     margin-top: 5rem;
   }
- }
- 
+}
 
- .carrusel-list{
+.carrusel-list {
   position: relative;
   display: flex;
   align-items: center;
   overflow: hidden;
   margin-top: 5rem;
-
-  .carrusel-track{
+  .carrusel-track {
     position: relative;
     top: 0;
     left: 0;
     display: flex;
     justify-content: center;
-    transition: .5s ease-in-out;
+    transition: 0.5s ease-in-out;
   }
 }
 
-
-.carrusel{
+.carrusel {
   position: relative;
-  padding: 0 1.8rem;
-  float: left;
-  box-sizing: border-box;
+  padding: 0 1.5rem;
   display: flex;
-
-  img{
+  margin-left: 4rem;
+  img {
     cursor: pointer;
   }
-
 }
 
-@include m.tablet{
-  .carrusel{
-      width: 27.5rem;
+@include m.tablet {
+  .carrusel {
+    width: 27.5rem;
   }
 }
 
-.carrusel-arrow{
+.carrusel-arrow {
   border-radius: 3rem;
   background-color: v.$sorbus100;
-  position:absolute;
+  position: absolute;
   z-index: 2;
   width: 4.8rem;
   height: 4.8rem;
@@ -84,88 +73,74 @@
   border: 0;
   cursor: pointer;
   margin-bottom: 0;
-
-  &:focus{
+  &:focus {
     outline: 0;
   }
-
-  svg{
+  svg {
     width: 1.2rem;
     height: 100%;
-    color:rgba(0,0,0,0.7);
+    color: rgba(0, 0, 0, 0.7);
   }
 }
 
-
-.carrusel-prev{
+.carrusel-prev {
   left: 0;
 }
 
-.carrusel-next{
+.carrusel-next {
   right: 0;
 }
 
-.iconosmin-contenedor{
+.iconosmin-contenedor {
   display: flex;
   justify-content: space-between;
   margin-top: 4rem;
   margin-bottom: 4rem;
   text-align: center;
- 
-
-  @include m.tablet{
+  @include m.tablet {
     margin-top: 6rem;
     margin-bottom: 6rem;
     text-align: center;
     justify-content: space-evenly;
     display: flex;
-    
   }
-  .iconmin{
+  .iconmin {
     height: 5rem;
     width: 5rem;
     padding: 0;
-
-    p{
+    p {
       color: v.$negro;
       text-align: center;
-      font-size: .8rem;
-
-      @include m.telefono{
+      font-size: 0.8rem;
+      @include m.telefono {
         font-size: 1.1rem;
         margin: 0;
-        
       }
-      @include m.tablet{
+      @include m.tablet {
         font-size: 1.5rem;
         color: v.$negro;
-        display: flex; 
+        display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-   
       }
-    
     }
-
-    img{
+    img {
       width: 3.5rem;
       height: 3.5rem;
       padding: 0;
-      
-      &:hover{
-        background-color: v.$sorbus600;  
+      &:hover {
+        background-color: v.$sorbus600;
         cursor: pointer;
         border-radius: 20%;
       }
-      @include m.telefono{
+      @include m.telefono {
         width: 4rem;
         height: 4rem;
-        
       }
-      @include m.tablet{
-      width: 5rem;
-       height: 5rem;
+      @include m.tablet {
+        width: 5rem;
+        height: 5rem;
       }
     }
   }
@@ -181,49 +156,46 @@
   display: grid;
   place-items: center;
   z-index: 2;
-
   &.active {
     opacity: 1;
     visibility: visible;
   }
-
   .overlay-content {
     max-width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #fff; // Fondo blanco para el contenido
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-
+    background: #fff;
+    padding: 2rem;
+    border-radius: 0.8rem;
+    box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.1);
     img {
       max-width: 100%;
       max-height: 80vh;
-      margin-bottom: 2rem; 
+      margin-bottom: 2rem;
     }
     p {
-      color: #333; // Color oscuro para mejor legibilidad
-      text-align: center; // Centrar el texto
-      font-size: 1.2rem; // Tamaño de fuente más grande
+      color: #333;
+      text-align: center;
+      font-size: 1.2rem;
     }
   }
 }
 
-.texto-gal{
-  margin:2rem;
+.texto-gal {
+  margin: 2rem;
   background-color: v.$sorbus100;
   border-radius: 2rem;
   margin-top: 5rem;
   height: auto;
-  text-align:justify;
-  p{
+  text-align: justify;
+  p {
     color: v.$negro;
     font-weight: 400;
     font-size: 2rem;
     padding: 3rem;
     line-height: 3.5rem;
-    span{
+    span {
       font-weight: 600;
     }
   }
@@ -232,11 +204,18 @@
 .img-zoom-lens {
   position: absolute;
   border: 0.1rem solid #000;
-  width: 10rem;  /* 100px */
-  height: 10rem; /* 100px */
+  width: 1rem;
+  height: 1rem;
   visibility: hidden;
 }
 
 .img-zoom-container {
   position: relative;
+}
+
+.img-zoom-lens {
+  display: none;
+  @include m.tablet {
+    display: block;
+  }
 }
