@@ -1637,6 +1637,7 @@ p {
   text-align: center;
   border: 0;
   cursor: pointer;
+  display: none;
   margin-bottom: 0;
 }
 .carrusel-arrow:focus {
@@ -1646,6 +1647,11 @@ p {
   width: 1.2rem;
   height: 100%;
   color: rgba(0, 0, 0, 0.7);
+}
+@media (min-width: 1250px) {
+  .carrusel-arrow {
+    display: block;
+  }
 }
 
 .carrusel-prev {

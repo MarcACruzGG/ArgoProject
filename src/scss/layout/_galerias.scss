@@ -80,6 +80,7 @@
   text-align: center;
   border: 0;
   cursor: pointer;
+  display: none;
   margin-bottom: 0;
   &:focus {
     outline: 0;
@@ -88,6 +89,10 @@
     width: 1.2rem;
     height: 100%;
     color: rgba(0, 0, 0, 0.7);
+  }
+
+  @include m.desktop {
+    display: block;
   }
 }
 

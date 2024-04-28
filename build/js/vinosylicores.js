@@ -112,19 +112,14 @@ function processingButton(event) {
   const btn = event.currentTarget;
   const carruselList = btn.closest(".carrusel-list");
   const track = carruselList.querySelector(".carrusel-track");
-  const slides = track.querySelectorAll(".carrusel");
-  const slideWidth = slides[0].offsetWidth;
-  
+  const carruselWidth = track.querySelector(".carrusel").offsetWidth;
+
   let currentTransform = getTranslateX(track);
 
   if (btn.dataset.button === "button-prev" && currentTransform < 0) {
-    // Mover hacia la derecha
-    let newPosition = currentTransform + slideWidth;
-    track.style.transform = `translateX(${newPosition}px)`;
-  } else if (btn.dataset.button === "button-next" && Math.abs(currentTransform) < (slideWidth * (slides.length - 1))) {
-    // Mover hacia la izquierda
-    let newPosition = currentTransform - slideWidth;
-    track.style.transform = `translateX(${newPosition}px)`;
+    track.style.transform = `translateX(${currentTransform + carruselWidth}px)`;
+  } else if (btn.dataset.button === "button-next") {
+    track.style.transform = `translateX(${currentTransform - carruselWidth}px)`;
   }
 }
 
@@ -136,59 +131,47 @@ function getTranslateX(element) {
     return 0;
   } else {
     const values = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
-    const x = values[4];
-    return parseInt(x);
+    return parseInt(values[4]);
   }
 }
 
 function addTouchEventsToCarrusel() {
   const track = document.getElementById("track");
-  let isDragging = false;
   let startPos = 0;
   let currentTranslate = 0;
-  let prevTranslate = getTranslateX(track);
+  let startTranslate = getTranslateX(track);
 
-  track.addEventListener('touchstart', touchStart);
-  track.addEventListener('touchend', touchEnd);
-  track.addEventListener('touchmove', touchMove);
-
-  function touchStart(e) {
-    isDragging = true;
+  track.addEventListener('touchstart', e => {
     startPos = getPositionX(e);
-    currentTranslate = prevTranslate;
-  }
+    startTranslate = getTranslateX(track);
+    track.style.transition = ''; // Desactivar transición para un movimiento suave
+  });
 
-  function touchMove(e) {
-    if (isDragging) {
+  track.addEventListener('touchmove', e => {
+    if (e.touches.length === 1) { // Asegura que solo un dedo esté en uso
       const currentPosition = getPositionX(e);
-      currentTranslate = prevTranslate + currentPosition - startPos;
+      currentTranslate = startTranslate + (currentPosition - startPos);
       track.style.transform = `translateX(${currentTranslate}px)`;
     }
-  }
+  });
 
-  function touchEnd() {
-    isDragging = false;
-    const movedBy = currentTranslate - prevTranslate;
-    if (movedBy < -100) { // Swiped left
-      changeSlide('next');
-    } else if (movedBy > 100) { // Swiped right
-      changeSlide('prev');
+  track.addEventListener('touchend', e => {
+    const endPosition = getPositionX(e);
+    finalizePosition(endPosition - startPos);
+  });
+
+  function finalizePosition(difference) {
+    const slideWidth = track.querySelector(".carrusel").offsetWidth;
+    if (difference > 50) { // Deslizar hacia la derecha
+      currentTranslate += slideWidth;
+    } else if (difference < -50) { // Deslizar hacia la izquierda
+      currentTranslate -= slideWidth;
     }
-    prevTranslate = currentTranslate;
+    track.style.transition = 'transform 0.5s ease-in-out'; // Reactivar transición
+    track.style.transform = `translateX(${currentTranslate}px)`;
   }
 
   function getPositionX(e) {
     return e.touches[0].clientX;
-  }
-
-  function changeSlide(direction) {
-    const slidesWidth = track.offsetWidth;
-    const listWidth = document.querySelector('.carrusel-list').offsetWidth;
-    if (direction === 'next' && Math.abs(currentTranslate) < slidesWidth - listWidth) {
-      currentTranslate -= 200; // Assume each slide has a width of 200px
-    } else if (direction === 'prev' && currentTranslate < 0) {
-      currentTranslate += 200;
-    }
-    track.style.transform = `translateX(${currentTranslate}px)`;
   }
 }
