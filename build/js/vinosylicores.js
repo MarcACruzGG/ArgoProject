@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   iniciarApp();
   inicializarGaleria();
   setUpCarruselControls();
+  addTouchEventsToCarrusel();
 });
 
 function iniciarApp() {
@@ -40,13 +41,13 @@ function mostrarImagen(id) {
   const overlay = document.createElement("div");
   overlay.className = "overlay";
   overlay.innerHTML = `
-        <div class="overlay-content">
-            <div class="img-zoom-container">
-                <img id="img-${id}" src="${imagenSrc}" alt="Imagen Galeria ${id}" style="width: 200; height: 300;">
-            </div>
-            <p>${descripciones[id - 1]}</p>
-        </div>
-    `;
+    <div class="overlay-content">
+      <div class="img-zoom-container">
+        <img id="img-${id}" src="${imagenSrc}" alt="Imagen Galeria ${id}" style="width: 200; height: 300;">
+      </div>
+      <p>${descripciones[id - 1]}</p>
+    </div>
+  `;
   overlay.addEventListener("click", function () {
     overlay.remove();
     document.body.classList.remove("fijar-body");
@@ -62,12 +63,10 @@ function activateZoom(imgId) {
   lens.setAttribute("class", "img-zoom-lens");
   img.parentElement.insertBefore(lens, img);
 
-  const cx = 3; // Incrementado el factor de zoom para X
-  const cy = 3; // Incrementado el factor de zoom para Y
-
-  // Aumentando el tamaño inicial del lente
-  lens.style.width = "10rem"; // Aumentado de 10rem a 20rem
-  lens.style.height = "10rem"; // Aumentado de 10rem a 20rem
+  const cx = 3;
+  const cy = 3;
+  lens.style.width = "10rem";
+  lens.style.height = "10rem";
 
   lens.style.backgroundImage = `url('${img.src}')`;
   lens.style.backgroundRepeat = "no-repeat";
@@ -80,54 +79,32 @@ function activateZoom(imgId) {
   function moveLens(e) {
     e.preventDefault();
     const pos = getCursorPos(e);
-
     let x = pos.x - lens.offsetWidth / 2;
     let y = pos.y - lens.offsetHeight / 2;
 
-    if (x > img.width - lens.offsetWidth) {
-      x = img.width - lens.offsetWidth;
-    }
-    if (x < 0) {
-      x = 0;
-    }
-    if (y > img.height - lens.offsetHeight) {
-      y = img.height - lens.offsetHeight;
-    }
-    if (y < 0) {
-      y = 0;
-    }
+    if (x > img.width - lens.offsetWidth) x = img.width - lens.offsetWidth;
+    if (x < 0) x = 0;
+    if (y > img.height - lens.offsetHeight) y = img.height - lens.offsetHeight;
+    if (y < 0) y = 0;
 
     lens.style.left = `${x / 10}rem`;
     lens.style.top = `${y / 10}rem`;
-    lens.style.backgroundPosition = `-${(x * cx) / 10}rem -${(y * cy) / 10}rem`;
+    lens.style.backgroundPosition = `-${x * cx / 10}rem -${y * cy / 10}rem`;
   }
 
   function getCursorPos(e) {
     const a = img.getBoundingClientRect();
-    let x = e.pageX - a.left;
-    let y = e.pageY - a.top;
-    x -= window.pageXOffset;
-    y -= window.pageYOffset;
-    return { x: x, y: y };
+    return {
+      x: e.pageX - a.left - window.pageXOffset,
+      y: e.pageY - a.top - window.pageYOffset
+    };
   }
 }
 
-if (!Element.prototype.closest) {
-  Element.prototype.closest = function (s) {
-    var el = this;
-    do {
-      if (el.matches(s)) return el;
-      el = el.parentElement || el.parentNode;
-    } while (el !== null && el.nodeType === 1);
-    return null;
-  };
-}
-
 function setUpCarruselControls() {
-  document.querySelectorAll(".carrusel-arrow").forEach((button) => {
-    button.addEventListener("click", function (event) {
-      processingButton(event);
-    });
+  const buttons = document.querySelectorAll(".carrusel-arrow");
+  buttons.forEach(button => {
+    button.addEventListener("click", processingButton);
   });
 }
 
@@ -137,17 +114,68 @@ function processingButton(event) {
   const track = carruselList.querySelector(".carrusel-track");
   const carrusel = track.querySelectorAll(".carrusel");
   const carruselWidth = carrusel[0].offsetWidth;
-  const trackWidth = track.offsetWidth;
-  const listWidth = carruselList.offsetWidth;
-  let leftPosition =
-    track.style.left === "" ? 0 : parseFloat(track.style.left.slice(0, -2));
-  if (btn.dataset.button === "button-prev") {
-    if (leftPosition < 0) {
-      track.style.left = `${leftPosition + carruselWidth}px`;
+  let currentTransform = track.style.transform.replace(/[^\d.]/g, '') || 0;
+  let newPosition = 0;
+
+  if (btn.dataset.button === "button-prev" && currentTransform < 0) {
+    newPosition = parseInt(currentTransform) + carruselWidth;
+    track.style.transform = `translateX(${newPosition}px)`;
+  } else if (btn.dataset.button === "button-next") {
+    newPosition = parseInt(currentTransform) - carruselWidth;
+    if (Math.abs(newPosition) <= carruselWidth * (carrusel.length - 1)) {
+      track.style.transform = `translateX(${newPosition}px)`;
     }
-  } else {
-    if (Math.abs(leftPosition) < trackWidth - listWidth) {
-      track.style.left = `${leftPosition - carruselWidth}px`;
+  }
+}
+
+function addTouchEventsToCarrusel() {
+  const track = document.getElementById("track");
+  let isDragging = false;
+  let startPos = 0;
+  let currentTranslate = 0;
+  let prevTranslate = 0;
+
+  track.addEventListener('touchstart', touchStart);
+  track.addEventListener('touchend', touchEnd);
+  track.addEventListener('touchmove', touchMove);
+
+  function touchStart(e) {
+    isDragging = true;
+    startPos = getPositionX(e);
+    currentTranslate = prevTranslate;
+  }
+
+  function touchMove(e) {
+    if (isDragging) {
+      const currentPosition = getPositionX(e);
+      currentTranslate = prevTranslate + currentPosition - startPos;
+      track.style.transform = `translateX(${currentTranslate}px)`;
     }
+  }
+
+  function touchEnd() {
+    isDragging = false;
+    const movedBy = currentTranslate - prevTranslate;
+    if (movedBy < -100) { // Swiped left
+      changeSlide('next');
+    } else if (movedBy > 100) { // Swiped right
+      changeSlide('prev');
+    }
+    prevTranslate = currentTranslate;
+  }
+
+  function getPositionX(e) {
+    return e.touches[0].clientX;
+  }
+
+  function changeSlide(direction) {
+    const slidesWidth = track.offsetWidth;
+    const listWidth = document.querySelector('.carrusel-list').offsetWidth;
+    if (direction === 'next' && Math.abs(currentTranslate) < slidesWidth - listWidth) {
+      currentTranslate -= 200; // Assume each slide has a width of 200px
+    } else if (direction === 'prev' && currentTranslate < 0) {
+      currentTranslate += 200;
+    }
+    track.style.transform = `translateX(${currentTranslate}px)`;
   }
 }
