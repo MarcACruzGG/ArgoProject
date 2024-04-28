@@ -55,17 +55,18 @@
   
         p{
           color: v.$blanco;
-          font-size: 1.5rem;
+          font-size: 1rem;
           font-weight: 400;
           margin: 0 2rem;
           padding: 1.3rem;
+          text-align: justify;
 
           @include m.telefono{
-            font-size: 2rem;
+            font-size: 1.5rem;
           }
 
           @include m.tablet{
-            font-size: 3rem;
+            font-size: 2.3rem;
           }
         }
       }
@@ -234,9 +235,7 @@
     
     }
   }
-    
 
-  
   .circle {
     width: 90px;
     height: 90px;
@@ -250,6 +249,13 @@
   .icon-indv{
     height: 10rem;
     width: 10rem;
+  }
+}
+
+.cerrar-modal{
+  background-color: v.$sorbus600;
+  @include m.tablet{
+    background-color: #fff4d3;
   }
 }
 

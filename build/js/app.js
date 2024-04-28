@@ -115,7 +115,7 @@ const textos = [
         titulo: "Políticas", 
         descripcion: `
         <p style="text-align:justify;">
-        <strong>Política de Calidad:</strong> Nos dedicamos a ofrecer productos y servicios que cumplen con los más altos estándares de calidad dentro de la Industria Gráfica Mexicana. Buscamos la excelencia en cada etapa de nuestro proceso productivo, mejorando continuamente nuestros procedimientos, servicios y sistema de gestión de calidad, en línea con los requisitos de la norma ISO 9001:2015. Nuestro compromiso es garantizar la satisfacción de nuestros clientes y consolidar nuestra reputación en el mercado como sinónimo de calidad y profesionalismo.
+        Nos dedicamos a ofrecer productos y servicios que cumplen con los más altos estándares de calidad dentro de la Industria Gráfica Mexicana. Buscamos la excelencia en cada etapa de nuestro proceso productivo, mejorando continuamente nuestros procedimientos, servicios y sistema de gestión de calidad, en línea con los requisitos de la norma ISO 9001:2015. Nuestro compromiso es garantizar la satisfacción de nuestros clientes y consolidar nuestra reputación en el mercado como sinónimo de calidad y profesionalismo.
         </p>
         `
     },
@@ -123,7 +123,7 @@ const textos = [
         titulo: "Certificados", 
         descripcion: `
         <p style="text-align:justify;">
-        <strong>Certificaciones:</strong> Nos enorgullecemos de contar con las siguientes certificaciones que respaldan nuestra dedicación a la excelencia y la responsabilidad social:
+        Nos enorgullecemos de contar con las siguientes certificaciones que respaldan nuestra dedicación a la excelencia y la responsabilidad social:
         <ul style="text-align:justify;">
             <li>ISO 9001:2015 - Garantiza la calidad de nuestros productos y servicios, cumpliendo con estándares internacionales.</li>
             <li>Responsabilidad Social (Disney) - Reconocimiento por nuestro compromiso con prácticas éticas y sostenibles en toda nuestra operación.</li>
@@ -138,7 +138,7 @@ const textos = [
         titulo: "Equipo", 
         descripcion: `
         <p style="text-align:justify;">
-        <strong>Equipos:</strong> En ARGO Artes Gráficas S.A., contamos con una variedad de maquinaria especializada que nos permite ofrecer soluciones de alta calidad en la industria gráfica:
+        Contamos con una variedad de maquinaria especializada que nos permite ofrecer soluciones de alta calidad en la industria gráfica:
         <ul style="text-align:justify;">
             <li><strong>Impresión:</strong> Roland 705 y 707 - Velocidad promedio de 12,000 pl/h, capaces de imprimir en papel de hasta 74 x 104 cm.</li>
             <li><strong>Suaje:</strong> Speria 106 E Autoplatine, Sanwa TRP1060-SE y Brausse 1050SF - Velocidad promedio de 3,500 pl/h, trabajan con papel de hasta 74 x 106 cm.</li>
@@ -153,7 +153,7 @@ const textos = [
         titulo: "Calidad", 
         descripcion: `
         <p style="text-align:justify;">
-        <strong>Calidad:</strong> Nos comprometemos a garantizar la máxima calidad en cada etapa de producción:
+        Nos comprometemos a garantizar la máxima calidad en cada etapa de producción:
         <br>
         • Realizamos inspecciones rigurosas de la materia prima, de cada proceso y del producto terminado.
         <br>
@@ -173,7 +173,7 @@ const textos = [
         titulo: "Presupuesto", 
         descripcion: `
         <p style="text-align:justify;">
-        <strong>Presupuesto:</strong> Nuestro equipo especializado en cotizaciones se encarga de proporcionar precios justos y respuestas rápidas a las solicitudes de nuestros clientes:
+        Nuestro equipo especializado en cotizaciones se encarga de proporcionar precios justos y respuestas rápidas a las solicitudes de nuestros clientes:
         <br>
         • Utilizamos herramientas avanzadas y metodologías precisas para garantizar que cada presupuesto refleje el mejor valor posible.
         <br>
@@ -185,7 +185,7 @@ const textos = [
         titulo: "Volumen de trabajo", 
         descripcion: `
         <p style="text-align:justify;">
-        <strong>Volumen de trabajo:</strong>Como una industria manufacturera de tamaño mediano, nos centramos en la producción de alto volumen, lo que nos permite especializarnos en satisfacer las demandas de grandes pedidos.
+       Como una industria manufacturera de tamaño mediano, nos centramos en la producción de alto volumen, lo que nos permite especializarnos en satisfacer las demandas de grandes pedidos.
         <br>
         • Garantizamos calidad y entrega a tiempo para proyectos de gran envergadura.
         <br>
