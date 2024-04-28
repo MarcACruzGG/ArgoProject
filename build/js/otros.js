@@ -62,14 +62,16 @@ function activateZoom(imgId) {
   lens.setAttribute("class", "img-zoom-lens");
   img.parentElement.insertBefore(lens, img);
 
-  const cx = 2; // Zoom factor for X
-  const cy = 2; // Zoom factor for Y
+  const cx = 3; // Incrementado el factor de zoom para X
+  const cy = 3; // Incrementado el factor de zoom para Y
+
+  // Aumentando el tamaño inicial del lente
+  lens.style.width = "10rem"; // Aumentado de 10rem a 20rem
+  lens.style.height = "10rem"; // Aumentado de 10rem a 20rem
 
   lens.style.backgroundImage = `url('${img.src}')`;
   lens.style.backgroundRepeat = "no-repeat";
-  lens.style.backgroundSize = `${(img.width * cx) / 10}rem ${
-    (img.height * cy) / 10
-  }rem`;
+  lens.style.backgroundSize = `${img.width * cx / 10}rem ${img.height * cy / 10}rem`;
   lens.style.visibility = "visible";
 
   img.addEventListener("mousemove", moveLens);
