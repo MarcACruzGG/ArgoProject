@@ -41,24 +41,32 @@
     top: 0;
     left: 0;
     display: flex;
-    justify-content: center;
+    justify-content: start; // Cambiado de center a start para un mejor control
     transition: 0.5s ease-in-out;
   }
 }
 
 .carrusel {
   position: relative;
-  padding: 0 1.5rem;
+  padding: 0 5.1rem; // Ajuste el padding si es necesario
   display: flex;
-  margin-left: 4rem;
+  margin-left: auto;
+  margin-right: auto; // Asegura que los elementos del carrusel se centren
   img {
     cursor: pointer;
+  }
+}
+@include m.telefono{
+  .carrusel {
+    width: 100%;
+    padding: 0 2rem;
   }
 }
 
 @include m.tablet {
   .carrusel {
-    width: 27.5rem;
+    width: 50%; 
+    padding: 0 2.3rem;
   }
 }
 

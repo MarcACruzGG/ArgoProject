@@ -112,22 +112,19 @@ function processingButton(event) {
   const btn = event.currentTarget;
   const carruselList = btn.closest(".carrusel-list");
   const track = carruselList.querySelector(".carrusel-track");
-  const carrusel = track.querySelectorAll(".carrusel");
-  const carruselWidth = carrusel[0].offsetWidth;
-
-  // Obteniendo el valor actual de la transformación del carrusel
+  const slides = track.querySelectorAll(".carrusel");
+  const slideWidth = slides[0].offsetWidth;
+  
   let currentTransform = getTranslateX(track);
 
   if (btn.dataset.button === "button-prev" && currentTransform < 0) {
     // Mover hacia la derecha
-    let newPosition = currentTransform + carruselWidth;
+    let newPosition = currentTransform + slideWidth;
     track.style.transform = `translateX(${newPosition}px)`;
-  } else if (btn.dataset.button === "button-next") {
+  } else if (btn.dataset.button === "button-next" && Math.abs(currentTransform) < (slideWidth * (slides.length - 1))) {
     // Mover hacia la izquierda
-    let newPosition = currentTransform - carruselWidth;
-    if (Math.abs(newPosition) <= carruselWidth * (carrusel.length - 1)) {
-      track.style.transform = `translateX(${newPosition}px)`;
-    }
+    let newPosition = currentTransform - slideWidth;
+    track.style.transform = `translateX(${newPosition}px)`;
   }
 }
 
