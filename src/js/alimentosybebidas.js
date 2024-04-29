@@ -61,7 +61,7 @@ function getMousePos(e, img) {
   const rect = img.getBoundingClientRect();
   return {
     x: e.clientX - rect.left,
-    y: e.clientY - rect.top
+    y: e.clientY - rect.top,
   };
 }
 
@@ -82,7 +82,9 @@ function activateZoom(imgId) {
 
   lens.style.backgroundImage = `url('${img.src}')`;
   lens.style.backgroundRepeat = "no-repeat";
-  lens.style.backgroundSize = `${img.width * cx / 10}rem ${img.height * cy / 10}rem`;
+  lens.style.backgroundSize = `${(img.width * cx) / 10}rem ${
+    (img.height * cy) / 10
+  }rem`;
   lens.style.visibility = "visible";
 
   img.addEventListener("mousemove", moveLens);
@@ -102,21 +104,21 @@ function activateZoom(imgId) {
 
     lens.style.left = `${x / 10}rem`;
     lens.style.top = `${y / 10}rem`;
-    lens.style.backgroundPosition = `-${x * cx / 10}rem -${y * cy / 10}rem`;
+    lens.style.backgroundPosition = `-${(x * cx) / 10}rem -${(y * cy) / 10}rem`;
   }
 
   function getCursorPos(e) {
     const a = img.parentElement.getBoundingClientRect();
     return {
       x: e.pageX - a.left - window.pageXOffset,
-      y: e.pageY - a.top - window.pageYOffset
+      y: e.pageY - a.top - window.pageYOffset,
     };
   }
 }
 
 function setUpCarruselControls() {
   const buttons = document.querySelectorAll(".carrusel-arrow");
-  buttons.forEach(button => {
+  buttons.forEach((button) => {
     button.addEventListener("click", processingButton);
   });
 }
@@ -126,21 +128,20 @@ function processingButton(event) {
   const carruselList = btn.closest(".carrusel-list");
   const track = carruselList.querySelector(".carrusel-track");
   const carruselItems = track.querySelectorAll(".carrusel");
-  const carruselWidth = carruselList.offsetWidth; // Ancho del viewport del carrusel
+  const carruselWidth = carruselList.offsetWidth; 
 
   let currentTransform = getTranslateX(track);
-  // Calcula el desplazamiento máximo basándose en el ancho total menos el ancho del viewport
-  const maxTransform = -(carruselItems.length * carruselItems[0].offsetWidth - carruselWidth);
+  const maxTransform = -(
+    carruselItems.length * carruselItems[0].offsetWidth -
+    carruselWidth
+  );
 
   if (btn.dataset.button === "button-prev") {
-    // Mueve a la izquierda solo si no es el primer elemento
     currentTransform = Math.min(currentTransform + carruselWidth, 0);
   } else if (btn.dataset.button === "button-next") {
-    // Mueve a la derecha solo si no es el último elemento
     currentTransform = Math.max(currentTransform - carruselWidth, maxTransform);
   }
 
-  // Aplica la transformación con un límite para no pasar la última imagen
   track.style.transform = `translateX(${currentTransform}px)`;
 }
 
@@ -148,10 +149,10 @@ function getTranslateX(element) {
   const style = window.getComputedStyle(element);
   const matrix = style.transform || style.webkitTransform || style.mozTransform;
 
-  if (matrix === 'none') {
+  if (matrix === "none") {
     return 0;
   } else {
-    const values = matrix.match(/matrix.*\((.+)\)/)[1].split(', ');
+    const values = matrix.match(/matrix.*\((.+)\)/)[1].split(", ");
     return parseInt(values[4]);
   }
 }
@@ -160,32 +161,37 @@ function addTouchEventsToCarrusel() {
   const track = document.getElementById("track");
   const carruselWidth = document.querySelector(".carrusel-list").offsetWidth;
   const carruselItems = track.querySelectorAll(".carrusel");
-  const maxTransform = -(carruselItems.length * carruselItems[0].offsetWidth - carruselWidth);
+  const maxTransform = -(
+    carruselItems.length * carruselItems[0].offsetWidth -
+    carruselWidth
+  );
   let startPos = 0;
   let currentTranslate = getTranslateX(track);
   let startTranslate = currentTranslate;
 
-  track.addEventListener('touchstart', e => {
+  track.addEventListener("touchstart", (e) => {
     const touchX = getPositionX(e);
     if (touchX !== null) {
       startPos = touchX;
       startTranslate = getTranslateX(track);
-      track.style.transition = 'none'; // Desactiva la transición para un movimiento suave
+      track.style.transition = "none"; 
     }
   });
 
-  track.addEventListener('touchmove', e => {
+  track.addEventListener("touchmove", (e) => {
     const touchX = getPositionX(e);
     if (touchX !== null) {
       e.preventDefault();
       const diff = touchX - startPos;
-      currentTranslate = Math.max(Math.min(startTranslate + diff, 0), maxTransform);
+      currentTranslate = Math.max(
+        Math.min(startTranslate + diff, 0),
+        maxTransform
+      );
       track.style.transform = `translateX(${currentTranslate}px)`;
     }
   });
 
-  track.addEventListener('touchend', () => {
-    track.style.transition = 'transform 0.5s ease-in-out'; // Re-activa la transición
-    // La lógica para ajustar la posición aquí no es necesaria ya que se maneja en touchmove
+  track.addEventListener("touchend", () => {
+    track.style.transition = "transform 0.5s ease-in-out"; 
   });
 }
