@@ -57,6 +57,18 @@ function mostrarImagen(id) {
   activateZoom(`img-${id}`);
 }
 
+function getMousePos(e, img) {
+  const rect = img.getBoundingClientRect();
+  return {
+    x: e.clientX - rect.left,
+    y: e.clientY - rect.top
+  };
+}
+
+function getPositionX(e) {
+  return e.touches ? e.touches[0].clientX : null;
+}
+
 function activateZoom(imgId) {
   const img = document.getElementById(imgId);
   const lens = document.createElement("div");
@@ -78,9 +90,10 @@ function activateZoom(imgId) {
 
   function moveLens(e) {
     e.preventDefault();
-    const pos = getCursorPos(e);
+    const pos = getMousePos(e, img);
     let x = pos.x - lens.offsetWidth / 2;
     let y = pos.y - lens.offsetHeight / 2;
+    img.addEventListener("mousemove", moveLens);
 
     if (x > img.width - lens.offsetWidth) x = img.width - lens.offsetWidth;
     if (x < 0) x = 0;
@@ -93,7 +106,7 @@ function activateZoom(imgId) {
   }
 
   function getCursorPos(e) {
-    const a = img.getBoundingClientRect();
+    const a = img.parentElement.getBoundingClientRect();
     return {
       x: e.pageX - a.left - window.pageXOffset,
       y: e.pageY - a.top - window.pageYOffset
@@ -112,15 +125,23 @@ function processingButton(event) {
   const btn = event.currentTarget;
   const carruselList = btn.closest(".carrusel-list");
   const track = carruselList.querySelector(".carrusel-track");
-  const carruselWidth = track.querySelector(".carrusel").offsetWidth;
+  const carruselItems = track.querySelectorAll(".carrusel");
+  const carruselWidth = carruselList.offsetWidth; // Ancho del viewport del carrusel
 
   let currentTransform = getTranslateX(track);
+  // Calcula el desplazamiento máximo basándose en el ancho total menos el ancho del viewport
+  const maxTransform = -(carruselItems.length * carruselItems[0].offsetWidth - carruselWidth);
 
-  if (btn.dataset.button === "button-prev" && currentTransform < 0) {
-    track.style.transform = `translateX(${currentTransform + carruselWidth}px)`;
+  if (btn.dataset.button === "button-prev") {
+    // Mueve a la izquierda solo si no es el primer elemento
+    currentTransform = Math.min(currentTransform + carruselWidth, 0);
   } else if (btn.dataset.button === "button-next") {
-    track.style.transform = `translateX(${currentTransform - carruselWidth}px)`;
+    // Mueve a la derecha solo si no es el último elemento
+    currentTransform = Math.max(currentTransform - carruselWidth, maxTransform);
   }
+
+  // Aplica la transformación con un límite para no pasar la última imagen
+  track.style.transform = `translateX(${currentTransform}px)`;
 }
 
 function getTranslateX(element) {
@@ -139,39 +160,47 @@ function addTouchEventsToCarrusel() {
   const track = document.getElementById("track");
   let startPos = 0;
   let currentTranslate = 0;
-  let startTranslate = getTranslateX(track);
+  let startTranslate = 0;
 
   track.addEventListener('touchstart', e => {
     startPos = getPositionX(e);
-    startTranslate = getTranslateX(track);
-    track.style.transition = ''; // Desactivar transición para un movimiento suave
+    if (startPos !== null) {
+      startTranslate = getTranslateX(track);
+      track.style.transition = 'none';
+    }
   });
 
   track.addEventListener('touchmove', e => {
-    if (e.touches.length === 1) { // Asegura que solo un dedo esté en uso
-      const currentPosition = getPositionX(e);
+    const currentPosition = getPositionX(e);
+    if (currentPosition !== null) {
+      e.preventDefault();
       currentTranslate = startTranslate + (currentPosition - startPos);
       track.style.transform = `translateX(${currentTranslate}px)`;
     }
   });
 
-  track.addEventListener('touchend', e => {
-    const endPosition = getPositionX(e);
-    finalizePosition(endPosition - startPos);
+  track.addEventListener('touchend', () => {
+    const endTranslate = getTranslateX(track);
+    finalizePosition(endTranslate - startTranslate);
+    track.style.transition = 'transform 0.5s ease-in-out';
+    // Actualiza startTranslate con la nueva posición para el próximo gesto de deslizamiento
+    startTranslate = endTranslate;
   });
 
   function finalizePosition(difference) {
-    const slideWidth = track.querySelector(".carrusel").offsetWidth;
-    if (difference > 50) { // Deslizar hacia la derecha
-      currentTranslate += slideWidth;
-    } else if (difference < -50) { // Deslizar hacia la izquierda
-      currentTranslate -= slideWidth;
+    const carruselItems = track.querySelectorAll(".carrusel");
+    const carruselWidth = document.querySelector(".carrusel-list").offsetWidth;
+    const maxTransform = -(carruselItems.length * carruselItems[0].offsetWidth - carruselWidth);
+    
+    if (difference > 50) {
+      // Deslizar hacia la derecha
+      currentTranslate = Math.min(currentTranslate + carruselWidth, 0);
+    } else if (difference < -50) {
+      // Deslizar hacia la izquierda
+      currentTranslate = Math.max(currentTranslate - carruselWidth, maxTransform);
     }
-    track.style.transition = 'transform 0.5s ease-in-out'; // Reactivar transición
+    
+    // Fija la posición final y realiza la transición
     track.style.transform = `translateX(${currentTranslate}px)`;
-  }
-
-  function getPositionX(e) {
-    return e.touches[0].clientX;
   }
 }
