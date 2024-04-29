@@ -158,49 +158,34 @@ function getTranslateX(element) {
 
 function addTouchEventsToCarrusel() {
   const track = document.getElementById("track");
+  const carruselWidth = document.querySelector(".carrusel-list").offsetWidth;
+  const carruselItems = track.querySelectorAll(".carrusel");
+  const maxTransform = -(carruselItems.length * carruselItems[0].offsetWidth - carruselWidth);
   let startPos = 0;
-  let currentTranslate = 0;
-  let startTranslate = 0;
+  let currentTranslate = getTranslateX(track);
+  let startTranslate = currentTranslate;
 
   track.addEventListener('touchstart', e => {
-    startPos = getPositionX(e);
-    if (startPos !== null) {
+    const touchX = getPositionX(e);
+    if (touchX !== null) {
+      startPos = touchX;
       startTranslate = getTranslateX(track);
-      track.style.transition = 'none';
+      track.style.transition = 'none'; // Desactiva la transición para un movimiento suave
     }
   });
 
   track.addEventListener('touchmove', e => {
-    const currentPosition = getPositionX(e);
-    if (currentPosition !== null) {
+    const touchX = getPositionX(e);
+    if (touchX !== null) {
       e.preventDefault();
-      currentTranslate = startTranslate + (currentPosition - startPos);
+      const diff = touchX - startPos;
+      currentTranslate = Math.max(Math.min(startTranslate + diff, 0), maxTransform);
       track.style.transform = `translateX(${currentTranslate}px)`;
     }
   });
 
   track.addEventListener('touchend', () => {
-    const endTranslate = getTranslateX(track);
-    finalizePosition(endTranslate - startTranslate);
-    track.style.transition = 'transform 0.5s ease-in-out';
-    // Actualiza startTranslate con la nueva posición para el próximo gesto de deslizamiento
-    startTranslate = endTranslate;
+    track.style.transition = 'transform 0.5s ease-in-out'; // Re-activa la transición
+    // La lógica para ajustar la posición aquí no es necesaria ya que se maneja en touchmove
   });
-
-  function finalizePosition(difference) {
-    const carruselItems = track.querySelectorAll(".carrusel");
-    const carruselWidth = document.querySelector(".carrusel-list").offsetWidth;
-    const maxTransform = -(carruselItems.length * carruselItems[0].offsetWidth - carruselWidth);
-    
-    if (difference > 50) {
-      // Deslizar hacia la derecha
-      currentTranslate = Math.min(currentTranslate + carruselWidth, 0);
-    } else if (difference < -50) {
-      // Deslizar hacia la izquierda
-      currentTranslate = Math.max(currentTranslate - carruselWidth, maxTransform);
-    }
-    
-    // Fija la posición final y realiza la transición
-    track.style.transform = `translateX(${currentTranslate}px)`;
-  }
 }
