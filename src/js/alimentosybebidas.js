@@ -10,9 +10,10 @@ function iniciarApp() {
   toggleMenuHamburguesa();
 }
 
+
 const descripciones = [
   "Descripción de la imagen 1 uno",
-  "Descripción de la imagen 2 ds",
+  "EMPAQUE MICROCORRUGADO FLAUTA E IMPRESO A SELECCIÓN DE COLOR BARNIZ UV A REGISTRO",
   "Descripción de la imagen 3 12",
   "Descripción de la imagen 4 1ad",
   "Descripción de la imagen 5 asdsad",
@@ -70,21 +71,21 @@ function getPositionX(e) {
 }
 
 function activateZoom(imgId) {
+  if ('ontouchstart' in window || navigator.maxTouchPoints) {
+    return; 
+  }
+  
   const img = document.getElementById(imgId);
   const lens = document.createElement("div");
   lens.setAttribute("class", "img-zoom-lens");
   img.parentElement.insertBefore(lens, img);
 
-  const cx = 3;
-  const cy = 3;
+  const zoomScale = 3; 
   lens.style.width = "10rem";
   lens.style.height = "10rem";
-
   lens.style.backgroundImage = `url('${img.src}')`;
   lens.style.backgroundRepeat = "no-repeat";
-  lens.style.backgroundSize = `${(img.width * cx) / 10}rem ${
-    (img.height * cy) / 10
-  }rem`;
+  lens.style.backgroundSize = `${img.width * zoomScale}px ${img.height * zoomScale}px`;
   lens.style.visibility = "visible";
 
   img.addEventListener("mousemove", moveLens);
@@ -92,26 +93,24 @@ function activateZoom(imgId) {
 
   function moveLens(e) {
     e.preventDefault();
-    const pos = getMousePos(e, img);
+    const pos = getMousePos(e);
     let x = pos.x - lens.offsetWidth / 2;
     let y = pos.y - lens.offsetHeight / 2;
-    img.addEventListener("mousemove", moveLens);
 
-    if (x > img.width - lens.offsetWidth) x = img.width - lens.offsetWidth;
-    if (x < 0) x = 0;
-    if (y > img.height - lens.offsetHeight) y = img.height - lens.offsetHeight;
-    if (y < 0) y = 0;
 
-    lens.style.left = `${x / 10}rem`;
-    lens.style.top = `${y / 10}rem`;
-    lens.style.backgroundPosition = `-${(x * cx) / 10}rem -${(y * cy) / 10}rem`;
+    x = Math.max(0, Math.min(x, img.width - lens.offsetWidth));
+    y = Math.max(0, Math.min(y, img.height - lens.offsetHeight));
+
+    lens.style.left = `${x}px`;
+    lens.style.top = `${y}px`;
+    lens.style.backgroundPosition = `-${x * zoomScale}px -${y * zoomScale}px`;
   }
 
-  function getCursorPos(e) {
-    const a = img.parentElement.getBoundingClientRect();
+  function getMousePos(e) {
+    const imgRect = img.getBoundingClientRect();
     return {
-      x: e.pageX - a.left - window.pageXOffset,
-      y: e.pageY - a.top - window.pageYOffset,
+      x: e.clientX - imgRect.left,
+      y: e.clientY - imgRect.top
     };
   }
 }

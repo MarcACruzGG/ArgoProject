@@ -10,9 +10,10 @@ function iniciarApp() {
   toggleMenuHamburguesa();
 }
 
+
 const descripciones = [
   "Descripción de la imagen 1 uno",
-  "Descripción de la imagen 2 ds",
+  "EMPAQUE MICROCORRUGADO FLAUTA E IMPRESO A SELECCIÓN DE COLOR BARNIZ UV A REGISTRO",
   "Descripción de la imagen 3 12",
   "Descripción de la imagen 4 1ad",
   "Descripción de la imagen 5 asdsad",
@@ -70,6 +71,10 @@ function getPositionX(e) {
 }
 
 function activateZoom(imgId) {
+  if ('ontouchstart' in window || navigator.maxTouchPoints) {
+    return; 
+  }
+  
   const img = document.getElementById(imgId);
   const lens = document.createElement("div");
   lens.setAttribute("class", "img-zoom-lens");

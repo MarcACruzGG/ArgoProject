@@ -1160,7 +1160,7 @@ button a {
   border-radius: 0.5rem;
 }
 .card-container .description p {
-  text-align: justify;
+  text-align: left;
   font-size: 1.5rem;
   margin: 0;
 }
@@ -1172,8 +1172,8 @@ button a {
   margin-bottom: 1rem;
 }
 .card-container .title h3 {
-  width: 50%;
-  font-size: 2rem;
+  width: 100%;
+  font-size: 1.45rem;
   margin-bottom: 0;
 }
 .card-container .circle {

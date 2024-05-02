@@ -167,10 +167,14 @@ function mostrarInfoModal() {
     {
       titulo: "Procesos",
       descripcion: `
-          <p style="text-align:justify;">
-            Descripción detallada de Procesos
-          </p>
-        `,
+        <p style="text-align:justify;">
+          <strong>Control de Proyecto desde la Orden hasta la Impresión:</strong> Nuestro proceso comienza con una orden de producción meticulosamente revisada y circula a través de todas las áreas relevantes. Esta rigurosidad asegura la precisión desde la preprensa hasta la formación de suajes y la preparación de placas, culminando en la programación precisa para la impresión.
+          <br><br>
+          <strong>Materiales de Primera Calidad:</strong> Utilizamos solo los mejores barnices, tintas y sustratos, asegurando que cada producto cumpla con las expectativas de calidad de nuestros clientes. La flexibilidad en nuestro proceso permite adaptar la producción según las necesidades específicas de cada proyecto.
+          <br><br>
+          <strong>Empaquetado y Etiquetado Personalizado:</strong> Como toque final, ofrecemos servicios de empaquetado y etiquetado que pueden ser personalizados para satisfacer las especificaciones únicas de cada cliente. Este nivel de personalización refuerza la identidad de marca y la satisfacción del cliente.
+        </p>
+      `,
     },
     {
       titulo: "Presupuesto",
