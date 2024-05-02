@@ -98,6 +98,7 @@
   @include m.tablet {
     margin: 0;
     width: auto;
+    max-width: 40rem;
     height: 34rem;
 
     p {

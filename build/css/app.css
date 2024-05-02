@@ -793,6 +793,7 @@ button a {
   .cards {
     margin: 0;
     width: auto;
+    max-width: 40rem;
     height: 34rem;
   }
   .cards p {
