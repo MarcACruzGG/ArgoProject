@@ -257,13 +257,6 @@
   }
 }
 
-.cerrar-modal {
-  background-color: v.$sorbus600;
-  @include m.tablet {
-    background-color: v.$sorbus100;
-  }
-}
-
 .front,
 .back {
   background-color: v.$negro;

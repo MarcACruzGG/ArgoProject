@@ -179,3 +179,11 @@ p {
   font-size: 1.6rem;
   cursor: pointer;
 }
+
+
+.cerrar-modal {
+  background-color: v.$sorbus600;
+  @include m.desktop {
+    background-color: v.$sorbus100;
+  }
+}

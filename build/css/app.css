@@ -803,7 +803,8 @@ button a {
 @media (min-width: 1250px) {
   .cards {
     margin: 0;
-    width: 50rem;
+    width: 55rem;
+    max-width: none;
     height: 30rem;
   }
   .cards p {
@@ -1191,15 +1192,6 @@ button a {
   width: 10rem;
 }
 
-.cerrar-modal {
-  background-color: #f67d04;
-}
-@media (min-width: 768px) {
-  .cerrar-modal {
-    background-color: #fff4d3;
-  }
-}
-
 .front,
 .back {
   background-color: #000000;
@@ -1413,6 +1405,15 @@ p {
   padding: 1rem 2rem;
   font-size: 1.6rem;
   cursor: pointer;
+}
+
+.cerrar-modal {
+  background-color: #f67d04;
+}
+@media (min-width: 1250px) {
+  .cerrar-modal {
+    background-color: #fff4d3;
+  }
 }
 
 .footer {
