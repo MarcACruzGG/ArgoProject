@@ -10,7 +10,6 @@ function iniciarApp() {
   toggleMenuHamburguesa();
 }
 
-
 const descripciones = [
   "Descripción de la imagen 1 uno",
   "EMPAQUE MICROCORRUGADO FLAUTA E IMPRESO A SELECCIÓN DE COLOR BARNIZ UV A REGISTRO",
@@ -43,9 +42,7 @@ function mostrarImagen(id) {
   overlay.className = "overlay";
   overlay.innerHTML = `
     <div class="overlay-content">
-      <div class="img-zoom-container">
-        <img id="img-${id}" src="${imagenSrc}" alt="Imagen Galeria ${id}" style="width: 200; height: 300;">
-      </div>
+      <img id="img-${id}" src="${imagenSrc}" alt="Imagen Galeria ${id}" style="width: 200; height: 300;">
       <p>${descripciones[id - 1]}</p>
     </div>
   `;
@@ -55,7 +52,6 @@ function mostrarImagen(id) {
   });
   document.body.appendChild(overlay);
   document.body.classList.add("fijar-body");
-  activateZoom(`img-${id}`);
 }
 
 function getMousePos(e, img) {
@@ -68,51 +64,6 @@ function getMousePos(e, img) {
 
 function getPositionX(e) {
   return e.touches ? e.touches[0].clientX : null;
-}
-
-function activateZoom(imgId) {
-  if ('ontouchstart' in window || navigator.maxTouchPoints) {
-    return; 
-  }
-  
-  const img = document.getElementById(imgId);
-  const lens = document.createElement("div");
-  lens.setAttribute("class", "img-zoom-lens");
-  img.parentElement.insertBefore(lens, img);
-
-  const zoomScale = 3; 
-  lens.style.width = "10rem";
-  lens.style.height = "10rem";
-  lens.style.backgroundImage = `url('${img.src}')`;
-  lens.style.backgroundRepeat = "no-repeat";
-  lens.style.backgroundSize = `${img.width * zoomScale}px ${img.height * zoomScale}px`;
-  lens.style.visibility = "visible";
-
-  img.addEventListener("mousemove", moveLens);
-  lens.addEventListener("mousemove", moveLens);
-
-  function moveLens(e) {
-    e.preventDefault();
-    const pos = getMousePos(e);
-    let x = pos.x - lens.offsetWidth / 2;
-    let y = pos.y - lens.offsetHeight / 2;
-
-
-    x = Math.max(0, Math.min(x, img.width - lens.offsetWidth));
-    y = Math.max(0, Math.min(y, img.height - lens.offsetHeight));
-
-    lens.style.left = `${x}px`;
-    lens.style.top = `${y}px`;
-    lens.style.backgroundPosition = `-${x * zoomScale}px -${y * zoomScale}px`;
-  }
-
-  function getMousePos(e) {
-    const imgRect = img.getBoundingClientRect();
-    return {
-      x: e.clientX - imgRect.left,
-      y: e.clientY - imgRect.top
-    };
-  }
 }
 
 function setUpCarruselControls() {

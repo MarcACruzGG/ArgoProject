@@ -70,57 +70,6 @@ function getPositionX(e) {
   return e.touches ? e.touches[0].clientX : null;
 }
 
-function activateZoom(imgId) {
-  if ('ontouchstart' in window || navigator.maxTouchPoints) {
-    return; 
-  }
-  
-  const img = document.getElementById(imgId);
-  const lens = document.createElement("div");
-  lens.setAttribute("class", "img-zoom-lens");
-  img.parentElement.insertBefore(lens, img);
-
-  const cx = 3;
-  const cy = 3;
-  lens.style.width = "10rem";
-  lens.style.height = "10rem";
-
-  lens.style.backgroundImage = `url('${img.src}')`;
-  lens.style.backgroundRepeat = "no-repeat";
-  lens.style.backgroundSize = `${(img.width * cx) / 10}rem ${
-    (img.height * cy) / 10
-  }rem`;
-  lens.style.visibility = "visible";
-
-  img.addEventListener("mousemove", moveLens);
-  lens.addEventListener("mousemove", moveLens);
-
-  function moveLens(e) {
-    e.preventDefault();
-    const pos = getMousePos(e, img);
-    let x = pos.x - lens.offsetWidth / 2;
-    let y = pos.y - lens.offsetHeight / 2;
-    img.addEventListener("mousemove", moveLens);
-
-    if (x > img.width - lens.offsetWidth) x = img.width - lens.offsetWidth;
-    if (x < 0) x = 0;
-    if (y > img.height - lens.offsetHeight) y = img.height - lens.offsetHeight;
-    if (y < 0) y = 0;
-
-    lens.style.left = `${x / 10}rem`;
-    lens.style.top = `${y / 10}rem`;
-    lens.style.backgroundPosition = `-${(x * cx) / 10}rem -${(y * cy) / 10}rem`;
-  }
-
-  function getCursorPos(e) {
-    const a = img.parentElement.getBoundingClientRect();
-    return {
-      x: e.pageX - a.left - window.pageXOffset,
-      y: e.pageY - a.top - window.pageYOffset,
-    };
-  }
-}
-
 function setUpCarruselControls() {
   const buttons = document.querySelectorAll(".carrusel-arrow");
   buttons.forEach((button) => {
