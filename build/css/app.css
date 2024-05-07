@@ -615,7 +615,7 @@ button a {
   align-items: center;
   overflow: hidden;
   position: relative;
-  margin: 1.3rem 0;
+  margin: 2rem 0;
   width: unset;
   max-width: unset;
 }
@@ -662,8 +662,8 @@ button a {
 }
 .contenedor-logos .slide-left .logos-slide img,
 .contenedor-logos .slide-right .logos-slide img {
-  height: 2rem;
-  width: 11.5rem;
+  height: 3rem;
+  width: 13rem;
 }
 .contenedor-logos .slide-left .logos-slide img:hover,
 .contenedor-logos .slide-right .logos-slide img:hover {
@@ -1060,7 +1060,7 @@ button a {
   }
   .logos .certificado {
     width: auto;
-    height: 8.5rem;
+    height: 7rem;
     margin: 0 1rem;
   }
 }
