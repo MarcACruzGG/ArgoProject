@@ -7,7 +7,7 @@
   align-items: center;
   overflow: hidden;
   position: relative;
-  margin: 2.5rem 0;
+  margin: 2.7rem 0;
   width: unset;
   max-width: unset;
 
@@ -74,8 +74,8 @@
       animation: slideLeft 800s linear infinite;
 
       img {
-        height: 3rem; // Altura fija de los logos
-        width: 13rem; // Mantener la proporción de los logos
+        height: 3.5rem; // Altura fija de los logos
+        width: auto; // Mantener la proporción de los logos
         &:hover {
           cursor: pointer;
           filter: brightness(0) saturate(100%) invert(49%) sepia(95%)

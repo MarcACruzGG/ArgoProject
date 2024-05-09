@@ -615,7 +615,7 @@ button a {
   align-items: center;
   overflow: hidden;
   position: relative;
-  margin: 2.5rem 0;
+  margin: 2.7rem 0;
   width: unset;
   max-width: unset;
 }
@@ -662,8 +662,8 @@ button a {
 }
 .contenedor-logos .slide-left .logos-slide img,
 .contenedor-logos .slide-right .logos-slide img {
-  height: 3rem;
-  width: 13rem;
+  height: 3.5rem;
+  width: auto;
 }
 .contenedor-logos .slide-left .logos-slide img:hover,
 .contenedor-logos .slide-right .logos-slide img:hover {
