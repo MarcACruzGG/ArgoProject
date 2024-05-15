@@ -1650,7 +1650,7 @@ p {
   height: 100%;
   color: rgba(0, 0, 0, 0.7);
 }
-@media (min-width: 1250px) {
+@media (min-width: 768px) {
   .carrusel-arrow {
     display: block;
   }

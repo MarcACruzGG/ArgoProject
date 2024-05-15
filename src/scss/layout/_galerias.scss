@@ -91,7 +91,7 @@
     color: rgba(0, 0, 0, 0.7);
   }
 
-  @include m.desktop {
+  @include m.tablet {
     display: block;
   }
 }
