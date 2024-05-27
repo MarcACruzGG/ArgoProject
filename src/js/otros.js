@@ -12,21 +12,17 @@ function iniciarApp() {
 
 
 const descripciones = [
-  "CAJILLA IMPRESIÓN DIRECTA + COLD FOIL",
-  "CAJILLA TINTAS IMPRESIÓN UV",
-  "CAJILLAS IMPRESIÓN TINTAS DIRECTAS LAMINADO SOFT TOUCH",
-  "CAJILLAS IMPRESIÓN TINTAS DIRECTAS",
-  "CAJILLAS IMPRESIÓN TINTAS DIRECTAS LAMINADO SOFT TOUCH",
-  "CAJILLAS IMPRESIÓN TINTAS DIRECTAS LAMINADO SOFT TOUCH",
-  "CAJILLA PROMOCIONAL IMPRESIÓN NATURAL KRAFT",
-  "CAJILLA 4 PACK FONDO AUTOMÁTICO",
-  "CAJILLA BARNIZ ANTI GRASO",
-  "CAJILLA IMPRESIÓN TINTAS NEÓN + HOT STAMPING",
-  "CAJILLA LAMINADO MATE",
-  "CAJILLA FONDO AUTOMÁTICO IMPRESIÓN UV",
-  "CAJILLA BARNIZ ANTI GRASO",
+  "CAJA VINOS MICRO F 1 TINTA + ASA DE TELA",
+  "CAJILLA PACK SAMS VENTANA DE PET + ARMADO NATURAL",
+  "CAJILLA PEGUE LINEAL NATURAL KRAFT",
+  "CAJILLA PACK IMPRESIÓN TINTAS FLUORESCENTES + FONDO AUTOMÁTICO",
+  "CAJILLA MICRO F VENTANA DE PET IMPRESIÓN UV",
+  "CAJILLA PLEGADIZA SUAJES ESPECIALES",
+  "MINI EMPAQUE NATURAL KRAFT",
+  "CAJILLA METALIZADA + BARNIZ CONTRASTE",
+  "CAJILLA PANQUÉS NATURAL KRAFT TINTAS FDA",
+  "EXHIBIDOR MICRO E TINTAS DIRECTAS",
 ];
-
 
 function inicializarGaleria() {
   const imagenes = document.querySelectorAll(".carrusel img");
@@ -38,7 +34,7 @@ function inicializarGaleria() {
 }
 
 function mostrarImagen(id) {
-  const imagenSrc = `/build/img/Belleza/${id}.png`;
+  const imagenSrc = `/build/img/Otros/${id}.png`;
   const overlay = document.createElement("div");
   overlay.className = "overlay";
   overlay.innerHTML = `
@@ -69,6 +65,7 @@ function getMousePos(e, img) {
 function getPositionX(e) {
   return e.touches ? e.touches[0].clientX : null;
 }
+
 
 function setUpCarruselControls() {
   const buttons = document.querySelectorAll(".carrusel-arrow");

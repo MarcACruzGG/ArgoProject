@@ -12,20 +12,14 @@ function iniciarApp() {
 
 
 const descripciones = [
-  "Descripción de la imagen 1 uno",
-  "EMPAQUE MICROCORRUGADO FLAUTA E IMPRESO A SELECCIÓN DE COLOR BARNIZ UV A REGISTRO",
-  "Descripción de la imagen 3 12",
-  "Descripción de la imagen 4 1ad",
-  "Descripción de la imagen 5 asdsad",
-  "Descripción de la imagen 6 awdad",
-  "Descripción de la imagen 7 awdad",
-  "Descripción de la imagen 8 awdad",
-  "Descripción de la imagen 9 awdad",
-  "Descripción de la imagen 10 awdad",
-  "Descripción de la imagen 11 awdad",
-  "Descripción de la imagen 12 awdad",
-  "Descripción de la imagen 13 awdad",
-  "Descripción de la imagen 14 awdad",
+  "JUEGOS DE MESA LICENCIA DISNEY PEGUE 4 ESQUINAS",
+  "LOTERÍA DISNEY PEGUE 4 ESQUINAS TINTAS UV",
+  "ROMPECABEZAS IMPRESIÓN UV SUAJES ESPECIALES",
+  "CAJA PLEGADIZA TINTAS DIRECTAS",
+  "CAJILLA MICROCORRUGADO E TINTAS DIRECTAS",
+  "CAJILLA PERFUME BARNIZ CONTRASTE LISO",
+  "CAJILLA PERFUME DISNEY PLEGADIZA",
+  "JUEGO DE MESA IMPRESIÓN CRC BARNIZ UV",
 ];
 
 function inicializarGaleria() {

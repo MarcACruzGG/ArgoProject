@@ -12,20 +12,23 @@ function iniciarApp() {
 
 
 const descripciones = [
-  "Descripción de la imagen 1 uno",
-  "EMPAQUE MICROCORRUGADO FLAUTA E IMPRESO A SELECCIÓN DE COLOR BARNIZ UV A REGISTRO",
-  "Descripción de la imagen 3 12",
-  "Descripción de la imagen 4 1ad",
-  "Descripción de la imagen 5 asdsad",
-  "Descripción de la imagen 6 awdad",
-  "Descripción de la imagen 7 awdad",
-  "Descripción de la imagen 8 awdad",
-  "Descripción de la imagen 9 awdad",
-  "Descripción de la imagen 10 awdad",
-  "Descripción de la imagen 11 awdad",
-  "Descripción de la imagen 12 awdad",
-  "Descripción de la imagen 13 awdad",
-  "Descripción de la imagen 14 awdad",
+  "CAJILLA SBS CUSTOMIZADA + COLD FOIL + BARNIZ CONTRASTE RUGOSO",
+  "CAJILLA METALIZADA, BARNIZ CONTRASTE LISO",
+  "CAJA MASTER PRESTIGE + SINGLE FTA B - LAMINADO MATE",
+  "VAP SBS VENTANA DE PET",
+  "VAP MICRO E VENTANA DE PET + HOT STAMPING + BARNIZ UV",
+  "CAJA COLD FOIL + REALCE + SOFT TOUCH",
+  "VAP MICROCORRUGADO FTA E VENTANA DE PET BARNIZ UV",
+  "PLEGADIZA TINTAS NEÓN + BARNIZ CONTRASTE",
+  "READY TO DISPLAY KRAFT",
+  "CNK IMPRESIÓN DIRECTA HOT STAMPING + COLD FOIL",
+  "VAP MICROCORRUGADO FTA E VENTANA DE PET BARNIZ UV",
+  "CAJILLA IMPRESA SBS 4X1",
+  "VAP METALIZADO IMPRESIÓN UV",
+  "CAJA FONDO AUTOMÁTICO IMPRESIÓN TINTAS DORADAS",
+  "CKB IMPRESIÓN UV",
+  "VAP ELABORADO EN PET HOT STAMPING + PRIMER ANTI SCRATCH",
+  "VAP MICROCORRUGADA + BARNIZ CONTRASTE LISO VENTANA SIN PET",
 ];
 
 function inicializarGaleria() {
