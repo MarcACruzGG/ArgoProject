@@ -12,21 +12,21 @@ function iniciarApp() {
 
 
 const descripciones = [
-  "Descripción de la imagen 1 uno",
-  "EMPAQUE MICROCORRUGADO FLAUTA E IMPRESO A SELECCIÓN DE COLOR BARNIZ UV A REGISTRO",
-  "Descripción de la imagen 3 12",
-  "Descripción de la imagen 4 1ad",
-  "Descripción de la imagen 5 asdsad",
-  "Descripción de la imagen 6 awdad",
-  "Descripción de la imagen 7 awdad",
-  "Descripción de la imagen 8 awdad",
-  "Descripción de la imagen 9 awdad",
-  "Descripción de la imagen 10 awdad",
-  "Descripción de la imagen 11 awdad",
-  "Descripción de la imagen 12 awdad",
-  "Descripción de la imagen 13 awdad",
-  "Descripción de la imagen 14 awdad",
+  "CAJILLA IMPRESIÓN DIRECTA + COLD FOIL",
+  "CAJILLA TINTAS IMPRESIÓN UV",
+  "CAJILLAS IMPRESIÓN TINTAS DIRECTAS LAMINADO SOFT TOUCH",
+  "CAJILLAS IMPRESIÓN TINTAS DIRECTAS",
+  "CAJILLAS IMPRESIÓN TINTAS DIRECTAS LAMINADO SOFT TOUCH",
+  "CAJILLAS IMPRESIÓN TINTAS DIRECTAS LAMINADO SOFT TOUCH",
+  "CAJILLA PROMOCIONAL IMPRESIÓN NATURAL KRAFT",
+  "CAJILLA 4 PACK FONDO AUTOMÁTICO",
+  "CAJILLA BARNIZ ANTI GRASO",
+  "CAJILLA IMPRESIÓN TINTAS NEÓN + HOT STAMPING",
+  "CAJILLA LAMINADO MATE",
+  "CAJILLA FONDO AUTOMÁTICO IMPRESIÓN UV",
+  "CAJILLA BARNIZ ANTI GRASO",
 ];
+
 
 function inicializarGaleria() {
   const imagenes = document.querySelectorAll(".carrusel img");

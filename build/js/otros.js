@@ -12,20 +12,16 @@ function iniciarApp() {
 
 
 const descripciones = [
-  "Descripción de la imagen 1 uno",
-  "EMPAQUE MICROCORRUGADO FLAUTA E IMPRESO A SELECCIÓN DE COLOR BARNIZ UV A REGISTRO",
-  "Descripción de la imagen 3 12",
-  "Descripción de la imagen 4 1ad",
-  "Descripción de la imagen 5 asdsad",
-  "Descripción de la imagen 6 awdad",
-  "Descripción de la imagen 7 awdad",
-  "Descripción de la imagen 8 awdad",
-  "Descripción de la imagen 9 awdad",
-  "Descripción de la imagen 10 awdad",
-  "Descripción de la imagen 11 awdad",
-  "Descripción de la imagen 12 awdad",
-  "Descripción de la imagen 13 awdad",
-  "Descripción de la imagen 14 awdad",
+  "CAJA VINOS MICRO F 1 TINTA + ASA DE TELA",
+  "CAJILLA PACK SAMS VENTANA DE PET + ARMADO NATURAL",
+  "CAJILLA PEGUE LINEAL NATURAL KRAFT",
+  "CAJILLA PACK IMPRESIÓN TINTAS FLUORESCENTES + FONDO AUTOMÁTICO",
+  "CAJILLA MICRO F VENTANA DE PET IMPRESIÓN UV",
+  "CAJILLA PLEGADIZA SUAJES ESPECIALES",
+  "MINI EMPAQUE NATURAL KRAFT",
+  "CAJILLA METALIZADA + BARNIZ CONTRASTE",
+  "CAJILLA PANQUÉS NATURAL KRAFT TINTAS FDA",
+  "EXHIBIDOR MICRO E TINTAS DIRECTAS",
 ];
 
 function inicializarGaleria() {

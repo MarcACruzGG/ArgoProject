@@ -12,20 +12,15 @@ function iniciarApp() {
 
 
 const descripciones = [
-  "Descripción de la imagen 1 uno",
+  "CUBO PROMOCIONAL PEGUE LINEAL + IMPRESIÓN UV",
   "EMPAQUE MICROCORRUGADO FLAUTA E IMPRESO A SELECCIÓN DE COLOR BARNIZ UV A REGISTRO",
-  "Descripción de la imagen 3 12",
-  "Descripción de la imagen 4 1ad",
-  "Descripción de la imagen 5 asdsad",
-  "Descripción de la imagen 6 awdad",
-  "Descripción de la imagen 7 awdad",
-  "Descripción de la imagen 8 awdad",
-  "Descripción de la imagen 9 awdad",
-  "Descripción de la imagen 10 awdad",
-  "Descripción de la imagen 11 awdad",
-  "Descripción de la imagen 12 awdad",
-  "Descripción de la imagen 13 awdad",
-  "Descripción de la imagen 14 awdad",
+  "FAJILLA IMPRESIÓN UV BARNIZ CONTRASTE + LAMINADO MATE",
+  "FAJILLA IMPRESIÓN UV BARNIZ CONTRASTE + LAMINADO MATE",
+  "BUNDLE VENTANA DE PET + PEGUE 4 ESQUINAS",
+  "FAJILLA IMPRESIÓN UV BARNIZ CONTRASTE + LAMINADO MATE",
+  "CAJA EN PASTA DURA CON IMÁN",
+  "BUNDLE IMPRESIÓN UV + BARNIZ CONTRASTE LISO",
+  "CAJILLA PROMOCIONAL IMPRESA EN TINTAS UV",
 ];
 
 function inicializarGaleria() {

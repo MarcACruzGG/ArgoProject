@@ -11,22 +11,27 @@ function iniciarApp() {
 }
 
 
+
 const descripciones = [
-  "Descripción de la imagen 1 uno",
-  "EMPAQUE MICROCORRUGADO FLAUTA E IMPRESO A SELECCIÓN DE COLOR BARNIZ UV A REGISTRO",
-  "Descripción de la imagen 3 12",
-  "Descripción de la imagen 4 1ad",
-  "Descripción de la imagen 5 asdsad",
-  "Descripción de la imagen 6 awdad",
-  "Descripción de la imagen 7 awdad",
-  "Descripción de la imagen 8 awdad",
-  "Descripción de la imagen 9 awdad",
-  "Descripción de la imagen 10 awdad",
-  "Descripción de la imagen 11 awdad",
-  "Descripción de la imagen 12 awdad",
-  "Descripción de la imagen 13 awdad",
-  "Descripción de la imagen 14 awdad",
+  "CAJA PLEGADIZA ESTUCHADO AUTOMÁTICO PEGUE LINEAL",
+  "CAJA PLEGADIZA ESTUCHADO AUTOMÁTICO PEGUE LINEAL",
+  "CAJA PLEGADIZA ESTUCHADO AUTOMÁTICO PEGUE LINEAL",
+  "CAJILLA PLEGADIZA FONDO AUTOMÁTICO BARNIZ SOFT TOUCH",
+  "CAJA PLEGADIZA CON VENTANA",
+  "CAJILLA PLEGADIZA IMPRESIÓN TINTAS DIRECTAS + HOT STAMPING",
+  "CAJILLA IMPRESIÓN DIRECTA + BARNIZ UV",
+  "CAJILLA LICENCIA DISNEY IMPRESA SOBRE PET + IMPRESIÓN ESPEJO",
+  "CAJILLA CON VENTANA DE PET ESQUINADA",
+  "PLEGADIZA FONDO AUTOMÁTICO 6X0 TINTAS",
+  "READY TO DISPLAY IMPRESIÓN UV",
+  "CAJA PHARMA BARNIZ DE ALTA SEGURIDAD + COLD FOIL",
+  "EXHIBIDOR EN POLIPROPILENO IMPRESIÓN UV",
+  "CAJA PLEGADIZA PEGUE LINEAL ESTUCHADO AUTOMÁTICO",
+  "CAJA PLEGADIZA + METALIZADO IMPRESIÓN UV + ALTO RELIEVE",
+  "CAJA PLEGADIZA PEGUE LINEAL ESTUCHADO AUTOMÁTICO",
+  "CAJA PLEGADIZA PEGUE LINEAL ESTUCHADO AUTOMÁTICO",
 ];
+
 
 function inicializarGaleria() {
   const imagenes = document.querySelectorAll(".carrusel img");
