@@ -128,10 +128,10 @@ function mostrarInfoModal() {
         <p style="text-align:justify;">
         Nos enorgullecemos de contar con las siguientes certificaciones que respaldan nuestra dedicación a la excelencia y la responsabilidad social:
         <ul style="text-align:justify;">
-            <li>ISO 9001:2015 - Garantiza la calidad de nuestros productos y servicios, cumpliendo con estándares internacionales.</li>
-            <li>Responsabilidad Social (Disney) - Reconocimiento por nuestro compromiso con prácticas éticas y sostenibles en toda nuestra operación.</li>
-            <li>SEDEX/SMETA 4 Pilares - Demuestra nuestro compromiso con la transparencia, la ética empresarial, los derechos laborales y el cuidado ambiental.</li>
-            <li>Auditoria de Principios Rectores SGP Coca-Cola - Validación de nuestro compromiso con los principios de sostenibilidad y responsabilidad social en nuestra cadena de suministro.</li>
+          <li><strong>ISO 9001:2015</strong> - Garantiza la calidad de nuestros productos y servicios, cumpliendo con estándares internacionales.</li>
+          <li><strong>Responsabilidad Social (Disney)</strong> - Reconocimiento por nuestro compromiso con prácticas éticas y sostenibles en toda nuestra operación.</li>
+          <li><strong>SEDEX/SMETA 4 Pilares</strong> - Demuestra nuestro compromiso con la transparencia, la ética empresarial, los derechos laborales y el cuidado ambiental.</li>
+          <li><strong>Auditoria de Principios Rectores SGP Coca-Cola</strong> - Validación de nuestro compromiso con los principios de sostenibilidad y responsabilidad social en nuestra cadena de suministro.</li>
         </ul>
         <p style="text-align:justify; padding-top:1.5rem;">Estas certificaciones reflejan nuestra dedicación a ofrecer productos y servicios de la más alta calidad, mientras cumplimos con los más altos estándares de responsabilidad social y ambiental.</p>
         </p>
