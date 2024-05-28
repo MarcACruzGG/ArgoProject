@@ -140,16 +140,15 @@ function mostrarInfoModal() {
     {
       titulo: "Equipo",
       descripcion: `
-        <p style="text-align:justify;">
-        Contamos con una variedad de maquinaria especializada que nos permite ofrecer soluciones de alta calidad en la industria gráfica:
-        <ul style="text-align:justify;">
-            <li><strong>Impresión:</strong> Roland 705 y 707 - Velocidad promedio de 12,000 pl/h, capaces de imprimir en papel de hasta 74 x 104 cm.</li>
-            <li><strong>Suaje:</strong> Speria 106 E Autoplatine, Sanwa TRP1060-SE y Brausse 1050SF - Velocidad promedio de 3,500 pl/h, trabajan con papel de hasta 74 x 106 cm.</li>
-            <li><strong>Pegue:</strong> Pegadoras Bobst, Vega y Smart - Capacidad de hasta 15,000 piezas/hora, con diferentes tamaños de papel.</li>
-            <li><strong>Guillotinas:</strong> Polar 115E serie 6731851 y 7031430 - Capacidad de corte de hasta 1150 mm de ancho.</li>
-        </ul>
-        <p style="text-align:justify;"> Nuestra variedad de equipos nos permite adaptarnos a una amplia gama de proyectos, garantizando siempre calidad y eficiencia.
-        </p>
+      <p>Contamos con tecnología avanzada en impresión, suaje y pegado, permitiéndonos ofrecer soluciones de alta calidad adaptadas a diversos proyectos gráficos. Nuestros equipos incluyen:</p>
+      <ul>
+          <li><strong>Impresión:</strong> Máquinas Roland con capacidades de hasta 12,000 pl/h y formatos de hasta 74 x 104 cm.</li>
+          <li><strong>Suaje:</strong> Equipos como Speria 106 E y Sanwa TRP1060-SE, con velocidades de 3,500 pl/h.</li>
+          <li><strong>Pegue:</strong> Pegadoras de marcas líderes con capacidad de hasta 15,000 piezas/hora.</li>
+          <li><strong>Guillotinas:</strong> Polar series con corte de hasta 1150 mm de ancho.</li>
+      </ul>
+      <p>Esta versatilidad nos permite garantizar calidad y eficiencia en cada proyecto.</p>
+      
         `,
     },
     {

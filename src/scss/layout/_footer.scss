@@ -144,3 +144,20 @@
     }
   }
 }
+
+.derechos-reservados {
+  text-align: center;
+  width: 100%;
+  padding: 1rem 0;
+  color: v.$blanco;
+  p{
+    font-size: 1rem;
+  }
+
+  @include m.tablet {
+    padding: 1rem 0;
+    p{
+    font-size: 1rem;
+    }  
+  }
+}
