@@ -140,7 +140,7 @@ function mostrarInfoModal() {
     {
       titulo: "Equipo",
       descripcion: `
-      <p>Contamos con tecnología avanzada en impresión, suaje y pegado, permitiéndonos ofrecer soluciones de alta calidad adaptadas a diversos proyectos gráficos. Nuestros equipos incluyen:</p>
+      <p style="text-align:justify;">Contamos con tecnología avanzada en impresión, suaje y pegado, permitiéndonos ofrecer soluciones de alta calidad adaptadas a diversos proyectos gráficos. Nuestros equipos incluyen:</p>
       <ul>
           <li><strong>Impresión:</strong> Máquinas Roland con capacidades de hasta 12,000 pl/h y formatos de hasta 74 x 104 cm.</li>
           <li><strong>Suaje:</strong> Equipos como Speria 106 E y Sanwa TRP1060-SE, con velocidades de 3,500 pl/h.</li>
