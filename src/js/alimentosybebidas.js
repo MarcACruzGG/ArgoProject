@@ -40,6 +40,15 @@ const descripciones = [
   "CAJA MICROCORRUGADA FTA E IMPRESIÓN Y BARNIZ CONTRASTE LISO",
 ];
 
+const imagenesEspeciales = [
+  "/build/img/AlimentosyBebidas/Estructural/especial1.png",
+  "/build/img/AlimentosyBebidas/Estructural/especial2.png",
+  "/build/img/AlimentosyBebidas/Estructural/especial3.png",
+  "/build/img/AlimentosyBebidas/Estructural/especial4.png",
+  "/build/img/AlimentosyBebidas/Estructural/especial5.png",
+  "/build/img/AlimentosyBebidas/Estructural/especial6.png",
+];
+
 function inicializarGaleria() {
   const imagenes = document.querySelectorAll(".carrusel img");
   imagenes.forEach((imagen) => {
@@ -50,7 +59,13 @@ function inicializarGaleria() {
 }
 
 function mostrarImagen(id) {
-  const imagenSrc = `/build/img/AlimentosyBebidas/${id}.png`;
+  let imagenSrc;
+  if (id <= 6) {
+    imagenSrc = imagenesEspeciales[id - 1];
+  } else {
+    imagenSrc = `/build/img/AlimentosyBebidas/${id}.png`;
+  }
+  
   const overlay = document.createElement("div");
   overlay.className = "overlay";
   overlay.innerHTML = `
