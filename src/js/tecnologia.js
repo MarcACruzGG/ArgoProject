@@ -10,7 +10,6 @@ function iniciarApp() {
   toggleMenuHamburguesa();
 }
 
-
 const descripciones = [
   "CUBO PROMOCIONAL PEGUE LINEAL + IMPRESIÓN UV",
   "EMPAQUE MICROCORRUGADO FLAUTA E IMPRESO A SELECCIÓN DE COLOR BARNIZ UV A REGISTRO",
@@ -23,6 +22,15 @@ const descripciones = [
   "CAJILLA PROMOCIONAL IMPRESA EN TINTAS UV",
 ];
 
+const imagenesAlternativas = [
+  "/build/img/Tecnologia/Estructural/especial1.png",
+  "/build/img/Tecnologia/Estructural/especial2.png",
+  "/build/img/Tecnologia/Estructural/especial3.png",
+  "/build/img/Tecnologia/Estructural/especial4.png",
+  "/build/img/Tecnologia/Estructural/especial5.png",
+  "/build/img/Tecnologia/Estructural/especial6.png",
+];
+
 function inicializarGaleria() {
   const imagenes = document.querySelectorAll(".carrusel img");
   imagenes.forEach((imagen) => {
@@ -33,7 +41,13 @@ function inicializarGaleria() {
 }
 
 function mostrarImagen(id) {
-  const imagenSrc = `/build/img/Tecnologia/${id}.png`;
+  let imagenSrc;
+  if (id <= 6) {
+    imagenSrc = imagenesAlternativas[id - 1];
+  } else {
+    imagenSrc = `/build/img/Tecnologia/${id}.png`;
+  }
+  
   const overlay = document.createElement("div");
   overlay.className = "overlay";
   overlay.innerHTML = `

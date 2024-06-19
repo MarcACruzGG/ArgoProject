@@ -10,7 +10,6 @@ function iniciarApp() {
   toggleMenuHamburguesa();
 }
 
-
 const descripciones = [
   "CAJA VINOS MICRO F 1 TINTA + ASA DE TELA",
   "CAJILLA PACK SAMS VENTANA DE PET + ARMADO NATURAL",
@@ -24,6 +23,15 @@ const descripciones = [
   "EXHIBIDOR MICRO E TINTAS DIRECTAS",
 ];
 
+const imagenesAlternativas = [
+  "/build/img/Otros/Estructural/especial1.png",
+  "/build/img/Otros/Estructural/especial2.png",
+  "/build/img/Otros/Estructural/especial3.png",
+  "/build/img/Otros/Estructural/especial4.png",
+  "/build/img/Otros/Estructural/especial5.png",
+  "/build/img/Otros/Estructural/especial6.png",
+];
+
 function inicializarGaleria() {
   const imagenes = document.querySelectorAll(".carrusel img");
   imagenes.forEach((imagen) => {
@@ -34,7 +42,13 @@ function inicializarGaleria() {
 }
 
 function mostrarImagen(id) {
-  const imagenSrc = `/build/img/Otros/${id}.png`;
+  let imagenSrc;
+  if (id <= 6) {
+    imagenSrc = imagenesAlternativas[id - 1];
+  } else {
+    imagenSrc = `/build/img/Otros/${id}.png`;
+  }
+  
   const overlay = document.createElement("div");
   overlay.className = "overlay";
   overlay.innerHTML = `
@@ -65,7 +79,6 @@ function getMousePos(e, img) {
 function getPositionX(e) {
   return e.touches ? e.touches[0].clientX : null;
 }
-
 
 function setUpCarruselControls() {
   const buttons = document.querySelectorAll(".carrusel-arrow");

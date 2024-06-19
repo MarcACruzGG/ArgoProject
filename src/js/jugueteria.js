@@ -10,7 +10,6 @@ function iniciarApp() {
   toggleMenuHamburguesa();
 }
 
-
 const descripciones = [
   "JUEGOS DE MESA LICENCIA DISNEY PEGUE 4 ESQUINAS",
   "LOTERÍA DISNEY PEGUE 4 ESQUINAS TINTAS UV",
@@ -20,6 +19,15 @@ const descripciones = [
   "CAJILLA PERFUME BARNIZ CONTRASTE LISO",
   "CAJILLA PERFUME DISNEY PLEGADIZA",
   "JUEGO DE MESA IMPRESIÓN CRC BARNIZ UV",
+];
+
+const imagenesAlternativas = [
+  "/build/img/Jugueteria/Estructural/especial1.png",
+  "/build/img/Jugueteria/Estructural/especial2.png",
+  "/build/img/Jugueteria/Estructural/especial3.png",
+  "/build/img/Jugueteria/Estructural/especial4.png",
+  "/build/img/Jugueteria/Estructural/especial5.png",
+  "/build/img/Jugueteria/Estructural/especial6.png",
 ];
 
 function inicializarGaleria() {
@@ -32,7 +40,13 @@ function inicializarGaleria() {
 }
 
 function mostrarImagen(id) {
-  const imagenSrc = `/build/img/Jugueteria/${id}.png`;
+  let imagenSrc;
+  if (id <= 6) {
+    imagenSrc = imagenesAlternativas[id - 1];
+  } else {
+    imagenSrc = `/build/img/Jugueteria/${id}.png`;
+  }
+  
   const overlay = document.createElement("div");
   overlay.className = "overlay";
   overlay.innerHTML = `

@@ -10,7 +10,6 @@ function iniciarApp() {
   toggleMenuHamburguesa();
 }
 
-
 const descripciones = [
   "CAJILLA IMPRESIÓN DIRECTA + COLD FOIL",
   "CAJILLA TINTAS IMPRESIÓN UV",
@@ -27,6 +26,14 @@ const descripciones = [
   "CAJILLA BARNIZ ANTI GRASO",
 ];
 
+const imagenesAlternativas = [
+  "/build/img/Belleza/Estructural/especial1.png",
+  "/build/img/Belleza/Estructural/especial2.png",
+  "/build/img/Belleza/Estructural/especial3.png",
+  "/build/img/Belleza/Estructural/especial4.png",
+  "/build/img/Belleza/Estructural/especial5.png",
+  "/build/img/Belleza/Estructural/especial6.png",
+];
 
 function inicializarGaleria() {
   const imagenes = document.querySelectorAll(".carrusel img");
@@ -38,7 +45,13 @@ function inicializarGaleria() {
 }
 
 function mostrarImagen(id) {
-  const imagenSrc = `/build/img/Belleza/${id}.png`;
+  let imagenSrc;
+  if (id <= 6) {
+    imagenSrc = imagenesAlternativas[id - 1];
+  } else {
+    imagenSrc = `/build/img/Belleza/${id}.png`;
+  }
+  
   const overlay = document.createElement("div");
   overlay.className = "overlay";
   overlay.innerHTML = `

@@ -7,6 +7,7 @@
   border-radius: 3rem 3rem 0 0;
   height: 100%;
   margin-bottom: 0;
+  padding: 1rem;
 
   .logo-footer {
     display: block;
@@ -35,16 +36,16 @@
     }
 
     .social-link {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 3.5rem;
+      height: 3.5rem;
       transition: 0.5s;
       &:hover {
         color: v.$sorbus500;
         cursor: pointer;
       }
       @include m.tablet {
-        width: 2rem;
-        height: 2rem;
+        width: 3rem;
+        height: 3rem;
       }
     }
   }
@@ -81,17 +82,22 @@
 .contenido-footer {
   display: flex;
   width: auto;
+  flex-direction: column; // Inicialmente en columna para pantallas pequeñas
+  align-items: center;
+  padding: 0 1rem;
+
   .bloque {
     display: flex;
     flex-direction: column;
     gap: 3.5rem;
-    margin: 4rem 0 2rem 2rem;
+    margin: 4rem 0 2rem 1rem;
     align-items: center;
     text-align: center;
     width: 70%;
   }
 
   @include m.telefono {
+    flex-direction: row; // Cambiar a fila después de 480px
     margin: 2rem 2rem 0 2rem;
   }
 }
@@ -100,8 +106,7 @@
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 4rem 1rem 2rem 1rem;
-
+  margin: 5rem 1rem 2rem 1rem;
   gap: 2rem;
 
   @include m.telefono {
@@ -150,14 +155,52 @@
   width: 100%;
   padding: 1rem 0;
   color: v.$blanco;
-  p{
+  p {
     font-size: 1rem;
   }
 
+  @include m.telefono {
+    text-align: center;
+    padding: 0.5rem 0;
+    p {
+      font-size: 0.875rem;
+      margin-bottom: 1rem;
+      line-height: 1.2rem;
+    }
+  }
+
   @include m.tablet {
-    padding: 1rem 0;
-    p{
-    font-size: 1rem;
-    }  
+    p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+  }
+}
+
+// Media query para tamaño de celular (antes de 480px)
+@media (max-width: 479px) {
+  .footer {
+    .contenido-footer {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1rem;
+    }
+
+    .contact-info {
+      margin: 2rem 1rem 1rem 1rem;
+      p {
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+        line-height: 1.2rem;
+      }
+    }
+
+    .derechos-reservados {
+      padding: 0.5rem 0;
+      p {
+        font-size: 0.75rem;
+        line-height: 1rem;
+      }
+    }
   }
 }

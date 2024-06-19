@@ -10,7 +10,6 @@ function iniciarApp() {
   toggleMenuHamburguesa();
 }
 
-
 const descripciones = [
   "CAJILLA SBS CUSTOMIZADA + COLD FOIL + BARNIZ CONTRASTE RUGOSO",
   "CAJILLA METALIZADA, BARNIZ CONTRASTE LISO",
@@ -31,6 +30,15 @@ const descripciones = [
   "VAP MICROCORRUGADA + BARNIZ CONTRASTE LISO VENTANA SIN PET",
 ];
 
+const imagenesAlternativas = [
+  "/build/img/Bebidas/Estructural/especial1.png",
+  "/build/img/Bebidas/Estructural/especial2.png",
+  "/build/img/Bebidas/Estructural/especial3.png",
+  "/build/img/Bebidas/Estructural/especial4.png",
+  "/build/img/Bebidas/Estructural/especial5.png",
+  "/build/img/Bebidas/Estructural/especial6.png",
+];
+
 function inicializarGaleria() {
   const imagenes = document.querySelectorAll(".carrusel img");
   imagenes.forEach((imagen) => {
@@ -41,7 +49,13 @@ function inicializarGaleria() {
 }
 
 function mostrarImagen(id) {
-  const imagenSrc = `/build/img/Bebidas/${id}.png`;
+  let imagenSrc;
+  if (id <= 6) {
+    imagenSrc = imagenesAlternativas[id - 1];
+  } else {
+    imagenSrc = `/build/img/Bebidas/${id}.png`;
+  }
+  
   const overlay = document.createElement("div");
   overlay.className = "overlay";
   overlay.innerHTML = `
@@ -72,7 +86,6 @@ function getMousePos(e, img) {
 function getPositionX(e) {
   return e.touches ? e.touches[0].clientX : null;
 }
-
 
 function setUpCarruselControls() {
   const buttons = document.querySelectorAll(".carrusel-arrow");

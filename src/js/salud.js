@@ -10,8 +10,6 @@ function iniciarApp() {
   toggleMenuHamburguesa();
 }
 
-
-
 const descripciones = [
   "CAJA PLEGADIZA ESTUCHADO AUTOMÁTICO PEGUE LINEAL",
   "CAJA PLEGADIZA ESTUCHADO AUTOMÁTICO PEGUE LINEAL",
@@ -32,6 +30,14 @@ const descripciones = [
   "CAJA PLEGADIZA PEGUE LINEAL ESTUCHADO AUTOMÁTICO",
 ];
 
+const imagenesAlternativas = [
+  "/build/img/Salud/Estructural/especial1.png",
+  "/build/img/Salud/Estructural/especial2.png",
+  "/build/img/Salud/Estructural/especial3.png",
+  "/build/img/Salud/Estructural/especial4.png",
+  "/build/img/Salud/Estructural/especial5.png",
+  "/build/img/Salud/Estructural/especial6.png",
+];
 
 function inicializarGaleria() {
   const imagenes = document.querySelectorAll(".carrusel img");
@@ -43,7 +49,13 @@ function inicializarGaleria() {
 }
 
 function mostrarImagen(id) {
-  const imagenSrc = `/build/img/Salud/${id}.png`;
+  let imagenSrc;
+  if (id <= 6) {
+    imagenSrc = imagenesAlternativas[id - 1];
+  } else {
+    imagenSrc = `/build/img/Salud/${id}.png`;
+  }
+  
   const overlay = document.createElement("div");
   overlay.className = "overlay";
   overlay.innerHTML = `
